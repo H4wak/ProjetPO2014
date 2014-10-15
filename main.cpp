@@ -11,11 +11,11 @@ int main()
 {
 
   Personnage* guerrier = new Guerrier();
-	cout << guerrier->toString();
+  cout << guerrier->toString();
   Joueur* Pierre = new Joueur("Pierre", *guerrier,"test.txt");
-  cout << Pierre->getDeck()->tirerCarte().toString();
+  cout << Pierre->getDeck()->tirerCarte().toString() << endl;
   Pierre->getPersonnage().setCP(new ComportementPouvoirGuerrier());
-  cout << Pierre->getPersonnage().utiliserPouvoir();
+  cout << Pierre->getPersonnage().utiliserPouvoir() << endl;
  
 
   return 0;

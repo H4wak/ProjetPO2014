@@ -18,12 +18,14 @@ class Carte
    int pa;
    std::string nom;
    int coutmana;
+   bool charge;
+   bool provoc;
    
    
    public :
   /* création/destruction */
   	Carte();
-	Carte(int pdv, int pa, std::string nom, int coutmana); // constructeur par défaut 
+	Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc); // constructeur par défaut 
 	~Carte(); // destructeur
 
   int getPdv();
@@ -37,6 +39,12 @@ class Carte
 
   int getCoutmana();
   void setCoutmana(int i);
+  
+  bool getCharge();
+  void setCharge(bool c);
+  
+  bool getProvoc();
+  void setProvoc(bool p);
 
   std::string toString();
 

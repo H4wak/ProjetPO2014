@@ -16,7 +16,8 @@ Deck::Deck(string fichier)
 {
   int pdv,pa,cm,i;
   i = 0;  
-  string ligne,nom;  
+  string ligne,nom;
+  bool charge,provoc;  
   ifstream ifs(fichier.c_str());
   if(ifs)
 	{
@@ -28,8 +29,10 @@ Deck::Deck(string fichier)
 			iss >> pa;
 			iss >> nom;
 			iss >> cm;
+			iss >> charge;
+			iss >> provoc;
 			//cout << pdv << " " << pa << " " << nom << " " << cm << endl;
-			Carte * c = new Carte(pdv,pa,nom,cm);
+			Carte * c = new Carte(pdv,pa,nom,cm,charge,provoc);
 			d.push(*c);
 			i++;
 			

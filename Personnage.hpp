@@ -19,7 +19,7 @@ class Personnage
       int pdv;
       int armure;
       int pdm;
-			ComportementPouvoir* CP;
+	  ComportementPouvoir* CP;
       
     
    public :
@@ -33,10 +33,10 @@ class Personnage
       void setArmure(int narmure);
       int getPdm();
       void setPdm(int npdm);
-			ComportementPouvoir* getCP();
+	  ComportementPouvoir* getCP();
       void setCP(ComportementPouvoir* CP);
       std::string toString();
-			std::string utiliserPouvoir();        
+	  std::string utiliserPouvoir();        
   
 };
 

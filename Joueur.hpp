@@ -42,9 +42,14 @@ class Joueur
 		void setPersonnage(Personnage p);
 		
 		std::string afficherMain();
+		std::string afficherBoard();
 		
 		bool ajouterMain(Carte* c); // renvoie vrai si l'opération a réussie
 		bool ajouterBoard(Carte* c); // renvoie vrai si l'opération a réussie
+		bool supprimerMain(int index);
+		bool supprimerBoard(int index);
+		
+		
 		
 		
 };

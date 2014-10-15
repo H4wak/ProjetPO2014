@@ -88,11 +88,42 @@ string Joueur::afficherMain()
 	
 		while ( i < size)
 		{
-			string Spdv = static_cast<ostringstream*>( &(ostringstream()<<this->main->at(i).getPdv()) )->str();
-			string Spa = static_cast<ostringstream*>( &(ostringstream() << this->main->at(i).getPa()) )->str();
-			string Scm = static_cast<ostringstream*>( &(ostringstream() << this->main->at(i).getCoutmana()) )->str();
-		
-			result = "Nom: " + this->main->at(i).getNom() +" Attaque: " + Spdv + " PDV:" + Spa + " Cout mana:" + Scm + "\n";
+			string index = static_cast<ostringstream*>( &(ostringstream() << i+1) )->str();
+			string lel = this->main->at(i).toString();
+			result +=  index +". " + lel + "\n";
+			
+			i++;
+		}
+	}
+	
+	
+	return result;
+	
+	
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+string Joueur::afficherBoard()
+{
+	string result;
+	int i =0;
+	int size;
+	
+	size = this->board->size();
+	
+	if (size == 0) 
+	{
+		return "Board vide!";
+	} else {
+	
+		while ( i < size)
+		{
+			string index = static_cast<ostringstream*>( &(ostringstream() << i+1) )->str();
+			string lel = this->board->at(i).toString();
+			result +=  index +". " + lel + "\n";
+			
+			
 			i++;
 		}
 	}
@@ -135,4 +166,35 @@ bool Joueur::ajouterBoard(Carte* c)
 		
 	
 }
+
+//////////////////////////////////////////////////////////////////////////
+bool Joueur::supprimerMain(int index)
+{
+	string sindex = static_cast<ostringstream*>( &(ostringstream() << index) )->str();
+	if (index-1 >= tailleMain || index-1 < 0 || index > this->main->size() )
+	{	
+		cout << "Index "+ sindex +" hors de la Main !!" << endl;
+		return false;
+	} else {
+		main->erase (this->main->begin()+index-1);
+		cout << " la carte n°"+ sindex + " a été enlevée de la main"<< endl;
+		return true;
+	}
+}
+		
+//////////////////////////////////////////////////////////////////////////
+bool Joueur::supprimerBoard(int index)
+{
+	string sindex = static_cast<ostringstream*>( &(ostringstream() << index) )->str();
+	if (index-1 >= tailleBoard || index-1 < 0 || index > this->board->size()) 
+	{	
+		cout << "Index "+ sindex+" hors du Board !!" << endl;
+		return false;
+	} else {
+		board->erase (this->board->begin()+index-1);
+		cout << " la carte n°"+ sindex + " a été enlevée du board"<< endl;
+		return true;
+	}
+}
+	
 
