@@ -107,7 +107,6 @@ string Joueur::afficherMain()
 bool Joueur::ajouterMain(Carte* c)
 {
 	
-	int i = 0;
 	
 	if (this->main->size() >= tailleMain)
 	{
@@ -124,7 +123,6 @@ bool Joueur::ajouterMain(Carte* c)
 //////////////////////////////////////////////////////////////////////////
 bool Joueur::ajouterBoard(Carte* c)
 {
-	int i = 0;
 	
 	if (this->board->size() >= tailleBoard)
 	{

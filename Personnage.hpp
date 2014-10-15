@@ -7,16 +7,15 @@
 #define PERSONNAGE_HPP
 
 #include <string> // pour le type std::string
-#include "Carte.hpp"
-#include "ComportementPouvoir.hpp"
 
+#include "ComportementPouvoirGuerrier.hpp"
 
+int const pdvmax(30);
 /******************************************************************************/
 
 class Personnage
 {
    private :
-      int pdvmax;
       int pdv;
       int armure;
       int pdm;
@@ -28,8 +27,6 @@ class Personnage
       Personnage();
       ~Personnage();
       
-      int getPdvmax();
-      void setPdvmax(int npdvmax);
       int getPdv();
       void setPdv(int npdv);
       int getArmure();
@@ -39,7 +36,7 @@ class Personnage
 			ComportementPouvoir* getCP();
       void setCP(ComportementPouvoir* CP);
       std::string toString();
-			void utiliserPouvoir();        
+			std::string utiliserPouvoir();        
   
 };
 

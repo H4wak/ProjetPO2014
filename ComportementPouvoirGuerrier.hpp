@@ -14,16 +14,11 @@
 
 class ComportementPouvoirGuerrier : public ComportementPouvoir
 {
-   private :
-      
-    
+
    public :
-		ComportementPouvoirGuerrier();
-		~ComportementPouvoirGuerrier();
-	  void pouvoir();
-			
-   
+	  std::string pouvoir();
+	
 };
 
-
+#include "ComportementPouvoirGuerrier.cpp"
 #endif // ComportementPouvoirGuerrier_HPP

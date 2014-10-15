@@ -13,9 +13,9 @@ using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
 
-Guerrier::Guerrier()
+Guerrier::Guerrier(): Personnage()
 {
-	this->setCP(new ComportementPouvoirGuerrier());
+	
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -23,5 +23,4 @@ Guerrier::Guerrier()
 Guerrier::~Guerrier()
 {
 }
-
 

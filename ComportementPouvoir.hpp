@@ -14,11 +14,8 @@
 
 class ComportementPouvoir
 {
-   private :
-      
-    
    public :
-		virtual void pouvoir() = 0;
+		virtual std::string pouvoir() = 0;
    
 };
 

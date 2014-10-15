@@ -15,10 +15,10 @@ using namespace std; // seulement dans le .cpp !
 
 Personnage::Personnage()
 {
-   this->pdvmax = 30;
    this->pdv = 30;
    this->armure = 0;
    this->pdm = 0;
+	 this->CP = new ComportementPouvoirGuerrier();
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -41,19 +41,6 @@ void Personnage::setPdv(int npdv)
    this->pdv = npdv;
 }
 
-/////////////////////////////////////////////////////////////////////////
-
-int Personnage::getPdvmax()
-{
-   return this->pdvmax;
-}
-
-/////////////////////////////////////////////////////////////////////////
-
-void Personnage::setPdvmax(int npdvmax)
-{
-   this->pdv = npdvmax;
-}
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -111,7 +98,7 @@ void Personnage::setCP(ComportementPouvoir* CP)
 
 /////////////////////////////////////////////////////////////////////////
 
-void Personnage::utiliserPouvoir()
+std::string Personnage::utiliserPouvoir()
 {
-   this->CP->pouvoir();
+   return this->CP->pouvoir();
 }

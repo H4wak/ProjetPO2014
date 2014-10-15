@@ -8,7 +8,7 @@ using namespace std;
 #include "Carte.hpp"
 #include "Deck.hpp"
 #include "Joueur.hpp"
-#include "Chainage.hpp"
+
 
 
 int main()

@@ -11,24 +11,10 @@
 
 using namespace std; // seulement dans le .cpp !
 
-/////////////////////////////////////////////////////////////////////////
 
-ComportementPouvoirGuerrier::ComportementPouvoirGuerrier()
+string ComportementPouvoirGuerrier::pouvoir()
 {
-
-}
-
-/////////////////////////////////////////////////////////////////////////
-
-ComportementPouvoirGuerrier::~ComportementPouvoirGuerrier()
-{
-}
-
-/////////////////////////////////////////////////////////////////////////
-
-void ComportementPouvoirGuerrier::pouvoir()
-{
-   cout << "POUR HURLENFER!";
+   return "POUR HURLENFER!";
 }
 
 
