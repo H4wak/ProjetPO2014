@@ -15,21 +15,31 @@ using namespace std;
 Carte::Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc)
 {
    this->pdv = pdv;
+   this->pdvmax = pdv;
    this->pa = pa;
    this->nom = nom;
    this->coutmana = coutmana;
    this->charge = charge;
    this->provoc = provoc;
+   if (charge == 1 ){
+   	this->malinvoc = 0;
+   } else {
+   	this->malinvoc = 1;
+   }
+   
 }
 
 Carte::Carte()
 {
    this->pdv = -1;
+   this->pdvmax = -1;
    this->pa = -1;
    this->nom = "";
    this->coutmana = -1;
    this->charge = false;
    this->provoc = false;
+   this->malinvoc = false;
+   
 }
 
 
@@ -49,6 +59,18 @@ int Carte::getPdv()
 void Carte::setPdv(int i)
 {
   this->pdv = i;
+}
+
+/////////////////////////////////////////////////////////////////////////
+int Carte::getPdvmax()
+{
+  return this->pdvmax;  
+}
+
+/////////////////////////////////////////////////////////////////////////
+void Carte::setPdvmax(int i)
+{
+  this->pdvmax = i;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -102,6 +124,15 @@ bool Carte::getProvoc(){
 /////////////////////////////////////////////////////////////////////////
 void Carte::setProvoc(bool p){
 	this->provoc =p;
+}
+
+/////////////////////////////////////////////////////////////////////////
+bool Carte::getMalinvoc(){
+	return this->malinvoc;
+}
+/////////////////////////////////////////////////////////////////////////
+void Carte::setMalinvoc(bool m){
+	this->malinvoc = m;
 }
 /////////////////////////////////////////////////////////////////////////
 

@@ -15,11 +15,14 @@ class Carte
 {
    private :
    int pdv;
+   int pdvmax;
    int pa;
    std::string nom;
    int coutmana;
    bool charge;
    bool provoc;
+   bool malinvoc;
+   
    
    
    public :
@@ -30,6 +33,9 @@ class Carte
 
   int getPdv();
   void setPdv(int i);
+  
+  int getPdvmax();
+  void setPdvmax(int i);
 
   int getPa();
   void setPa(int i);
@@ -45,6 +51,10 @@ class Carte
   
   bool getProvoc();
   void setProvoc(bool p);
+  
+  bool getMalinvoc();
+  void setMalinvoc(bool m);
+
 
   std::string toString();
 
