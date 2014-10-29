@@ -18,7 +18,7 @@ class Guerrier: public Personnage
    private :
     
    public :
-			Guerrier();
+      Guerrier();
       ~Guerrier();
    
   

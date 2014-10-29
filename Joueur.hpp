@@ -26,6 +26,7 @@ class Joueur
 	
 	public:
 		
+		
 		Joueur(std::string nom, Personnage p,std::string fichier);
 		~Joueur();
 		

@@ -1,0 +1,34 @@
+/*
+   Fichier Tour.cpp
+
+   Définition des méthodes de Tour
+*/
+
+
+#include <iostream>
+#include <sstream> // pour les conversions en chaine
+#include <typeinfo>
+
+using namespace std; // seulement dans le .cpp !
+
+/////////////////////////////////////////////////////////////////////////
+
+Tour::Tour(Jeu* j)
+{
+   this->jeu = j;
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+Tour::~Tour()
+{
+}
+
+/////////////////////////////////////////////////////////////////////////
+Jeu* Tour::getJeu()
+{
+  return this->jeu;  
+}
+
+
+
