@@ -10,6 +10,7 @@
 
 
 /******************************************************************************/
+class Jeu;
 
 class TourJoueur1 : public Tour
 {
@@ -30,5 +31,6 @@ class TourJoueur1 : public Tour
 		
 };
 
+#include "Jeu.hpp"
 #include "../../src/Controleur/TourJoueur1.cpp"
 #endif // TourJoueur1_HPP		

@@ -7,15 +7,18 @@
 #define Jeu_HPP
 #include <string> // pour le type std::string
 #include "../Modele/Joueur/Joueur.hpp"
-#include "Tour.hpp"
-#include "TourJoueur1.hpp"
-#include "TourJoueur2.hpp"
 
 
+
+class Tour;
+class TourJoueur1;
+class TourJoueur2;
 /******************************************************************************/
 
 class Jeu
 {
+
+
 	private:
 		Joueur* joueurCourant;
 		Joueur* joueurAutre;
@@ -41,5 +44,9 @@ class Jeu
 		
 };
 
+
+#include "Tour.hpp"
+#include "TourJoueur1.hpp"
+#include "TourJoueur2.hpp"
 #include "../../src/Controleur/Jeu.cpp"
 #endif // JEU_HPP		

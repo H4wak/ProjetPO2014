@@ -6,7 +6,7 @@
 #ifndef TourJoueur1_HPP
 #define TourJoueur1_HPP
 #include <string> // pour le type std::string
-
+#include "Tour.hpp"
 
 
 /******************************************************************************/
@@ -31,6 +31,6 @@ class TourJoueur1 : public Tour
 		
 };
 
-#include "../../src/Controleur/TourJoueur1.cpp"
 #include "Jeu.hpp"
+#include "../../src/Controleur/TourJoueur1.cpp"
 #endif // TourJoueur1_HPP		

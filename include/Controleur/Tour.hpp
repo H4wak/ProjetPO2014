@@ -7,7 +7,7 @@
 #define Tour_HPP
 #include <string> // pour le type std::string
 
-#include "Jeu.hpp"
+
 
 
 /******************************************************************************/
