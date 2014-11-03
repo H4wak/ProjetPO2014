@@ -11,6 +11,12 @@
 
 
 /******************************************************************************/
+
+/**
+* La classe Carte représente une Carte.
+* @author Pierre Gaultier, Théo Dolez
+*/
+
 class Carte
 {
    private :
@@ -26,7 +32,16 @@ class Carte
    
    
    public :
-  /* création/destruction */
+	/*
+	* Constructeur.
+	* Créer une carte.
+	* @param pdv Point de vie de la carte.
+	* @param pa Point d'attaque de la carte.
+	* @param nom Nom de la carte.
+	* @param coutmana Cout en mana de la carte.
+	* @param charge Booléen, vrai si la carte à la capacité Charge.
+	* @param provoc Booléen, vrai si la carte à la capacité Provocation.
+	*/
   	Carte();
 	Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc); // constructeur par défaut 
 	~Carte(); // destructeur
