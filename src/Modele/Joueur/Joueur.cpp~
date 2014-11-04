@@ -201,7 +201,7 @@ void Joueur::setPDM(int npdm)
 {
 	this->p.setPdm(npdm);
 
-
-
 }
+
+
 

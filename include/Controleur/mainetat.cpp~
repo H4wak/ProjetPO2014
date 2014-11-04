@@ -9,28 +9,18 @@ int main()
 {
 
 
-	Personnage guerrier;
-	Personnage guerriera;
+	Guerrier cheval;
+	Chasseur poney;
 	
-	Joueur* Pierre = new Joueur("Pierre", guerrier,"DeckGuerrier.txt");
-	Joueur* Theo = new Joueur("Théo", guerriera,"DeckGuerrier.txt");
+	Joueur* Pierre = new Joueur("Pierre", cheval,"DeckGuerrier.txt");
+	Joueur* Theo = new Joueur("Théo", poney,"DeckGuerrier.txt");
 	
 	Jeu* game = new Jeu(Pierre, Theo);
 	
-	cout << game->getJoueurCourant()->getNom() << endl;
-	cout << game->getJoueurAutre()->getNom() << endl;
-	
-	cout << "**********************" << endl;
-	
-	cout << Pierre->getPersonnage().getPdm() << endl;
-	
-	cout << "**********************" << endl;
-	
-	//game->jouer();
-	cout << Pierre->getPersonnage().getPdv() << endl;
-	Pierre->getPersonnage().setPdv(20);
-	cout << Pierre->getPersonnage().getPdv() << endl;
 
+	
+	game->jouer();
+	
 	
 	/*
 	game->finTour();

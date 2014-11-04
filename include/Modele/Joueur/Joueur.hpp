@@ -10,6 +10,7 @@
 #include <vector>
 #include "Deck/Deck.hpp"
 #include "Personnage/Guerrier.hpp"
+#include "Personnage/Chasseur.hpp"
 
 int const tailleMain(8);
 int const tailleBoard(8);
@@ -43,6 +44,7 @@ class Joueur
 		void setPersonnage(Personnage p);
 		
 		void setPDM(int npdm);
+		
 		
 		std::string afficherMain();
 		std::string afficherBoard();
