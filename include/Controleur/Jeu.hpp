@@ -7,7 +7,7 @@
 #define Jeu_HPP
 #include <string> // pour le type std::string
 #include "../Modele/Joueur/Joueur.hpp"
-
+#include "../Vue/VueConsole.hpp"
 
 
 class Tour;
@@ -25,6 +25,7 @@ class Jeu
 		Tour* tourCourant;
 		TourJoueur1* tourJoueur1;
 		TourJoueur2* tourJoueur2;
+		VueConsole vue;
  
 	
 	public:

@@ -17,20 +17,10 @@ int main()
 	
 	Jeu* game = new Jeu(Pierre, Theo);
 	
-	cout << game->getJoueurCourant()->getNom() << endl;
-	cout << game->getJoueurAutre()->getNom() << endl;
-	
-	cout << "**********************" << endl;
-	
-	cout << Pierre->getPersonnage().getPdm() << endl;
-	
-	cout << "**********************" << endl;
-	
-	//game->jouer();
-	cout << Pierre->getPersonnage().getPdv() << endl;
-	Pierre->getPersonnage().setPdv(20);
-	cout << Pierre->getPersonnage().getPdv() << endl;
 
+	
+	game->jouer();
+	
 	
 	/*
 	game->finTour();
