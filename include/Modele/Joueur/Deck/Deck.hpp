@@ -12,7 +12,12 @@
 #include <fstream> // pour la gestion des flux de fichier
 #include <sstream> // pour la gestion des flux de string
 #include <stack>
-#include <string> // pour le type std::string
+#include <algorithm>    // std::random_shuffle
+#include <vector>       // std::vector
+#include <ctime>        // std::time
+#include <cstdlib>      // std::rand, std::srand
+#include <unistd.h>
+#include <time.h>
 #include "Carte/Carte.hpp"
 
 /******************************************************************************/
