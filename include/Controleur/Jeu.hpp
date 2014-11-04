@@ -38,6 +38,8 @@ class Jeu
 		Tour* getTourJoueur2();
 		void echangeJoueur(); // echange les deux joueurs dans joueurCourant et joueurAutre
 		void setTour(Tour* t); //setEtat
+		void finTour(); 
+		void jouer();// lance le tour
 		
 		
 		

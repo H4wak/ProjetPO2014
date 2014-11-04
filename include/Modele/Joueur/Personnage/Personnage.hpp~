@@ -34,6 +34,7 @@ class Personnage
       void setArmure(int narmure);
       int getPdm();
       void setPdm(int npdm);
+      void incPdm(); // augmente de 1 le nombre de points de mana
 	  ComportementPouvoir* getCP();
       void setCP(ComportementPouvoir* CP);
       std::string toString();
@@ -42,5 +43,5 @@ class Personnage
 };
 
 #include "../../../../src/Modele/Joueur/Personnage/Personnage.cpp"
-#include "Guerrier.hpp"
+
 #endif // Personnage_HPP

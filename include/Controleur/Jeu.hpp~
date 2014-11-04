@@ -38,14 +38,16 @@ class Jeu
 		Tour* getTourJoueur2();
 		void echangeJoueur(); // echange les deux joueurs dans joueurCourant et joueurAutre
 		void setTour(Tour* t); //setEtat
+		void finTour(); 
 		
 		
 		
 		
 };
 
-#include "../../src/Controleur/Jeu.cpp"
+
 #include "Tour.hpp"
 #include "TourJoueur1.hpp"
 #include "TourJoueur2.hpp"
+#include "../../src/Controleur/Jeu.cpp"
 #endif // JEU_HPP		

@@ -34,5 +34,7 @@ Jeu* TourJoueur2::getJeu()
 void TourJoueur2::finTour()
 {
   jeu->setTour(jeu->getTourJoueur1());
+  jeu->echangeJoueur();
+  jeu->jouer();
 }
 

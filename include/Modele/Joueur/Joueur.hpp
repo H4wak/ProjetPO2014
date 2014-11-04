@@ -11,8 +11,8 @@
 #include "Deck/Deck.hpp"
 #include "Personnage/Guerrier.hpp"
 
-int const tailleMain(5);
-int const tailleBoard(3);
+int const tailleMain(8);
+int const tailleBoard(8);
 /******************************************************************************/
 
 class Joueur
@@ -42,11 +42,13 @@ class Joueur
 		Personnage getPersonnage();
 		void setPersonnage(Personnage p);
 		
+		void setPDM(int npdm);
+		
 		std::string afficherMain();
 		std::string afficherBoard();
 		
-		bool ajouterMain(Carte* c); // renvoie vrai si l'opération a réussie
-		bool ajouterBoard(Carte* c); // renvoie vrai si l'opération a réussie
+		bool ajouterMain(Carte c); // renvoie vrai si l'opération a réussie
+		bool ajouterBoard(Carte c); // renvoie vrai si l'opération a réussie
 		bool supprimerMain(int index);
 		bool supprimerBoard(int index);
 		

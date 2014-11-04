@@ -31,7 +31,7 @@ class Deck
    	  void setTaille(int t);
    	  std::stack<Carte> getStack();
    	  
-   	  Carte tirerCarte();
+   	  Carte* tirerCarte();
    	  
 };
 

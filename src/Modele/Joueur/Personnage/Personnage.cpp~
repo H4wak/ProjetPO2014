@@ -103,4 +103,16 @@ std::string Personnage::utiliserPouvoir()
    return this->CP->pouvoir();
 }
 
-
+/////////////////////////////////////////////////////////////////////////
+void Personnage::incPdm()
+{
+	cout << "FONCTION INC" << endl;
+	
+	int tmp = this->getPdm() + 1;
+	cout << tmp << endl;
+	cout << "CHEVAL" << endl;
+	this->setPdm(tmp);
+	cout << this->getPdm() << endl;
+	
+	cout << "FIN FONCTION INC" << endl;
+}

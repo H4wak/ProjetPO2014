@@ -34,6 +34,7 @@ class Personnage
       void setArmure(int narmure);
       int getPdm();
       void setPdm(int npdm);
+     
 	  ComportementPouvoir* getCP();
       void setCP(ComportementPouvoir* CP);
       std::string toString();

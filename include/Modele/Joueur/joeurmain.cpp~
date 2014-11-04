@@ -3,42 +3,27 @@
 #include <fstream> // pour la gestion des flux de fichier
 #include <sstream> // pour la gestion des flux de string
 using namespace std;
-#include "../Modele/Joueur/Joueur.hpp"
-#include "Jeu.hpp"
+
+#include "Joueur.hpp"
 int main()
 {
-
-
 	Personnage guerrier;
-	Personnage guerriera;
 	
 	Joueur* Pierre = new Joueur("Pierre", guerrier,"DeckGuerrier.txt");
-	Joueur* Theo = new Joueur("Théo", guerriera,"DeckGuerrier.txt");
 	
-	Jeu* game = new Jeu(Pierre, Theo);
+	cout << Pierre->getNom() << endl;
 	
+	Pierre->setNom("cheval") ;
 
+	cout << Pierre->getNom() << endl;
 	
-	game->jouer();
+	cout << Pierre->getPersonnage().getPdm() << endl;
 	
+	Pierre->getPersonnage().setPdm(45);
 	
-	/*
-	game->finTour();
-	
-	cout << game->getJoueurCourant()->getNom() << endl;
-	cout << game->getJoueurAutre()->getNom() << endl;*/
+	cout << Pierre->getPersonnage().getPdm() << endl;
 	
 	
-	
-	
-	
-	
-	
-	
-
-
-
-
 
   return 0;
 }
