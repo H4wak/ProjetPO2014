@@ -160,7 +160,7 @@ bool Joueur::ajouterBoard(Carte c)
 		cout << "Board plein !" << endl;
 		return false;
 	} else {
-		 board->push_back *c);
+		 board->push_back (c);
 		 return true;
 	}
 		
@@ -201,7 +201,7 @@ void Joueur::setPDM(int npdm)
 {
 	this->p.setPdm(npdm);
 
-
-
 }
+
+
 

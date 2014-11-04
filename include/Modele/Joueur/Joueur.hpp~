@@ -12,7 +12,7 @@
 #include "Personnage/Guerrier.hpp"
 
 int const tailleMain(8);
-int const tailleBoard(5);
+int const tailleBoard(8);
 /******************************************************************************/
 
 class Joueur
@@ -43,6 +43,7 @@ class Joueur
 		void setPersonnage(Personnage p);
 		
 		void setPDM(int npdm);
+		
 		
 		std::string afficherMain();
 		std::string afficherBoard();

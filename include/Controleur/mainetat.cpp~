@@ -9,11 +9,11 @@ int main()
 {
 
 
-	Personnage guerrier;
-	Personnage guerriera;
+	Guerrier cheval;
+	Chasseur poney;
 	
-	Joueur* Pierre = new Joueur("Pierre", guerrier,"DeckGuerrier.txt");
-	Joueur* Theo = new Joueur("Théo", guerriera,"DeckGuerrier.txt");
+	Joueur* Pierre = new Joueur("Pierre", cheval,"DeckGuerrier.txt");
+	Joueur* Theo = new Joueur("Théo", poney,"DeckGuerrier.txt");
 	
 	Jeu* game = new Jeu(Pierre, Theo);
 	
