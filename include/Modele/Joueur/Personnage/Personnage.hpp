@@ -1,6 +1,6 @@
-/*
-   Fichier Personnage.hpp
-
+/**
+* Fichier Personnage
+* @author Pierre Gaultier & Theo Dolez
 */
 
 #ifndef PERSONNAGE_HPP
