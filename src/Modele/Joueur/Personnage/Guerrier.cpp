@@ -1,7 +1,6 @@
-/*
-   Fichier Guerrier.cpp
-
-   Définition des méthodes de Guerrier
+/**
+*Fichier Guerrier.cpp
+* @author Pierre Gaultier & Theo Dolez
 */
 
 
@@ -12,14 +11,18 @@
 using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Constructeur.
+*/
 Guerrier::Guerrier(): Personnage()
 {
 	
 }
 
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Destructeur
+*/
 Guerrier::~Guerrier()
 {
 }
