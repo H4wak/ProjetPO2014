@@ -71,7 +71,6 @@ void VueConsole::afficherDebutTour(Joueur* j)
 	cout <<  "Vous avez" + spdm + " points de Mana." << endl;
 	cout << "pioche" << endl;
 	cout << j->afficherMain() << endl;
-  cout << "Que voulez vous faire ?" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -103,7 +102,7 @@ void VueConsole::afficherPasAssezDeMana()
 void VueConsole::afficherPersonnage(Joueur* j)
 {
    int pdvv = j->getPersonnage().getPdv();
-   int pdmm = j->getPersonnage().getPdm();
+   int pdmn = j->getPersonnage().getPdm();
    int armm = j->getPersonnage().getArmure();
    string pdv = static_cast<ostringstream*>( &(ostringstream() << pdvv)  )->str();
    string pdm = static_cast<ostringstream*>( &(ostringstream() << pdmn)  )->str();

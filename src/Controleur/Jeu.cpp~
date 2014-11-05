@@ -92,16 +92,18 @@ void Jeu::jouer()
 	vue.afficherDebutTour(joueurCourant);
 	
 	
-	int choix = 25;
+	int choix = -1;
 	int choixcarte;
 	
+	
+	
 
-	while (choix != 0 && choix <5) {	
+	while (choix != 0) {	
 	vue.afficherChoix();
 		switch (vue.getChoixActionTour())
 		{
 		    case 1: {
-					vue.afficherMain();
+					vue.afficherMain(joueurCourant);
 					break;
 		    }
 		    case 2:  {
@@ -121,13 +123,13 @@ void Jeu::jouer()
 		      break;
 		    }
 		    case 3: {	
-				  vue.afficherBoard( joueurCourant);
+				  vue.afficherBoard(joueurCourant);
 				  break;
     		}
     		case 4:
     		{
 					vue.afficherPersonnage(joueurCourant);
-    			break;
+    			
     		}
 		}
 	}

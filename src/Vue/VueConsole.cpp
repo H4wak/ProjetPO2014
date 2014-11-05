@@ -68,10 +68,9 @@ void VueConsole::afficherDebutTour(Joueur* j)
 {
 	cout << "C'est à " + j->getNom() + " de jouer." << endl;	
   string spdm = static_cast<ostringstream*>( &(ostringstream() << j->getPersonnage().getPdm())  )->str();
-	cout <<  "Vous avez" + spdm + " points de Mana." << endl;
+	cout <<  "Vous avez " + spdm + " points de Mana." << endl;
 	cout << "pioche" << endl;
 	cout << j->afficherMain() << endl;
-  cout << "Que voulez vous faire ?" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
