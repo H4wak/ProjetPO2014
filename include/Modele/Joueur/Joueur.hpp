@@ -1,6 +1,6 @@
-/*
-   Fichier Joueur.hpp
-
+/**
+* Fichier Joueur.hpp
+* @author Pierre Gaultier &  Theo Dolez
 */
 
 #ifndef Joueur_HPP

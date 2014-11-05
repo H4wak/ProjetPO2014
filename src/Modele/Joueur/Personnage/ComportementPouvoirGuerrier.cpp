@@ -1,7 +1,6 @@
-/*
-   Fichier Guerrier.cpp
-
-   Définition des méthodes de ComportementPouvoirGuerrier
+/**
+*Fichier ComportementPouvoirGuerrier.cpp
+* @author Pierre Gaultier & Theo Dolez
 */
 
 
@@ -11,7 +10,9 @@
 
 using namespace std; // seulement dans le .cpp !
 
-
+/**
+* Methode qui applique le pouvoir heroique du guerrier
+*/
 string ComportementPouvoirGuerrier::pouvoir()
 {
    return "POUR HURLENFER!";

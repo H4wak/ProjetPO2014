@@ -1,6 +1,6 @@
-/*
-   Fichier Guerrier.hpp
-
+/**
+* Fichier Guerrier
+* @author Pierre Gaultier & Theo Dolez
 */
 
 #ifndef GUERRIER_HPP

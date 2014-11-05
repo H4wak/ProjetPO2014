@@ -1,6 +1,6 @@
-/*
-   Fichier ComportementPouvoirGuerrier.hpp
-
+/**
+* Fichier ComportementPouvoir
+* @author Pierre Gaultier & Theo Dolez
 */
 
 #ifndef COMPORTEMENTPOUVOIRGUERRIER_HPP
