@@ -1,7 +1,6 @@
-/*
-   Fichier TourJoueur1.cpp
-
-   Définition des méthodes de TourJoueur1
+/**
+*Fichier TourJoueur1.cpp
+* @author Pierre Gaultier & Theo Dolez
 */
 
 
@@ -12,19 +11,28 @@
 using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Constructeur.
+* @param j le jeu 
+*/
 TourJoueur1::TourJoueur1(Jeu* j)
 {
 	this->jeu = j;
 }
 
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Destructeur
+*/
 TourJoueur1::~TourJoueur1()
 {
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le jeu
+*@return jeu le jeu
+*/
 Jeu* TourJoueur1::getJeu()
 {
   return this->jeu;  
@@ -35,5 +43,6 @@ void TourJoueur1::finTour()
 {
   jeu->setTour(jeu->getTourJoueur2());
   jeu->echangeJoueur();
+  jeu->jouer();
 }
 

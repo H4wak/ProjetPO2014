@@ -25,7 +25,7 @@ class Jeu
 		Tour* tourCourant;
 		TourJoueur1* tourJoueur1;
 		TourJoueur2* tourJoueur2;
-		vueConsole vue;
+		VueConsole vue;
  
 	
 	public:

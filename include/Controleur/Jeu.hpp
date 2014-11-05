@@ -1,6 +1,6 @@
-/*
-   Fichier Jeu.hpp
-
+/**
+* Fichier Jeu.hpp
+* @author Pierre Gaultier & Theo Dolez
 */
 
 #ifndef Jeu_HPP

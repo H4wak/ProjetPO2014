@@ -1,7 +1,6 @@
-/*
-   Fichier Jeu.cpp
-
-   Définition des méthodes de Jeu
+/**
+*Fichier Jeu.cpp
+* @author Pierre Gaultier & Theo Dolez
 */
 
 
@@ -12,7 +11,11 @@
 using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Constructeur
+* @param j1 Joueur 1
+* @param j2 Joueur2
+*/
 Jeu::Jeu(Joueur* j1, Joueur* j2)
 {
    this->joueurCourant = j1;
@@ -23,24 +26,37 @@ Jeu::Jeu(Joueur* j1, Joueur* j2)
 }
 
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Destructeur
+*/
 Jeu::~Jeu()
 {
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui retourne le joueur courant
+* @return joueurCourant le joueur courant
+*/
 Joueur* Jeu::getJoueurCourant()
 {
   return this->joueurCourant;  
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui retourne le joueur autre
+* @return joueurAutre le joueur autre
+*/
 Joueur* Jeu::getJoueurAutre()
 {
   return this->joueurAutre;  
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui echange le joueurCourant avec le joueur autre
+*/
 void Jeu::echangeJoueur()
 {
   Joueur* tmp = this->joueurCourant;
@@ -49,36 +65,57 @@ void Jeu::echangeJoueur()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le tour courant
+* @return tourCourant le tour courant
+*/
 Tour* Jeu::getTourCourant()
 {
   return this->tourCourant;  
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le tour du joueur1
+* @return tourCourant le tour du joueur1
+*/
 Tour* Jeu::getTourJoueur1()
 {
   return this->tourJoueur1;  
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le tour du joueur2
+* @return tourCourant le tour du joueur2
+*/
 Tour* Jeu::getTourJoueur2()
 {
   return this->tourJoueur2;  
 }	
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui change le tourCourant
+* @param t le nouveau tour
+*/
 void Jeu::setTour(Tour* t)
 {
 	this->tourCourant = t;
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui appelle la methode finTour() sur le tour courant
+*/
 void Jeu::finTour()
 {
 	this->tourCourant->finTour();
 }
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Methode qui lance le jeu
+*/
 void Jeu::jouer()
 {
 	
@@ -95,9 +132,6 @@ void Jeu::jouer()
 	int choix = -1;
 	int choixcarte;
 	
-	
-	
-
 	while (choix != 0) {	
 	vue.afficherChoix();
 	choix = vue.getChoixActionTour();
@@ -134,9 +168,6 @@ void Jeu::jouer()
     		}
 		}
 	}
-	
-	
 	vue.afficherFinTour();
 	this->finTour();
-
 }
