@@ -1,6 +1,6 @@
-/*
-   Fichier TourJoueur2.hpp
-
+/**
+* Fichier TourJoueur2.hpp
+* @author Pierre Gaultier & Theo Dolez
 */
 
 #ifndef TourJoueur2_HPP
