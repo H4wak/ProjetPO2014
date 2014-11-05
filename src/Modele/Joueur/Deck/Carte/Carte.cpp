@@ -144,7 +144,7 @@ string Carte::toString()
    string Spa = static_cast<ostringstream*>( &(ostringstream() << this->pa) )->str();
    string Scm = static_cast<ostringstream*>( &(ostringstream() << this->coutmana) )->str();
    
-   result = "Nom: " + this->nom +" Attaque: " + Spdv + " PDV:" + Spa + " Cout mana:" + Scm ;
+   result = "Nom: " + this->nom +" Attaque: " + Spa + " PDV:" + Spdv + " Cout mana:" + Scm ;
    
    if (this->charge == true)
    {

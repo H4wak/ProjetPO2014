@@ -27,17 +27,19 @@ class VueConsole
 		
 		int getChoixActionTour();
 		int getChoixCarteAJouer();
-
+		
 
 		void afficherMain(Joueur* j);
 		void afficherChoix();
 		void afficherBoard(Joueur* j);
+		void afficher2Board(Joueur* j1, Joueur* j2)
 		void afficherPersonnage(Joueur* j);
 		void afficherDebutTour(Joueur* j);
 		void afficherFinTour();
 		void afficherJouerCarte();
 		void afficherPdmnRestant(int i);
 		void afficherPasAssezDeMana();
+		
 };
 #include "../../src/Vue/VueConsole.cpp"
 #endif // JEU_HPP		

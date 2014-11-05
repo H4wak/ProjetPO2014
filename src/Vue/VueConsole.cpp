@@ -52,7 +52,8 @@ void VueConsole::afficherMain(Joueur* j)
 void VueConsole::afficherChoix()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> Afficher votre personnage." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards." << endl;
+	cout << "5 -> Afficher votre Personnage. \n6 -> Attaquer une carte. " << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -61,6 +62,20 @@ void VueConsole::afficherBoard(Joueur* j)
   cout << "\n°•. °•. °•. VOTRE BOARD .•° .•° .•°" << endl;
   cout << j->afficherBoard() << endl;
   cout << "°•. °•. °•. °•. °•. .•° .•° .•° .•° .•°\n" << endl; 
+}
+
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficher2Board(Joueur* j1, Joueur* j2)
+{
+  cout << "\n°•. °•. °•. VOTRE BOARD .•° .•° .•°" << endl;
+  cout << j1->afficherBoard() << endl;
+  cout << "°•. °•. °•. °•. °•. .•° .•° .•° .•° .•°\n" << endl; 
+  
+  cout << "\n°•. °•. °•. SON BOARD .•° .•° .•°" << endl;
+  cout << j2->afficherBoard() << endl;
+  cout << "°•. °•. °•. °•. °•. .•° .•° .•° .•° .•°\n" << endl; 
+  
+  
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -112,5 +127,11 @@ void VueConsole::afficherPersonnage(Joueur* j)
    cout << " Vous avez " + pdm + " points de Mana. " << endl;
    cout << " Vous avez " + arm + " points d'armure. \n" << endl;
 }
+
+
+
+
+
+
 
 

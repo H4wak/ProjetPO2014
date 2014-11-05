@@ -45,6 +45,7 @@ int Personnage::getPdv()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/*
 * Methode qui remplace les points de vie du personnage par npdv
 * @param npdv les nouveaux points de vie
 */
@@ -65,6 +66,7 @@ int Personnage::getArmure()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/*
 * Methode qui remplace les points d'armure du personnage par narmure
 * @param narmure les nouveaux points d'armure
 */
@@ -84,6 +86,7 @@ int Personnage::getPdm()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/*
 * Methode qui remplace les points de mana du personnage par npdv
 * @param npdm les nouveaux points de mana
 */
@@ -93,6 +96,7 @@ void Personnage::setPdm(int npdm)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/*
 * Methode qui renvoie une chaine de caracteres qui decrit le personnage
 *@return String definition du personnage
 */
@@ -117,6 +121,7 @@ ComportementPouvoir* Personnage::getCP()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/*
 * Methode qui remplace le comportement du pouvoir par CP
 * @param CP le nouveau comportement
 */
@@ -126,6 +131,7 @@ void Personnage::setCP(ComportementPouvoir* CP)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/*
 * Methode qui applique le pouvoir du personnage
 * @return //a changer
 */

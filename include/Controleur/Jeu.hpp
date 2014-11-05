@@ -37,6 +37,10 @@ class Jeu
 		Tour* getTourCourant();
 		Tour* getTourJoueur1();
 		Tour* getTourJoueur2();
+		
+		void attaqueCvC(int index1, int index2);
+		//void attaqueCvJ(int index);
+		void enleverMalinvoc();
 		void echangeJoueur(); // echange les deux joueurs dans joueurCourant et joueurAutre
 		void setTour(Tour* t); //setEtat
 		void finTour(); 
