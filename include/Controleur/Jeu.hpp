@@ -5,6 +5,11 @@
 
 #ifndef Jeu_HPP
 #define Jeu_HPP
+#ifdef __cplusplus__
+  #include <cstdlib>
+#else
+  #include <stdlib.h>
+#endif
 #include <string> // pour le type std::string
 #include "../Modele/Joueur/Joueur.hpp"
 #include "../Vue/VueConsole.hpp"
@@ -43,11 +48,13 @@ class Jeu
 		Etat* getEtatNoAttaque();
 		Etat* getEtatDoubleNo();
 		Etat* getEtatDebutTour();
+		VueConsole getVue();
 		
 		void attaqueCvC(int index1, int index2);
 		//void attaqueCvJ(int index);
 		void enleverMalinvoc();
 		bool testNoMana();
+		bool testProvoc();
 		bool testNoAttaque();
 		void echangeJoueur(); // echange les deux joueurs dans joueurCourant et joueurAutre
 		void setEtat(Etat* e); //setEtat

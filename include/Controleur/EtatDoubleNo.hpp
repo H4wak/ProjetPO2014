@@ -24,7 +24,7 @@ class EtatDoubleNo : public Etat
 		~EtatDoubleNo();
 
 		Jeu* getJeu();
-		void afficherChoixEtat();
+		int afficherChoixEtat();
 		void finTour();
 		
 		

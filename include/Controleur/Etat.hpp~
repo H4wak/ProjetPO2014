@@ -21,7 +21,7 @@ class Etat
 	public:
 		
 		void virtual finTour()= 0;
-		void virtual afficherChoix()= 0;
+		bool virtual afficherChoixEtat()= 0;
 		
 		
 		

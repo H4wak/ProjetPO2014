@@ -31,6 +31,11 @@ class VueConsole
 
 		void afficherMain(Joueur* j);
 		void afficherChoix();
+		void afficherChoixDebutTour();
+		void afficherChoixNoMana();
+		void afficherChoixNoAttaque();
+		void afficherChoixDoubleNo();
+		void afficherChoixCvC();
 		void afficherBoard(Joueur* j);
 		void afficher2Board(Joueur* j1, Joueur* j2);
 		void afficherPersonnage(Joueur* j);

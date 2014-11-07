@@ -43,10 +43,14 @@ class Jeu
 		Etat* getEtatNoAttaque();
 		Etat* getEtatDoubleNo();
 		Etat* getEtatDebutTour();
+		VueConsole getVue();
 		
 		void attaqueCvC(int index1, int index2);
 		//void attaqueCvJ(int index);
 		void enleverMalinvoc();
+		bool testNoMana();
+		bool testProvoc();
+		bool testNoAttaque();
 		void echangeJoueur(); // echange les deux joueurs dans joueurCourant et joueurAutre
 		void setEtat(Etat* e); //setEtat
 		void finTour(); 

@@ -24,7 +24,7 @@ class EtatNoMana : public Etat
 		~EtatNoMana();
 
 		Jeu* getJeu();
-		void afficherChoixEtat();
+		int afficherChoixEtat();
 		void finTour();
 		
 		

@@ -59,33 +59,37 @@ int EtatNoMana::afficherChoixEtat()
 	int choixcarte;
 	int choixcarte1, choixcarte2;
 	int pdmn = jeu->getJoueurCourant()->getPersonnage().getPdm();
-	jeu->vue.afficherChoixNoMana();
-	choix = jeu->vue.getChoixActionTour();
+	
+	cout << "\nETAT NO MANA\n" << endl;
+	
+	jeu->getVue().afficherChoixNoMana();
+	choix = jeu->getVue().getChoixActionTour();
 		switch (choix)
 		{
 		    case 1: {
-					jeu->vue.afficherMain(jeu->getJoueurCourant());
+					jeu->getVue().afficherMain(jeu->getJoueurCourant());
 					break;
 		    }
 		   
 		    case 2: {	
-				  jeu->vue.afficherBoard(jeu->getJoueurCourant());
+				  jeu->getVue().afficherBoard(jeu->getJoueurCourant());
 				  break;
     		}
     		case 3:
     		{
-					jeu->vue.afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
+					jeu->getVue().afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
     				break;
     		}
     		case 4:
     		{
-					jeu->vue.afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
     				break;
     		}
     		case 5:
     		{
-    				choixcarte1 = jeu->vue.getChoixCarteAJouer();
-    				choixcarte2 = jeu->vue.getChoixCarteAJouer();
+    				jeu->getVue().afficherChoixCvC();
+    				choixcarte1 = jeu->getVue().getChoixCarteAJouer();
+    				choixcarte2 = jeu->getVue().getChoixCarteAJouer();
     				jeu->attaqueCvC(choixcarte1, choixcarte2);
     				
     				if (jeu->testNoAttaque() == true )

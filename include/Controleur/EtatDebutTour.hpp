@@ -24,7 +24,7 @@ class EtatDebutTour : public Etat
 		~EtatDebutTour();
 
 		Jeu* getJeu();
-		void afficherChoixEtat();
+		int afficherChoixEtat();
 		void finTour();
 		
 		

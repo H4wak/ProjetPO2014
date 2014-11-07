@@ -52,7 +52,7 @@ void VueConsole::afficherMain(Joueur* j)
 void VueConsole::afficherChoixDebutTour()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Attaquer.  \n6 -> Afficher votre Personnage. \n7 -> utiliser le pouvoir heroique." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher votre Personnage.\n 6 -> Attaquer. \n7 -> utiliser le pouvoir heroique." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -132,6 +132,12 @@ void VueConsole::afficherPasAssezDeMana()
 {
   cout << "Pas assez de Mana !" << endl;
 }
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherChoixCvC()
+{
+	cout << "Entrez le numéro de votre Carte, appuyez sur Entrée, puis faites de même avec la Carte de l'adversaire" << endl;
+}
+
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherPersonnage(Joueur* j)

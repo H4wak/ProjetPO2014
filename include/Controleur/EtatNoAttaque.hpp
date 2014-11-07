@@ -24,7 +24,7 @@ class EtatNoAttaque : public Etat
 		~EtatNoAttaque();
 
 		Jeu* getJeu();
-		void afficherChoixEtat();
+		int afficherChoixEtat();
 		void finTour();
 		
 		

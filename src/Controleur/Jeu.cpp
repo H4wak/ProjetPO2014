@@ -71,9 +71,9 @@ void Jeu::echangeJoueur()
 * Methode qui renvoie le tour courant
 * @return tourCourant le tour courant
 */
-Tour* Jeu::getEtatCourant()
+Etat* Jeu::getEtatCourant()
 {
-  return this->EtatCourant;  
+  return this->etatCourant;  
 }
 
 
@@ -82,7 +82,7 @@ Tour* Jeu::getEtatCourant()
 * Methode qui renvoie le tour du joueur2
 * @return tourCourant le tour du joueur2
 */
-Tour* Jeu::getEtatDebutTour()
+Etat* Jeu::getEtatDebutTour()
 {
   return this->etatDebutTour;  
 }	
@@ -92,7 +92,7 @@ Tour* Jeu::getEtatDebutTour()
 * Methode qui renvoie le tour du joueur2
 * @return tourCourant le tour du joueur2
 */
-Tour* Jeu::getEtatNoMana()
+Etat* Jeu::getEtatNoMana()
 {
   return this->etatNoMana;  
 }	
@@ -102,7 +102,7 @@ Tour* Jeu::getEtatNoMana()
 * Methode qui renvoie le tour du joueur2
 * @return tourCourant le tour du joueur2
 */
-Tour* Jeu::getEtatNoAttaque()
+Etat* Jeu::getEtatNoAttaque()
 {
   return this->etatNoAttaque;  
 }	
@@ -112,7 +112,7 @@ Tour* Jeu::getEtatNoAttaque()
 * Methode qui renvoie le tour du joueur2
 * @return tourCourant le tour du joueur2
 */
-Tour* Jeu::getEtatDoubleNo()
+Etat* Jeu::getEtatDoubleNo()
 {
   return this->etatDoubleNo;  
 }	
@@ -128,6 +128,14 @@ void Jeu::setEtat(Etat* e)
 }
 
 /////////////////////////////////////////////////////////////////////////
+VueConsole Jeu::getVue()
+{
+	return this->vue;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////
 /**
 * Methode qui appelle la methode finTour() sur le tour courant
 */
@@ -141,31 +149,64 @@ void Jeu::finTour()
 */
 void Jeu::jouer()
 {
+	if (system("CLS")) system("clear");
 	
 	int pdmn = this->joueurCourant->getPersonnage().getPdm();
+	
+	if (this->joueurCourant->getPersonnage().getPdm() == 0)
+	{
+		this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
+		this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
+	}
+	
 	if (this->joueurCourant->getPersonnage().getPdm() < 10)
 	{
 		this->joueurCourant->setPDM(this->joueurCourant->getPersonnage().getPdm()+1);	
 	}
+	
  	this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
   
-  	
+  
+  
 	enleverMalinvoc();
+	
+
 	
 	vue.afficherDebutTour(joueurCourant);
 	
 	
 	int choix = -1;
 	
+	if (this->testNoMana() == true && this->testNoAttaque() == true )
+	{
+			this->setEtat(this->getEtatDoubleNo());
+	} else {
+	
+		if (this->testNoMana() == true )
+		{
+			this->setEtat(this->getEtatNoMana());
+		}
+		 
+		if (this->testNoAttaque() == true )
+		{
+			this->setEtat(this->getEtatNoAttaque());
+		} 
+	}  
 	
 	
-	while (choix != 0) {	
+	while (choix != 0)
+	{	
 	
-	choix = etatCourant.afficherChoixEtat();
+		
+	
+		choix = etatCourant->afficherChoixEtat();
 	
 	
 	}
 	vue.afficherFinTour();
+	
+	usleep(1000000);
+	
 	this->finTour();
 }
 /////////////////////////////////////////////////////////////////////////
@@ -175,28 +216,43 @@ void Jeu::attaqueCvC(int index1, int index2)
 	
 	if ( joueurCourant->getBoard()->at(index1-1).getMalinvoc() == true )
 	{
-		cout << "Cette carte vient d'être invoquée ! Impossible d'attaquer !" << endl;
+		cout << "Cette carte ne peut pas attaquer pour l'instant!" << endl;
 	} else {
-		
+	
 		pdv1 = joueurCourant->getBoard()->at(index1-1).getPdv();
-		pdv2 = joueurAutre->getBoard()->at(index1-1).getPdv();
+		pdv2 = joueurAutre->getBoard()->at(index2-1).getPdv();
 		attac1 = joueurCourant->getBoard()->at(index1-1).getPa();
-		attac2 = joueurAutre->getBoard()->at(index1-1).getPa();
+		attac2 = joueurAutre->getBoard()->at(index2-1).getPa();
 		
-		joueurCourant->getBoard()->at(index1-1).setPdv(pdv1-attac2);
-		joueurAutre->getBoard()->at(index1-1).setPdv(pdv2-attac1);
+		if ( this->testProvoc() == false ) {			
+			
+			joueurCourant->getBoard()->at(index1-1).setPdv(pdv1-attac2);
+			joueurAutre->getBoard()->at(index2-1).setPdv(pdv2-attac1);
+			
+			
+		} else {
+		
+			if ( joueurAutre->getBoard()->at(index2-1).getProvoc() == false)
+			{
+				cout << "\nVous devez attaquer les cartes avec Provocation !!\n" << endl;
+			} else {
+				joueurCourant->getBoard()->at(index1-1).setPdv(pdv1-attac2);
+				joueurAutre->getBoard()->at(index2-1).setPdv(pdv2-attac1);
+			}
+				
+		}
 		
 		if ( joueurCourant->getBoard()->at(index1-1).getPdv() <= 0 )
-		{	
-			joueurCourant->supprimerBoard(index1);
-			cout << "Votre carte est tombée au combat !" << endl;
-		}
-		
-		if ( joueurAutre->getBoard()->at(index1-1).getPdv() <= 0 )
-		{	
-			joueurAutre->supprimerBoard(index2);
-			cout << "Vous avez triomphé de votre adversaire !" << endl;
-		}
+			{	
+				joueurCourant->supprimerBoard(index1);
+				cout << "Votre carte est tombée au combat !" << endl;
+			}
+			
+			if ( joueurAutre->getBoard()->at(index1-1).getPdv() <= 0 )
+			{	
+				joueurAutre->supprimerBoard(index2);
+				cout << "Vous avez triomphé de votre adversaire !" << endl;
+			}
 	}
 	
 	cout << "attaque terminée"<< endl;
@@ -229,8 +285,8 @@ bool Jeu::testNoMana()
 {
 	int pmr;
 	bool nomana = true;
-	pmr = joueurCourant->gtPersonnage()->getPdm()
-	for ( i = 0; i < joueurCourant->getMain()->size() ; i++ )
+	pmr = joueurCourant->getPersonnage().getPdm();
+	for ( int i = 0; i < joueurCourant->getMain()->size() ; i++ )
 	{
 		if ( joueurCourant->getMain()->at(i).getCoutmana() <= pmr )
 		{
@@ -248,7 +304,7 @@ bool Jeu::testNoAttaque()
 	
 	bool noatt = true;
 	
-	for ( i = 0; i < joueurCourant->getBoard()->size() ; i++ )
+	for ( int i = 0; i < joueurCourant->getBoard()->size() ; i++ )
 	{
 		if ( joueurCourant->getBoard()->at(i).getMalinvoc() == false )
 		{
@@ -258,4 +314,22 @@ bool Jeu::testNoAttaque()
 	
 	return noatt;
 }
+
+/////////////////////////////////////////////////////////////////////////
+bool Jeu::testProvoc()
+{
+	bool provoc = true;
+	
+	for ( int i = 0; i < joueurAutre->getBoard()->size() ; i++ )
+	{
+		if ( joueurAutre->getBoard()->at(i).getProvoc() == true )
+		{
+			provoc = true;
+		}
+	} 
+	
+	return provoc;
+}
+
+
 

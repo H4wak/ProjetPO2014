@@ -51,56 +51,75 @@ void EtatNoAttaque::finTour()
 
 /////////////////////////////////////////////////////////////////////////
 int EtatNoAttaque::afficherChoixEtat()
-int choix = -1;
+{
+	int choix = -1;
 	int choixcarte;
 	int choixcarte1, choixcarte2;
+	bool malinvoc;
 	int pdmn = jeu->getJoueurCourant()->getPersonnage().getPdm();
-	jeu->vue.afficherChoixDebutTour();
-	choix = jeu->vue.getChoixActionTour();
+	
+	cout << "\nETAT NO ATTAQUE\n" << endl;
+	
+	jeu->getVue().afficherChoixNoAttaque();
+	choix = jeu->getVue().getChoixActionTour();
 		switch (choix)
 		{
 		    case 1: {
-					jeu->vue.afficherMain(joueurCourant);
+					jeu->getVue().afficherMain(jeu->getJoueurCourant());
 					break;
 		    }
 		    case 2:  {
-		   		jeu->vue.afficherJouerCarte();
-		   		choixcarte = jeu->vue.getChoixCarteAJouer();
+		   		jeu->getVue().afficherJouerCarte();
+		   		choixcarte = jeu->getVue().getChoixCarteAJouer();
 		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte-1).getCoutmana() <= pdmn)
 		   		{
 		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte-1));
 		   			pdmn = pdmn - jeu->getJoueurCourant()->getMain()->at(choixcarte-1).getCoutmana();
-		   			jeu->vue.afficherPdmnRestant(pdmn);
+		   			malinvoc = jeu->getJoueurCourant()->getMain()->at(choixcarte-1).getMalinvoc();
+		   			jeu->getVue().afficherPdmnRestant(pdmn);
 		   		 	jeu->getJoueurCourant()->supprimerMain(choixcarte);
 		   		 	
-		   		 	if (jeu->testNomana() == true )
+		   		 	
+		   		 	
+		   		 	if (jeu->testNoMana() == true )
 		   		 	{
-		   		 		jeu->setEtat(jeu->getEtatDoubleNo());
-		   		 	}		   		 
+		   		 		if (malinvoc == false) 
+		   		 		{
+		   		 			jeu->setEtat(jeu->getEtatNoMana());
+		   		 		} else {
+			   		 		jeu->setEtat(jeu->getEtatDoubleNo());
+			   		 	}
+		   		 	} else {
+		   		 		
+		   		 		if (malinvoc == false) 	 
+		   		 		{
+		   		 			jeu->setEtat(jeu->getEtatDebutTour());
+		   		 		}
+		   		 	}
 		   		 	
 		   		}else{
 		   			
-		   			jeu->vue.afficherPasAssezDeMana();
+		   			jeu->getVue().afficherPasAssezDeMana();
 		      	}
 		      break;
 		    }
 		    case 3: {	
-				  jeu->vue.afficherBoard(jeu->getJoueurCourant());
+				  jeu->getVue().afficherBoard(jeu->getJoueurCourant());
 				  break;
     		}
     		case 4:
     		{
-					jeu->vue.afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
+					jeu->getVue().afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
     				break;
     		}
     		case 5:
     		{
-					jeu->vue.afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
     				break;
     		}
     		case 6:
     		{
-    			cout << "POUVOIR" << endl
+    			cout << "POUVOIR" << endl;
     		}
     		
 		}

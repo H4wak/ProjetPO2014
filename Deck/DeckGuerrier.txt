@@ -4,7 +4,7 @@
 1 2 Soldat_de_Comté_de_l'Or 1 0 1
 2 3 Crocilisque_des_rivieres 2 0 0
 2 3 Crocilisque_des_rivieres 2 0 0
-2 2 Grunt_loup_de_givre 2 0 0
+2 2 Grunt_loup_de_givre 2 0 1
 2 2 Grunt_loup_de_givre 2 0 1
 2 1 Guerrier_branchie_bleue 2 1 0
 2 1 Guerrier_branchie_bleue 2 1 0
