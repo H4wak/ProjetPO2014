@@ -1,10 +1,10 @@
 /**
-* Fichier Tour.hpp
+* Fichier Etat.hpp
 * @author Pierre Gaultier & Theo Dolez
 */
 
-#ifndef Tour_HPP
-#define Tour_HPP
+#ifndef ETAT_HPP
+#define ETAT_HPP
 #include <string> // pour le type std::string
 
 
@@ -12,7 +12,7 @@
 
 /******************************************************************************/
 
-class Tour
+class Etat
 {
 
 	private:
@@ -21,10 +21,11 @@ class Tour
 	public:
 		
 		void virtual finTour()= 0;
+		void virtual afficherChoixEtat()= 0;
 		
 		
 		
 		
 };
 
-#endif // Tour_HPP		
+#endif // Etat_HPP		

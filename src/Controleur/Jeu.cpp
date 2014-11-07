@@ -20,9 +20,11 @@ Jeu::Jeu(Joueur* j1, Joueur* j2)
 {
    this->joueurCourant = j1;
    this->joueurAutre = j2;
-   this->tourJoueur1 = new TourJoueur1(this);
-   this->tourJoueur2 = new TourJoueur2(this);
-   this->tourCourant = this->tourJoueur1;
+   this->etatDebutTour = new EtatDebutTour(this);
+   this->etatNoMana = new EtatNoMana(this);
+   this->etatNoAttaque = new EtatNoAttaque(this);
+   this->etatDoubleNo = new EtatDoubleNo(this);  
+   this->etatCourant = this->etatDebutTour;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -69,29 +71,50 @@ void Jeu::echangeJoueur()
 * Methode qui renvoie le tour courant
 * @return tourCourant le tour courant
 */
-Tour* Jeu::getTourCourant()
+Tour* Jeu::getEtatCourant()
 {
-  return this->tourCourant;  
+  return this->EtatCourant;  
 }
 
-/////////////////////////////////////////////////////////////////////////
-/**
-* Methode qui renvoie le tour du joueur1
-* @return tourCourant le tour du joueur1
-*/
-Tour* Jeu::getTourJoueur1()
-{
-  return this->tourJoueur1;  
-}
 
 /////////////////////////////////////////////////////////////////////////
 /**
 * Methode qui renvoie le tour du joueur2
 * @return tourCourant le tour du joueur2
 */
-Tour* Jeu::getTourJoueur2()
+Tour* Jeu::getEtatDebutTour()
 {
-  return this->tourJoueur2;  
+  return this->etatDebutTour;  
+}	
+
+/////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le tour du joueur2
+* @return tourCourant le tour du joueur2
+*/
+Tour* Jeu::getEtatNoMana()
+{
+  return this->etatNoMana;  
+}	
+
+/////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le tour du joueur2
+* @return tourCourant le tour du joueur2
+*/
+Tour* Jeu::getEtatNoAttaque()
+{
+  return this->etatNoAttaque;  
+}	
+
+/////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le tour du joueur2
+* @return tourCourant le tour du joueur2
+*/
+Tour* Jeu::getEtatDoubleNo()
+{
+  return this->etatDoubleNo;  
 }	
 
 /////////////////////////////////////////////////////////////////////////
@@ -99,9 +122,9 @@ Tour* Jeu::getTourJoueur2()
 * Methode qui change le tourCourant
 * @param t le nouveau tour
 */
-void Jeu::setTour(Tour* t)
+void Jeu::setEtat(Etat* e)
 {
-	this->tourCourant = t;
+	this->etatCourant = e;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -110,7 +133,7 @@ void Jeu::setTour(Tour* t)
 */
 void Jeu::finTour()
 {
-	this->tourCourant->finTour();
+	this->etatCourant->finTour();
 }
 /////////////////////////////////////////////////////////////////////////
 /**
@@ -133,55 +156,14 @@ void Jeu::jouer()
 	
 	
 	int choix = -1;
-	int choixcarte;
-	int choixcarte1, choixcarte2;
+	
+	
 	
 	while (choix != 0) {	
-	vue.afficherChoix();
-	choix = vue.getChoixActionTour();
-		switch (choix)
-		{
-		    case 1: {
-					vue.afficherMain(joueurCourant);
-					break;
-		    }
-		    case 2:  {
-		   		vue.afficherJouerCarte();
-		   		choixcarte = vue.getChoixCarteAJouer();
-		   		if ( this->joueurCourant->getMain()->at(choixcarte-1).getCoutmana() <= pdmn)
-		   		{
-		   			this->joueurCourant->ajouterBoard(this->joueurCourant->getMain()->at(choixcarte-1));
-		   			pdmn = pdmn - this->joueurCourant->getMain()->at(choixcarte-1).getCoutmana();
-		   			vue.afficherPdmnRestant(pdmn);
-		   		 	this->joueurCourant->supprimerMain(choixcarte);
-		   		 	
-		   		}else{
-		   			
-		   			vue.afficherPasAssezDeMana();
-		      }
-		      break;
-		    }
-		    case 3: {	
-				  vue.afficherBoard(joueurCourant);
-				  break;
-    		}
-    		case 4:
-    		{
-					vue.afficher2Board(joueurCourant,joueurAutre);
-    				break;
-    		}
-    		case 5:
-    		{
-					vue.afficherPersonnage(joueurCourant);
-    				break;
-    		}
-    		case 6:
-    		{
-    				choixcarte1 = vue.getChoixCarteAJouer();
-    				choixcarte2 = vue.getChoixCarteAJouer();
-    				attaqueCvC(choixcarte1, choixcarte2);
-    		}
-		}
+	
+	choix = etatCourant.afficherChoixEtat();
+	
+	
 	}
 	vue.afficherFinTour();
 	this->finTour();
@@ -242,9 +224,38 @@ void Jeu::enleverMalinvoc()
 }
 		
 		
+/////////////////////////////////////////////////////////////////////////		
+bool Jeu::testNoMana()
+{
+	int pmr;
+	bool nomana = true;
+	pmr = joueurCourant->gtPersonnage()->getPdm()
+	for ( i = 0; i < joueurCourant->getMain()->size() ; i++ )
+	{
+		if ( joueurCourant->getMain()->at(i).getCoutmana() <= pmr )
+		{
+			nomana = false;
+		}
+	} 
+	
+	return nomana;
+	
+}
 		
-		
-		
-		
-
+/////////////////////////////////////////////////////////////////////////
+bool Jeu::testNoAttaque()
+{
+	
+	bool noatt = true;
+	
+	for ( i = 0; i < joueurCourant->getBoard()->size() ; i++ )
+	{
+		if ( joueurCourant->getBoard()->at(i).getMalinvoc() == false )
+		{
+			noatt = false;
+		}
+	} 
+	
+	return noatt;
+}
 

@@ -10,9 +10,11 @@
 #include "../Vue/VueConsole.hpp"
 
 
-class Tour;
-class TourJoueur1;
-class TourJoueur2;
+class Etat;
+class EtatDebutTour;
+class EtatNoMana;
+class EtatNoAttaque;
+class EtatDoubleNo;
 /******************************************************************************/
 
 class Jeu
@@ -22,9 +24,11 @@ class Jeu
 	private:
 		Joueur* joueurCourant;
 		Joueur* joueurAutre;
-		Tour* tourCourant;
-		TourJoueur1* tourJoueur1;
-		TourJoueur2* tourJoueur2;
+		Etat* etatCourant;
+		EtatDebutTour* etatDebutTour;
+		EtatNoMana* etatNoMana;
+		EtatNoAttaque* etatNoAttaque;
+		EtatDoubleNo* etatDoubleNo;
 		VueConsole vue;
  
 	
@@ -34,15 +38,19 @@ class Jeu
 		
 		Joueur* getJoueurCourant();
 		Joueur* getJoueurAutre();
-		Tour* getTourCourant();
-		Tour* getTourJoueur1();
-		Tour* getTourJoueur2();
+		Etat* getEtatCourant();
+		Etat* getEtatNoMana();
+		Etat* getEtatNoAttaque();
+		Etat* getEtatDoubleNo();
+		Etat* getEtatDebutTour();
 		
 		void attaqueCvC(int index1, int index2);
 		//void attaqueCvJ(int index);
 		void enleverMalinvoc();
+		bool testNoMana();
+		bool testNoAttaque();
 		void echangeJoueur(); // echange les deux joueurs dans joueurCourant et joueurAutre
-		void setTour(Tour* t); //setEtat
+		void setEtat(Etat* e); //setEtat
 		void finTour(); 
 		void jouer();// lance le tour
 		
@@ -52,8 +60,10 @@ class Jeu
 };
 
 
-#include "Tour.hpp"
-#include "TourJoueur1.hpp"
-#include "TourJoueur2.hpp"
+#include "Etat.hpp"
+#include "EtatDebutTour.hpp"
+#include "EtatNoMana.hpp"
+#include "EtatNoAttaque.hpp"
+#include "EtatDoubleNo.hpp"
 #include "../../src/Controleur/Jeu.cpp"
 #endif // JEU_HPP		

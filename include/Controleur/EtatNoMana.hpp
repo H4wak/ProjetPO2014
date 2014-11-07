@@ -1,18 +1,18 @@
 /**
-* Fichier TourJoueur1.hpp
+* Fichier EtatNoMana.hpp
 * @author Pierre Gaultier & Theo Dolez
 */
 
-#ifndef TourJoueur1_HPP
-#define TourJoueur1_HPP
+#ifndef EtatNoMana_HPP
+#define EtatNoMana_HPP
 #include <string> // pour le type std::string
-#include "Tour.hpp"
+#include "Etat.hpp"
 
 
 /******************************************************************************/
 class Jeu;
 
-class TourJoueur1 : public Tour
+class EtatNoMana : public Etat
 {
 
 	protected:
@@ -20,10 +20,11 @@ class TourJoueur1 : public Tour
 
 	public:
 		
-		TourJoueur1(Jeu* j);
-		~TourJoueur1();
+		EtatNoMana(Jeu* j);
+		~EtatNoMana();
 
 		Jeu* getJeu();
+		void afficherChoixEtat();
 		void finTour();
 		
 		
@@ -32,5 +33,5 @@ class TourJoueur1 : public Tour
 };
 
 #include "Jeu.hpp"
-#include "../../src/Controleur/TourJoueur1.cpp"
-#endif // TourJoueur1_HPP		
+#include "../../src/Controleur/EtatNoMana.cpp"
+#endif // EtatNoMana_HPP		
