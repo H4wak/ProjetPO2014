@@ -52,21 +52,21 @@ void VueConsole::afficherMain(Joueur* j)
 void VueConsole::afficherChoixDebutTour()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Attaquer. \n6 -> utiliser le pouvoir heroique \n7 -> Afficher votre Personnage.." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Attaquer.  \n6 -> Afficher votre Personnage. \n7 -> utiliser le pouvoir heroique." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixNoMana()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> afficher le board. \n3 -> afficher les 2 boards. \n4 -> Attaquer.  \n5 -> Afficher votre Personnage.." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> afficher le board. \n3 -> afficher les 2 boards. \n4 -> Afficher votre Personnage. \n5 -> Attaquer." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixNoAttaque()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards.  \n5 -> utiliser le pouvoir heroique \n6 -> Afficher votre Personnage.." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher votre Personnage. \n6 -> utiliser le pouvoir heroique." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
