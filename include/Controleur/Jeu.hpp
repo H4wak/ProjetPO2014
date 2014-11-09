@@ -6,13 +6,16 @@
 #ifndef Jeu_HPP
 #define Jeu_HPP
 #ifdef __cplusplus__
-  #include <cstdlib>
+#include <cstdlib>
 #else
-  #include <stdlib.h>
+#include <stdlib.h>
 #endif
+#include <vector>
 #include <string> // pour le type std::string
 #include "../Modele/Joueur/Joueur.hpp"
 #include "../Vue/VueConsole.hpp"
+#include "Sujet.hpp"
+#include "Observer.hpp"
 
 
 class Etat;
@@ -22,7 +25,7 @@ class EtatNoAttaque;
 class EtatDoubleNo;
 /******************************************************************************/
 
-class Jeu
+class Jeu : public Sujet
 {
 
 
@@ -35,6 +38,8 @@ class Jeu
 		EtatNoAttaque* etatNoAttaque;
 		EtatDoubleNo* etatDoubleNo;
 		VueConsole vue;
+		vector<Observer*>* obs;     
+
  
 	
 	public:
@@ -60,6 +65,9 @@ class Jeu
 		void setEtat(Etat* e); //setEtat
 		void finTour(); 
 		void jouer();// lance le tour
+		void enregistrerObs(Observer* O);
+		void supprimerObs(Observer* O);
+		void notifierObs();
 		
 		
 		

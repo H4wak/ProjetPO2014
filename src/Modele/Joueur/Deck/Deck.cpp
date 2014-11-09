@@ -56,7 +56,7 @@ Deck::Deck(string fichier)
 	}
 	else
 	{
-		cout<<"erreur"<<endl;
+		cout<<"erreur dans la creation du deck"<<endl;
 	}
 	
   sz = myvector.size();

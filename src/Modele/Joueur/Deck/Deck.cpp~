@@ -56,14 +56,14 @@ Deck::Deck(string fichier)
 	}
 	else
 	{
-		cout<<"erreur"<<endl;
+		cout<<"erreur dans la creation du deck"<<endl;
 	}
 	
   sz = myvector.size();
    
   for (j=0; j < sz ; j++)
   {
-    cout << myvector[j].toString() << endl;
+  	d.push(myvector[j]);
   }
   
   

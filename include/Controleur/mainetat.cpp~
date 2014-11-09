@@ -8,7 +8,6 @@ using namespace std;
 int main()
 {
 
-
 	Guerrier cheval;
 	Chasseur poney;
 	
@@ -28,17 +27,6 @@ int main()
 	cout << game->getJoueurCourant()->getNom() << endl;
 	cout << game->getJoueurAutre()->getNom() << endl;*/
 	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
 
   return 0;
 }

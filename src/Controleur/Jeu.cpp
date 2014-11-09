@@ -25,6 +25,7 @@ Jeu::Jeu(Joueur* j1, Joueur* j2)
    this->etatNoAttaque = new EtatNoAttaque(this);
    this->etatDoubleNo = new EtatDoubleNo(this);  
    this->etatCourant = this->etatDebutTour;
+   this->obs = new vector<Observer*>();
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -331,5 +332,29 @@ bool Jeu::testProvoc()
 	return provoc;
 }
 
+/////////////////////////////////////////////////////////////////////////
+void Jeu::enregistrerObs(Observer* O)
+{
+  obs->push_back(O);
+}
 
+/////////////////////////////////////////////////////////////////////////
+void Jeu::supprimerObs(Observer* O)
+{
+  int i = 0;
+  for(i;i<obs->size()-1;i++){
+	if (obs->at(i) == O){
+		obs->erase(obs->begin()+i);
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////
+void Jeu::notifierObs()
+{ 
+  int i = 0;
+  for(i;i<obs->size()-1;i++){
+	obs->at(i)->actualiser();
+	}
+}
 
