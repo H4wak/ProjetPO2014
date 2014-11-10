@@ -15,10 +15,10 @@ using namespace std; // seulement dans le .cpp !
 * Constructeur
 * @param s Sujet de l'observer
 */
-FinDeJeu::FinDeJeu(Sujet s)
+FinDeJeu::FinDeJeu(Sujet* s)
 {
    this->suj = s;
-   this->suj.engistrerObs(this);
+   this->suj->engistrerObs(this);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -36,11 +36,11 @@ FinDeJeu::~FinDeJeu()
 */
 void FinDeJeu::actualiser()
 {
-  if(this->suj.getJoueurCourant().getPersonnage().getPdv() < 0){
-	cout <<   this->suj.getJoueurCourant().getNom() + " a gagné!!!";
+  if(this->suj->getJoueurCourant().getPersonnage().getPdv() < 0){
+	cout <<   this->suj->getJoueurCourant().getNom() + " a gagné!!!";
   }
-  if(this->suj.getJoueurAutre().getPersonnage().getPdv() < 0){
-	cout <<   this->suj.getJoueurAutre().getNom() + " a gagné!!!";
+  if(this->suj->getJoueurAutre().getPersonnage().getPdv() < 0){
+	cout <<   this->suj->getJoueurAutre().getNom() + " a gagné!!!";
   }
 }
 

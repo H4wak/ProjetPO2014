@@ -69,8 +69,8 @@ void Jeu::echangeJoueur()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui renvoie le tour courant
-* @return tourCourant le tour courant
+* Methode qui renvoie l'etat courant
+* @return tourCourant l'etat courant
 */
 Etat* Jeu::getEtatCourant()
 {
@@ -80,8 +80,8 @@ Etat* Jeu::getEtatCourant()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui renvoie le tour du joueur2
-* @return tourCourant le tour du joueur2
+* Methode qui renvoie l'etat DebutTour
+* @return etatDebutTour l'etat DebutTour
 */
 Etat* Jeu::getEtatDebutTour()
 {
@@ -90,8 +90,8 @@ Etat* Jeu::getEtatDebutTour()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui renvoie le tour du joueur2
-* @return tourCourant le tour du joueur2
+* Methode qui renvoie l'etat NoMana
+* @return etatNoMana l'etat no mana
 */
 Etat* Jeu::getEtatNoMana()
 {
@@ -100,8 +100,8 @@ Etat* Jeu::getEtatNoMana()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui renvoie le tour du joueur2
-* @return tourCourant le tour du joueur2
+* Methode qui renvoie l'etat NoAttaque
+* @return etatNoAttaque l'etat NoAttaque
 */
 Etat* Jeu::getEtatNoAttaque()
 {
@@ -110,8 +110,8 @@ Etat* Jeu::getEtatNoAttaque()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui renvoie le tour du joueur2
-* @return tourCourant le tour du joueur2
+* Methode qui renvoie l'etat DoubleNo
+* @return etatDoubleNo l'etat DoubleNo
 */
 Etat* Jeu::getEtatDoubleNo()
 {
@@ -120,8 +120,8 @@ Etat* Jeu::getEtatDoubleNo()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui change le tourCourant
-* @param t le nouveau tour
+* Methode qui change l'etat courant
+* @param e le nouvel etat
 */
 void Jeu::setEtat(Etat* e)
 {
@@ -129,6 +129,10 @@ void Jeu::setEtat(Etat* e)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui retourne la vue
+* @return vue la vue
+*/
 VueConsole Jeu::getVue()
 {
 	return this->vue;
@@ -167,15 +171,10 @@ void Jeu::jouer()
 	
  	this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
   
-  
-  
 	enleverMalinvoc();
 	
-
-	
 	vue.afficherDebutTour(joueurCourant);
-	
-	
+		
 	int choix = -1;
 	
 	if (this->testNoMana() == true && this->testNoAttaque() == true )
@@ -197,12 +196,7 @@ void Jeu::jouer()
 	
 	while (choix != 0)
 	{	
-	
-		
-	
 		choix = etatCourant->afficherChoixEtat();
-	
-	
 	}
 	vue.afficherFinTour();
 	
@@ -210,6 +204,7 @@ void Jeu::jouer()
 	
 	this->finTour();
 }
+
 /////////////////////////////////////////////////////////////////////////
 void Jeu::attaqueCvC(int index1, int index2)
 {
@@ -259,6 +254,25 @@ void Jeu::attaqueCvC(int index1, int index2)
 	cout << "attaque terminée"<< endl;
 
 }
+
+/////////////////////////////////////////////////////////////////////////
+void Jeu::attaqueCvJ(int index1)
+{
+	if ( joueurCourant->getBoard()->at(index1-1).getMalinvoc() == true )
+	{
+		cout << "Cette carte ne peut pas attaquer pour l'instant!" << endl;
+	} else {
+		if ( this->testProvoc() == false ) {			
+			joueurAutre->getPersonnage().setPdv(joueurAutre->getPersonnage().getPdv()- joueurCourant->getBoard()->at(index1-1).getPa());
+		} 
+		else {
+			cout << "\nVous devez attaquer les cartes avec Provocation !!\n" << endl;				
+		}
+	}
+	cout << "attaque terminée"<< endl;
+	notifierObs();
+}
+
 /////////////////////////////////////////////////////////////////////////
 void Jeu::enleverMalinvoc()
 {

@@ -5,6 +5,7 @@
 using namespace std;
 #include "../Modele/Joueur/Joueur.hpp"
 #include "Jeu.hpp"
+#include "FinDeJeu.hpp"
 int main()
 {
 
@@ -13,9 +14,8 @@ int main()
 	
 	Joueur* Pierre = new Joueur("Pierre", cheval,"DeckGuerrier.txt");
 	Joueur* Theo = new Joueur("Théo", poney,"DeckGuerrier.txt");
-	
 	Jeu* game = new Jeu(Pierre, Theo);
-	
+	FinDeJeu* ob = new FinDeJeu(game);
 
 	
 	game->jouer();

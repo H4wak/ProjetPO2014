@@ -56,7 +56,7 @@ class Jeu : public Sujet
 		VueConsole getVue();
 		
 		void attaqueCvC(int index1, int index2);
-		//void attaqueCvJ(int index);
+		void attaqueCvJ(int index);
 		void enleverMalinvoc();
 		bool testNoMana();
 		bool testProvoc();
