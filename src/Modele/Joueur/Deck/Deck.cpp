@@ -32,8 +32,8 @@ Deck::Deck(string fichier)
 		{
 
 			istringstream iss(ligne);
-			iss >> pdv;
 			iss >> pa;
+			iss >> pdv;
 			iss >> nom;
 			iss >> cm;
 			iss >> charge;

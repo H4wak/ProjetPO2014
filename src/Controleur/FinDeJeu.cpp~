@@ -38,10 +38,12 @@ void FinDeJeu::actualiser()
 {
   if(this->suj->getJoueurCourant()->getPersonnage().getPdv() < 0){
 	cout <<   this->suj->getJoueurAutre()->getNom() + " a gagné!!!";
+	exit();
   }
-  cout << "\n\n\nPOULEEEEEEEEEEETETETTET\n\n" << endl;
+ 
   if(this->suj->getJoueurAutre()->getPersonnage().getPdv() < 0){
 	cout <<   this->suj->getJoueurCourant()->getNom() + " a gagné!!!";
+	exit();
   }
 }
 
