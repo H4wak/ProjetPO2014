@@ -23,6 +23,7 @@ class Sujet
 		void virtual enregistrerObs(Observer* O)= 0;
 		void virtual supprimerObs(Observer* O)= 0;
 		void virtual notifierObs()= 0;
+		void virtual getJoueurCourant()=0;
 		
 		
 		

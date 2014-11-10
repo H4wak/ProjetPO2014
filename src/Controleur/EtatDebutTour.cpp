@@ -103,6 +103,7 @@ int EtatDebutTour::afficherChoixEtat()
     		case 5:
     		{
 					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue().afficherPersonnageAutre(jeu->getJoueurAutre());
     				break;
     		}
     		case 6:
@@ -120,7 +121,20 @@ int EtatDebutTour::afficherChoixEtat()
     		}
     		case 7:
     		{
-    			cout << "POUVOIR" << endl;
+    				cout << "POUVOIR" << endl;
+    				break;
+    		}
+    		
+    		case 8:
+    		{		
+    				jeu->getVue().afficherChoixCvJ();
+    				choixcarte1 = jeu->getVue().getChoixCarteAJouer();
+    				jeu->attaqueCvJ(choixcarte1);
+    				if (jeu->testNoAttaque() == true )
+    				{
+    					jeu->setEtat(jeu->getEtatNoAttaque());
+		   		 	}		   		 
+    				break;	
     		}
 		}
 	

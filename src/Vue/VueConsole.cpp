@@ -52,28 +52,28 @@ void VueConsole::afficherMain(Joueur* j)
 void VueConsole::afficherChoixDebutTour()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher votre Personnage.\n 6 -> Attaquer. \n7 -> utiliser le pouvoir heroique." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher les Personnages.\n6 -> Attaquer une carte. \n7 -> utiliser le pouvoir heroique \n8 -> attaquer le heros adverse." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixNoMana()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> afficher le board. \n3 -> afficher les 2 boards. \n4 -> Afficher votre Personnage. \n5 -> Attaquer." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> afficher le board. \n3 -> afficher les 2 boards. \n4 -> Afficher votre Personnages. \n5 -> Attaquer une carte. \n6 -> attaquer le heros adverse" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixNoAttaque()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher votre Personnage. \n6 -> utiliser le pouvoir heroique." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher les Personnages. \n6 -> utiliser le pouvoir heroique." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixDoubleNo()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main.  \n2 -> afficher le board. \n3 -> afficher les 2 boards.  \n4 ->  Afficher votre Personnage.." << endl;
+	cout << "0 -> passer votre tour. \n1 -> afficher votre main.  \n2 -> afficher le board. \n3 -> afficher les 2 boards.  \n4 ->  Afficher les Personnages." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -104,7 +104,6 @@ void VueConsole::afficherDebutTour(Joueur* j)
 	cout << "C'est à " + j->getNom() + " de jouer." << endl;	
   string spdm = static_cast<ostringstream*>( &(ostringstream() << j->getPersonnage().getPdm())  )->str();
 	cout <<  "Vous avez " + spdm + " points de Mana." << endl;
-	cout << "pioche" << endl;
 	cout << j->afficherMain() << endl;
 }
 
@@ -138,6 +137,12 @@ void VueConsole::afficherChoixCvC()
 	cout << "Entrez le numéro de votre Carte, appuyez sur Entrée, puis faites de même avec la Carte de l'adversaire" << endl;
 }
 
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherChoixCvJ()
+{
+	cout << "Entrez le numéro de votre Carte, appuyez sur Entrée" << endl;
+}
+
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherPersonnage(Joueur* j)
@@ -154,6 +159,20 @@ void VueConsole::afficherPersonnage(Joueur* j)
    cout << " Vous avez " + arm + " points d'armure. \n" << endl;
 }
 
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherPersonnageAutre(Joueur* j)
+{
+   int pdvv = j->getPersonnage().getPdv();
+   int pdmn = j->getPersonnage().getPdm();
+   int armm = j->getPersonnage().getArmure();
+   string pdv = static_cast<ostringstream*>( &(ostringstream() << pdvv)  )->str();
+   string pdm = static_cast<ostringstream*>( &(ostringstream() << pdmn)  )->str();
+   string arm = static_cast<ostringstream*>( &(ostringstream() << armm)  )->str();
+    			
+   cout << "\n Il a " + pdv + " points de vie. " << endl;
+   cout << " Il a " + pdm + " points de Mana. " << endl;
+   cout << " Il a " + arm + " points d'armure. \n" << endl;
+}
 
 
 

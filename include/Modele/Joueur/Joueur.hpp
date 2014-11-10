@@ -44,6 +44,7 @@ class Joueur
 		void setPersonnage(Personnage p);
 		
 		void setPDM(int npdm);
+		void setPDV(int npdv);
 		
 		
 		std::string afficherMain();

@@ -115,6 +115,8 @@ int EtatNoAttaque::afficherChoixEtat()
     		case 5:
     		{
 					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue().afficherPersonnageAutre(jeu->getJoueurAutre());
+					
     				break;
     		}
     		case 6:

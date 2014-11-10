@@ -55,6 +55,10 @@ int EtatDoubleNo::afficherChoixEtat()
 	int choixcarte;
 	int choixcarte1, choixcarte2;
 	int pdmn = jeu->getJoueurCourant()->getPersonnage().getPdm();
+	
+	
+	cout << "\nETAT DOUBLE NO\n" << endl;
+	
 	jeu->getVue().afficherChoixDoubleNo();
 	choix = jeu->getVue().getChoixActionTour();
 		switch (choix)
@@ -76,6 +80,7 @@ int EtatDoubleNo::afficherChoixEtat()
     		case 4:
     		{
 					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue().afficherPersonnage(jeu->getJoueurAutre());
     				
     		}
     		

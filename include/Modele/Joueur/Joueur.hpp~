@@ -1,6 +1,6 @@
-/*
-   Fichier Joueur.hpp
-
+/**
+* Fichier Joueur.hpp
+* @author Pierre Gaultier &  Theo Dolez
 */
 
 #ifndef Joueur_HPP
@@ -10,6 +10,7 @@
 #include <vector>
 #include "Deck/Deck.hpp"
 #include "Personnage/Guerrier.hpp"
+#include "Personnage/Chasseur.hpp"
 
 int const tailleMain(8);
 int const tailleBoard(8);

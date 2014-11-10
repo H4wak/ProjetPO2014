@@ -203,5 +203,14 @@ void Joueur::setPDM(int npdm)
 
 }
 
+//////////////////////////////////////////////////////////////////////////
+void Joueur::setPDV(int npdv)
+{
+	this->p.setPdv(npdv);
+
+}
+
+
+
 
 

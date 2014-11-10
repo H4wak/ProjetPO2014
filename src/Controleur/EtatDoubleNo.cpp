@@ -80,6 +80,7 @@ int EtatDoubleNo::afficherChoixEtat()
     		case 4:
     		{
 					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue().afficherPersonnageAutre(jeu->getJoueurAutre());
     				
     		}
     		

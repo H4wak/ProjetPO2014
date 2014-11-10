@@ -83,6 +83,7 @@ int EtatNoMana::afficherChoixEtat()
     		case 4:
     		{
 					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue().afficherPersonnageAutre(jeu->getJoueurAutre());
     				break;
     		}
     		case 5:
@@ -97,6 +98,17 @@ int EtatNoMana::afficherChoixEtat()
     					jeu->setEtat(jeu->getEtatDoubleNo());
 		   		 	}		   		 
     					
+    		}
+    		case 6:
+    		{		
+    				jeu->getVue().afficherChoixCvJ();
+    				choixcarte1 = jeu->getVue().getChoixCarteAJouer();
+    				jeu->attaqueCvJ(choixcarte1);
+    				if (jeu->testNoAttaque() == true )
+    				{
+    					jeu->setEtat(jeu->getEtatNoAttaque());
+		   		 	}		   		 
+    				break;	
     		}
 		}
 	
