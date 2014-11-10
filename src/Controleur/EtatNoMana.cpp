@@ -63,7 +63,7 @@ int EtatNoMana::afficherChoixEtat()
 	cout << "\nETAT NO MANA\n" << endl;
 	
 	jeu->getVue().afficherChoixNoMana();
-	choix = jeu->getVue().getChoixActionTour();
+	choix = jeu->getVue().getChoixJoueur();
 		switch (choix)
 		{
 		    case 1: {
@@ -89,8 +89,8 @@ int EtatNoMana::afficherChoixEtat()
     		case 5:
     		{
     				jeu->getVue().afficherChoixCvC();
-    				choixcarte1 = jeu->getVue().getChoixCarteAJouer();
-    				choixcarte2 = jeu->getVue().getChoixCarteAJouer();
+    				choixcarte1 = jeu->getVue().getChoixJoueur();
+    				choixcarte2 = jeu->getVue().getChoixJoueur();
     				jeu->attaqueCvC(choixcarte1, choixcarte2);
     				
     				if (jeu->testNoAttaque() == true )
@@ -102,7 +102,7 @@ int EtatNoMana::afficherChoixEtat()
     		case 6:
     		{		
     				jeu->getVue().afficherChoixCvJ();
-    				choixcarte1 = jeu->getVue().getChoixCarteAJouer();
+    				choixcarte1 = jeu->getVue().getChoixJoueur();
     				jeu->attaqueCvJ(choixcarte1);
     				if (jeu->testNoAttaque() == true )
     				{

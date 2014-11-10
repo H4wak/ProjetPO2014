@@ -25,8 +25,7 @@ class VueConsole
 		VueConsole();
 		~VueConsole();
 		
-		int getChoixActionTour();
-		int getChoixCarteAJouer();
+		int getChoixJoueur();
 		
 
 		void afficherMain(Joueur* j);

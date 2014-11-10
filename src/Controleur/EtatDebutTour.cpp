@@ -63,7 +63,7 @@ int EtatDebutTour::afficherChoixEtat()
 	cout << "\nETAT DEBUT TOUR\n" << endl;
 	
 	jeu->getVue().afficherChoixDebutTour();
-	choix = jeu->getVue().getChoixActionTour();
+	choix = jeu->getVue().getChoixJoueur();
 		switch (choix)
 		{
 		    case 1: {
@@ -72,7 +72,9 @@ int EtatDebutTour::afficherChoixEtat()
 		    }
 		    case 2:  {
 		   		jeu->getVue().afficherJouerCarte();
-		   		choixcarte = jeu->getVue().getChoixCarteAJouer();
+		   		while(choixcarte>0 && choixcarte < jeu->getJoueurCourant()->getMain()->size()){
+		   			choixcarte = jeu->getVue().getChoixJoueur();
+		   		}
 		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte-1).getCoutmana() <= pdmn)
 		   		{
 		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte-1));
@@ -109,8 +111,12 @@ int EtatDebutTour::afficherChoixEtat()
     		case 6:
     		{		
     				jeu->getVue().afficherChoixCvC();
-    				choixcarte1 = jeu->getVue().getChoixCarteAJouer();
-    				choixcarte2 = jeu->getVue().getChoixCarteAJouer();
+    				while(choixcarte1 > 0 && choixcarte1 < jeu->getJoueurCourant()->getBoard()->size()){
+		   				choixcarte1 = jeu->getVue().getChoixJoueur();
+		   			}
+    				while(choixcarte2 > 0 && choixcarte2 < jeu->getJoueurAutre()->getBoard()->size()){
+		   				choixcarte2 = jeu->getVue().getChoixJoueur();
+		   			}
     				jeu->attaqueCvC(choixcarte1, choixcarte2);
     				
     				if (jeu->testNoAttaque() == true )
@@ -128,7 +134,9 @@ int EtatDebutTour::afficherChoixEtat()
     		case 8:
     		{		
     				jeu->getVue().afficherChoixCvJ();
-    				choixcarte1 = jeu->getVue().getChoixCarteAJouer();
+    				while(choixcarte1 > 0 && choixcarte1 < jeu->getJoueurCourant()->getBoard()->size()){
+		   				choixcarte1 = jeu->getVue().getChoixJoueur();
+		   			}
     				jeu->attaqueCvJ(choixcarte1);
     				if (jeu->testNoAttaque() == true )
     				{

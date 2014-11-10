@@ -25,20 +25,14 @@ VueConsole::~VueConsole()
 }
 
 /////////////////////////////////////////////////////////////////////////
-int VueConsole::getChoixActionTour()
+int VueConsole::getChoixJoueur(Joueur* j)
 {
 	int i =0;
-  cin >> i;
+    cin >> i;
 	return i;
 }
 
-/////////////////////////////////////////////////////////////////////////
-int VueConsole::getChoixCarteAJouer()
-{
-  int i =0;
-  cin >> i;
-	return i;
-}
+
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherMain(Joueur* j)

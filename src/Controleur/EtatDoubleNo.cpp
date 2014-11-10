@@ -60,7 +60,7 @@ int EtatDoubleNo::afficherChoixEtat()
 	cout << "\nETAT DOUBLE NO\n" << endl;
 	
 	jeu->getVue().afficherChoixDoubleNo();
-	choix = jeu->getVue().getChoixActionTour();
+	choix = jeu->getVue().getChoixJoueur();
 		switch (choix)
 		{
 		    case 1: {

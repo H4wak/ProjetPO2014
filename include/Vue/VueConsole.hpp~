@@ -25,8 +25,7 @@ class VueConsole
 		VueConsole();
 		~VueConsole();
 		
-		int getChoixActionTour();
-		int getChoixCarteAJouer();
+		int getChoixJoueur();
 		
 
 		void afficherMain(Joueur* j);
@@ -40,6 +39,7 @@ class VueConsole
 		void afficherBoard(Joueur* j);
 		void afficher2Board(Joueur* j1, Joueur* j2);
 		void afficherPersonnage(Joueur* j);
+		void afficherPersonnageAutre(Joueur* j);
 		void afficherDebutTour(Joueur* j);
 		void afficherFinTour();
 		void afficherJouerCarte();
