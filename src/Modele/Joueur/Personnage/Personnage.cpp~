@@ -45,7 +45,7 @@ int Personnage::getPdv()
 }
 
 /////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
+
 /*
 =======
 /**
@@ -70,7 +70,7 @@ int Personnage::getArmure()
 }
 
 /////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
+
 /*
 =======
 /**
@@ -94,7 +94,7 @@ int Personnage::getPdm()
 }
 
 /////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
+
 /*
 =======
 /**
@@ -108,7 +108,7 @@ void Personnage::setPdm(int npdm)
 }
 
 /////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
+
 /*
 * Methode qui renvoie une chaine de caracteres qui decrit le personnage
 =======
@@ -137,7 +137,7 @@ ComportementPouvoir* Personnage::getCP()
 }
 
 /////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
+
 /*
 =======
 /**
@@ -151,7 +151,7 @@ void Personnage::setCP(ComportementPouvoir* CP)
 }
 
 /////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
+
 /*
 =======
 /**
@@ -159,9 +159,9 @@ void Personnage::setCP(ComportementPouvoir* CP)
 * Methode qui applique le pouvoir du personnage
 * @return //a changer
 */
-std::string Personnage::utiliserPouvoir()
+void Personnage::utiliserPouvoir(Jeu* j)
 {
-   return this->CP->pouvoir();
+   return this->CP->pouvoir(j);
 }
 
 

@@ -9,16 +9,17 @@
 #include <string> // pour le type std::string
 #include "ComportementPouvoir.hpp"
 
-
+class Jeu;
+class Joueur;
 /******************************************************************************/
 
 class ComportementPouvoirGuerrier : public ComportementPouvoir
 {
 
    public :
-	  std::string pouvoir();
+	  void pouvoir(Jeu* j);
 	
 };
-
+//#include "../../../Controleur/Jeu.hpp"
 #include "../../../../src/Modele/Joueur/Personnage/ComportementPouvoirGuerrier.cpp"
 #endif // ComportementPouvoirGuerrier_HPP

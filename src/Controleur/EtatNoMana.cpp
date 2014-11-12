@@ -89,8 +89,28 @@ int EtatNoMana::afficherChoixEtat()
     		case 5:
     		{
     				jeu->getVue().afficherChoixCvC();
+    				bool bonnecarte1 = false;
+    				bool bonnecarte2 = false;
     				choixcarte1 = jeu->getVue().getChoixJoueur();
     				choixcarte2 = jeu->getVue().getChoixJoueur();
+    				int size1 = jeu->getJoueurCourant()->getBoard()->size();
+    				int size2 = jeu->getJoueurAutre()->getBoard()->size();
+    				
+    				while ( bonnecarte1 == false &&  bonnecarte2 == false )
+    				{
+    					if ( choixcarte1 > 0 && choixcarte1 <= size1 && choixcarte2 > 0 && choixcarte2 <= size2 )
+    					{
+    						bonnecarte1 = true;
+    						bonnecarte2 = true;
+    					}
+    					else
+    					{	
+    						jeu->getVue().afficherChoixCvC();
+    						choixcarte1 = jeu->getVue().getChoixJoueur();
+    						choixcarte2 = jeu->getVue().getChoixJoueur();
+      					}   				
+    				}    	
+    				
     				jeu->attaqueCvC(choixcarte1, choixcarte2);
     				
     				if (jeu->testNoAttaque() == true )
@@ -102,7 +122,22 @@ int EtatNoMana::afficherChoixEtat()
     		case 6:
     		{		
     				jeu->getVue().afficherChoixCvJ();
-    				choixcarte1 = jeu->getVue().getChoixJoueur();
+    				bool bonnecarte = false;
+    				choixcarte1 = jeu->getVue().getChoixJoueur();	
+    				int size = jeu->getJoueurCourant()->getBoard()->size();  
+    				
+    				while ( bonnecarte == false )
+    				{
+    					if ( choixcarte1 > 0 && choixcarte1 <= size)
+    					{
+    						bonnecarte = true;
+    					}
+    					else
+    					{	
+    						jeu->getVue().afficherChoixCvJ();
+    						choixcarte1 = jeu->getVue().getChoixJoueur();
+      					}   				
+    				}  
     				jeu->attaqueCvJ(choixcarte1);
     				if (jeu->testNoAttaque() == true )
     				{

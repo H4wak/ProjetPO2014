@@ -25,8 +25,9 @@ VueConsole::~VueConsole()
 }
 
 /////////////////////////////////////////////////////////////////////////
-int VueConsole::getChoixJoueur(Joueur* j)
+int VueConsole::getChoixJoueur()
 {
+	cout << "POULET" << endl;
 	int i =0;
     cin >> i;
 	return i;

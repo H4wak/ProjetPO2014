@@ -12,9 +12,11 @@
 using namespace std; // seulement dans le .cpp !
 
 
-string ComportementPouvoirChasseur::pouvoir()
+void ComportementPouvoirChasseur::pouvoir(Jeu* j)
 {
-   return "JE VOUS TRAQUERAIS! BLBLBL";
+   
+   //j->getJoueurAutre()->setPDV(j->getJoueurAutre()->getPersonnage()->getPdv() - 2);
+   
 }
 
 

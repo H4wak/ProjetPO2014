@@ -1,6 +1,6 @@
-/*
-   Fichier Personnage.hpp
-
+/**
+* Fichier Personnage
+* @author Pierre Gaultier & Theo Dolez
 */
 
 #ifndef PERSONNAGE_HPP
@@ -12,6 +12,8 @@
 
 
 int const pdvmax(30);
+class Jeu;
+class Joueur;
 /******************************************************************************/
 
 class Personnage
@@ -34,11 +36,11 @@ class Personnage
       void setArmure(int narmure);
       int getPdm();
       void setPdm(int npdm);
-      void incPdm(); // augmente de 1 le nombre de points de mana
+     
 	  ComportementPouvoir* getCP();
       void setCP(ComportementPouvoir* CP);
       std::string toString();
-	  std::string utiliserPouvoir();        
+	  std::string utiliserPouvoir(Jeu* j);        
   
 };
 

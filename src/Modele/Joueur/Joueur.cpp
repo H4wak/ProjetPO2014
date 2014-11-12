@@ -210,6 +210,11 @@ void Joueur::setPDV(int npdv)
 
 }
 
+//////////////////////////////////////////////////////////////////////////
+void Joueur::setARMURE(int arm)
+{
+	this->p.setArmure(arm);
+}
 
 
 

@@ -12,6 +12,8 @@
 
 
 int const pdvmax(30);
+class Jeu;
+class Joueur;
 /******************************************************************************/
 
 class Personnage
@@ -38,7 +40,7 @@ class Personnage
 	  ComportementPouvoir* getCP();
       void setCP(ComportementPouvoir* CP);
       std::string toString();
-	  std::string utiliserPouvoir();        
+	  void utiliserPouvoir(Jeu* j);        
   
 };
 

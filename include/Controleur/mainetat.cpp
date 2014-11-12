@@ -16,6 +16,8 @@ int main()
 	Joueur* Theo = new Joueur("Théo", poney,"DeckGuerrier.txt");
 	Jeu* game = new Jeu(Pierre, Theo);
 	FinDeJeu* ob = new FinDeJeu(game);
+	
+	Pierre->setARMURE(5);
 
 	
 	game->jouer();

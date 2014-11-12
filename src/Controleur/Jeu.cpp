@@ -265,8 +265,30 @@ void Jeu::attaqueCvJ(int index1)
 	{
 		cout << "Cette carte ne peut pas attaquer pour l'instant!" << endl;
 	} else {
-		if ( this->testProvoc() == false ) {			
-			joueurAutre->setPDV(joueurAutre->getPersonnage().getPdv()- joueurCourant->getBoard()->at(index1-1).getPa());
+		if ( this->testProvoc() == false ) {	
+		
+			
+			int ataq = joueurCourant->getBoard()->at(index1-1).getPa();
+			int arm =  joueurAutre->getPersonnage().getArmure();
+			
+			if (arm == 0)
+			{					
+				joueurAutre->setPDV(joueurAutre->getPersonnage().getPdv()- ataq);
+			}
+			else
+			{
+				if (ataq <= arm)
+				{
+					joueurAutre->setARMURE(arm-ataq);
+				}
+				else
+				{
+					int ataq2 = ataq - arm;
+					joueurAutre->setARMURE(0);
+					joueurAutre->setPDV(joueurAutre->getPersonnage().getPdv()- ataq2);
+				}
+			}
+					
 			joueurCourant->getBoard()->at(index1-1).setMalinvoc(true);
 		} 
 		else {

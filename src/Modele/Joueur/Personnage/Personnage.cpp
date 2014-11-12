@@ -159,9 +159,9 @@ void Personnage::setCP(ComportementPouvoir* CP)
 * Methode qui applique le pouvoir du personnage
 * @return //a changer
 */
-std::string Personnage::utiliserPouvoir()
+void Personnage::utiliserPouvoir(Jeu* j)
 {
-   return this->CP->pouvoir();
+   this->CP->pouvoir(j);
 }
 
 

@@ -27,6 +27,7 @@ VueConsole::~VueConsole()
 /////////////////////////////////////////////////////////////////////////
 int VueConsole::getChoixJoueur()
 {
+	
 	int i =0;
     cin >> i;
 	return i;

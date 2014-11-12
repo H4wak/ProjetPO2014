@@ -70,14 +70,31 @@ int EtatNoAttaque::afficherChoixEtat()
 		    }
 		    case 2:  {
 		   		jeu->getVue().afficherJouerCarte();
-		   		choixcarte = jeu->getVue().getChoixJoueur();
-		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte-1).getCoutmana() <= pdmn)
+		   		
+		   		bool bonnecarte0 = false;
+    			int choixcarte0 = jeu->getVue().getChoixJoueur();	
+    			int size0 = jeu->getJoueurCourant()->getMain()->size();  
+		   		
+		   		while ( bonnecarte0 == false )
+    			{
+    				if ( choixcarte0 > 0 && choixcarte0 <= size0)
+    				{
+    					bonnecarte0 = true;
+    				}
+    				else
+   					{	
+   						jeu->getVue().afficherJouerCarte();
+   						choixcarte0 = jeu->getVue().getChoixJoueur();
+   					}   				
+    			}    			
+		   		
+		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= pdmn)
 		   		{
-		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte-1));
-		   			pdmn = pdmn - jeu->getJoueurCourant()->getMain()->at(choixcarte-1).getCoutmana();
-		   			malinvoc = jeu->getJoueurCourant()->getMain()->at(choixcarte-1).getMalinvoc();
+		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
+		   			pdmn = pdmn - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana();
+		   			malinvoc = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getMalinvoc();
 		   			jeu->getVue().afficherPdmnRestant(pdmn);
-		   		 	jeu->getJoueurCourant()->supprimerMain(choixcarte);
+		   		 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);
 		   		 	
 		   		 	
 		   		 	
@@ -121,7 +138,7 @@ int EtatNoAttaque::afficherChoixEtat()
     		}
     		case 6:
     		{
-    			cout << "POUVOIR" << endl;
+    			jeu->getJoueurCourant()->getPersonnage().utiliserPouvoir(jeu);
     		}
     		
 		}

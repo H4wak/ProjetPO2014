@@ -13,9 +13,9 @@ using namespace std; // seulement dans le .cpp !
 /**
 * Methode qui applique le pouvoir heroique du guerrier
 */
-string ComportementPouvoirGuerrier::pouvoir()
+void ComportementPouvoirGuerrier::pouvoir(Jeu* j)
 {
-   return "POUR HURLENFER!";
+     // j->getJoueurCourant()->setARMURE(j->getJoueurCourant()->getPersonnage()->getArmure() + 2);
 }
 
 
