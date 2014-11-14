@@ -9,16 +9,24 @@
 #include <list>
 #include <vector>
 #include "Deck/Deck.hpp"
-#include "Personnage/Guerrier.hpp"
-#include "Personnage/Chasseur.hpp"
+#include "Guerrier.hpp"
+#include "Chasseur.hpp"
+#include "ComportementPouvoir.hpp"
+#include "ComportementPouvoirGuerrier.hpp"
+#include "ComportementPouvoirChasseur.hpp"
 
 int const tailleMain(8);
 int const tailleBoard(8);
+int const pdvmax(30);
 /******************************************************************************/
 
 class Joueur
 {
 	private:
+		int pdv;
+     	int armure;
+      	int pdm;
+	 	ComportementPouvoir* CP;
 		Deck* d;
 		std::vector<Carte>* main;
 		std::vector<Carte>* board;
@@ -27,9 +35,20 @@ class Joueur
 	
 	public:
 		
-		
-		Joueur(std::string nom, Personnage p,std::string fichier);
+		Joueur(std::string nom,std::string fichier);
 		~Joueur();
+		
+		int getPdv();
+    	void setPdv(int npdv);
+     	int getArmure();
+      	void setArmure(int narmure);
+      	int getPdm();
+      	void setPdm(int npdm);
+     
+		ComportementPouvoir* getCP();
+    	void setCP(ComportementPouvoir* CP);
+    	std::string toString();
+		void utiliserPouvoir(Jeu* j); 
 		
 		Deck* getDeck();
 		
