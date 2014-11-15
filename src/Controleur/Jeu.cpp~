@@ -156,17 +156,17 @@ void Jeu::jouer()
 {
 	if (system("CLS")) system("clear");
 	
-	int pdmn = this->joueurCourant->getPersonnage().getPdm();
+	int pdmn = this->joueurCourant->getPdm();
 	
-	if (this->joueurCourant->getPersonnage().getPdm() == 0)
+	if (this->joueurCourant->getPdm() == 0)
 	{
 		this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
 		this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
 	}
 	
-	if (this->joueurCourant->getPersonnage().getPdm() < 10)
+	if (this->joueurCourant->getPdm() < 10)
 	{
-		this->joueurCourant->setPDM(this->joueurCourant->getPersonnage().getPdm()+1);	
+		this->joueurCourant->setPDM(this->joueurCourant->getPdm()+1);	
 	}
 	
  	this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
@@ -269,28 +269,26 @@ void Jeu::attaqueCvJ(int index1)
 		
 			
 			int ataq = joueurCourant->getBoard()->at(index1-1).getPa();
-			int arm =  joueurAutre->getPersonnage().getArmure();
+			int arm =  joueurAutre->getArmure();
 			
 			if (arm == 0)
 			{					
-			joueurAutre->setPDV(joueurAutre->getPersonnage().getPdv()- ataq);
+				joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
 			}
 			else
 			{
-			if (ataq <= arm)
-			{
-			joueurAutre->setARMURE(arm-ataq);
+				if (ataq <= arm)
+				{
+					joueurAutre->setARMURE(arm-ataq);
+				}
+				else
+				{
+					int ataq2 = ataq - arm;
+					joueurAutre->setARMURE(0);
+					joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+				}
 			}
-			else
-			{
-			int ataq2 = ataq - arm;
-			joueurAutre->setARMURE(0);
-			joueurAutre->setPDV(joueurAutre->getPersonnage().getPdv()- ataq2);
-			
-			
-			
-			
-			
+					
 			joueurCourant->getBoard()->at(index1-1).setMalinvoc(true);
 		} 
 		else {
@@ -328,7 +326,7 @@ bool Jeu::testNoMana()
 {
 	int pmr;
 	bool nomana = true;
-	pmr = joueurCourant->getPersonnage().getPdm();
+	pmr = joueurCourant->getPdm();
 	for ( int i = 0; i < joueurCourant->getMain()->size() ; i++ )
 	{
 		if ( joueurCourant->getMain()->at(i).getCoutmana() <= pmr )

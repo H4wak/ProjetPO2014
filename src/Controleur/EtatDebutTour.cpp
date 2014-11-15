@@ -58,7 +58,7 @@ int EtatDebutTour::afficherChoixEtat()
 	int choix = -1;
 	int choixcarte;
 	int choixcarte1, choixcarte2;
-	int pdmn = jeu->getJoueurCourant()->getPersonnage().getPdm();
+	int pdmn = jeu->getJoueurCourant()->getPdm();
 	
 	cout << "\nETAT DEBUT TOUR\n" << endl;
 	
@@ -158,7 +158,7 @@ int EtatDebutTour::afficherChoixEtat()
     		}
     		case 7:
     		{
-    				jeu->getJoueurCourant()->getPersonnage().utiliserPouvoir(jeu);
+    				jeu->getJoueurCourant()->utiliserPouvoir();
     				
     				break;
     		}

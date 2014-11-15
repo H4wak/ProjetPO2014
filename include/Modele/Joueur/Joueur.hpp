@@ -9,11 +9,10 @@
 #include <list>
 #include <vector>
 #include "Deck/Deck.hpp"
-#include "Guerrier.hpp"
-#include "Chasseur.hpp"
+
 #include "ComportementPouvoir.hpp"
-#include "ComportementPouvoirGuerrier.hpp"
-#include "ComportementPouvoirChasseur.hpp"
+
+
 
 int const tailleMain(8);
 int const tailleBoard(8);
@@ -24,14 +23,14 @@ class Joueur
 {
 	private:
 		int pdv;
-     	int armure;
-      	int pdm;
+     		int armure;
+      		int pdm;
 	 	ComportementPouvoir* CP;
 		Deck* d;
 		std::vector<Carte>* main;
 		std::vector<Carte>* board;
-		Personnage p;
 		std::string nom;
+		Joueur* joueurAutre;
 	
 	public:
 		
@@ -39,16 +38,18 @@ class Joueur
 		~Joueur();
 		
 		int getPdv();
-    	void setPdv(int npdv);
-     	int getArmure();
-      	void setArmure(int narmure);
-      	int getPdm();
-      	void setPdm(int npdm);
+    		void setPdv(int npdv);
+     		int getArmure();
+      		void setArmure(int narmure);
+      		int getPdm();
+      		void setPdm(int npdm);
+		Joueur* getJoueurAutre();
+      		void setJoueurAutre(Joueur* j);
      
 		ComportementPouvoir* getCP();
-    	void setCP(ComportementPouvoir* CP);
-    	std::string toString();
-		void utiliserPouvoir(Jeu* j); 
+    		void setCP(ComportementPouvoir* CP);
+    		std::string toString();
+		void utiliserPouvoir(); 
 		
 		Deck* getDeck();
 		
@@ -58,9 +59,6 @@ class Joueur
 		
 		std::string getNom();
 		void setNom(std::string n);
-		
-		Personnage getPersonnage();
-		void setPersonnage(Personnage p);
 		
 		void setPDM(int npdm);
 		void setPDV(int npdv);
@@ -81,4 +79,5 @@ class Joueur
 };
 
 #include "../../../src/Modele/Joueur/Joueur.cpp"
+
 #endif // JOUEUR_HPP		

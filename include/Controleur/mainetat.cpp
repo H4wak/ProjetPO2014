@@ -8,27 +8,14 @@ using namespace std;
 #include "FinDeJeu.hpp"
 int main()
 {
-
-	Guerrier cheval;
-	Chasseur poney;
 	
-	Joueur* Pierre = new Joueur("Pierre", cheval,"DeckGuerrier.txt");
-	Joueur* Theo = new Joueur("Théo", poney,"DeckGuerrier.txt");
+	
+	Joueur* Pierre = new Joueur("Pierre","DeckGuerrier.txt");
+	Joueur* Theo = new Joueur("Théo","DeckGuerrier.txt");
+	Pierre->setJoueurAutre(Theo);
+	Theo->setJoueurAutre(Pierre);
 	Jeu* game = new Jeu(Pierre, Theo);
 	FinDeJeu* ob = new FinDeJeu(game);
-	
-	Pierre->setARMURE(5);
-
-	
 	game->jouer();
-	
-	
-	/*
-	game->finTour();
-	
-	cout << game->getJoueurCourant()->getNom() << endl;
-	cout << game->getJoueurAutre()->getNom() << endl;*/
-	
-
-  return 0;
+  	return 0;
 }

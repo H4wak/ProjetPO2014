@@ -58,7 +58,7 @@ int EtatNoMana::afficherChoixEtat()
 	int choix = -1;
 	int choixcarte;
 	int choixcarte1, choixcarte2;
-	int pdmn = jeu->getJoueurCourant()->getPersonnage().getPdm();
+	int pdmn = jeu->getJoueurCourant()->getPdm();
 	
 	cout << "\nETAT NO MANA\n" << endl;
 	

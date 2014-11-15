@@ -97,7 +97,7 @@ void VueConsole::afficher2Board(Joueur* j1, Joueur* j2)
 void VueConsole::afficherDebutTour(Joueur* j)
 {
 	cout << "C'est à " + j->getNom() + " de jouer." << endl;	
-  string spdm = static_cast<ostringstream*>( &(ostringstream() << j->getPersonnage().getPdm())  )->str();
+  string spdm = static_cast<ostringstream*>( &(ostringstream() << j->getPdm())  )->str();
 	cout <<  "Vous avez " + spdm + " points de Mana." << endl;
 	cout << j->afficherMain() << endl;
 }
@@ -142,9 +142,9 @@ void VueConsole::afficherChoixCvJ()
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherPersonnage(Joueur* j)
 {
-   int pdvv = j->getPersonnage().getPdv();
-   int pdmn = j->getPersonnage().getPdm();
-   int armm = j->getPersonnage().getArmure();
+   int pdvv = j->getPdv();
+   int pdmn = j->getPdm();
+   int armm = j->getArmure();
    string pdv = static_cast<ostringstream*>( &(ostringstream() << pdvv)  )->str();
    string pdm = static_cast<ostringstream*>( &(ostringstream() << pdmn)  )->str();
    string arm = static_cast<ostringstream*>( &(ostringstream() << armm)  )->str();
@@ -157,9 +157,9 @@ void VueConsole::afficherPersonnage(Joueur* j)
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherPersonnageAutre(Joueur* j)
 {
-   int pdvv = j->getPersonnage().getPdv();
-   int pdmn = j->getPersonnage().getPdm();
-   int armm = j->getPersonnage().getArmure();
+   int pdvv = j->getPdv();
+   int pdmn = j->getPdm();
+   int armm = j->getArmure();
    string pdv = static_cast<ostringstream*>( &(ostringstream() << pdvv)  )->str();
    string pdm = static_cast<ostringstream*>( &(ostringstream() << pdmn)  )->str();
    string arm = static_cast<ostringstream*>( &(ostringstream() << armm)  )->str();

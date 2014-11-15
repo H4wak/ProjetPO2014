@@ -56,7 +56,7 @@ int EtatNoAttaque::afficherChoixEtat()
 	int choixcarte;
 	int choixcarte1, choixcarte2;
 	bool malinvoc;
-	int pdmn = jeu->getJoueurCourant()->getPersonnage().getPdm();
+	int pdmn = jeu->getJoueurCourant()->getPdm();
 	
 	cout << "\nETAT NO ATTAQUE\n" << endl;
 	
@@ -138,7 +138,7 @@ int EtatNoAttaque::afficherChoixEtat()
     		}
     		case 6:
     		{
-    			jeu->getJoueurCourant()->getPersonnage().utiliserPouvoir(jeu);
+    			jeu->getJoueurCourant()->utiliserPouvoir();
     		}
     		
 		}

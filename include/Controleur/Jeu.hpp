@@ -13,6 +13,8 @@
 #include <vector>
 #include <string> // pour le type std::string
 #include "../Modele/Joueur/Joueur.hpp"
+#include "../Modele/Joueur/ComportementPouvoirGuerrier.hpp"
+#include "../Modele/Joueur/Guerrier.hpp"
 #include "../Vue/VueConsole.hpp"
 #include "Sujet.hpp"
 #include "Observer.hpp"

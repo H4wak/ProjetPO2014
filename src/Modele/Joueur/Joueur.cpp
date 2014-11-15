@@ -22,7 +22,6 @@ Joueur::Joueur(std::string nom, std::string fichier)
 	this->pdv = 30;
 	this->armure = 0;
 	this->pdm = 0;
-	this->CP = new ComportementPouvoir(this);
      
 }
 
@@ -203,7 +202,7 @@ int Joueur::getPdv()
 * Methode qui remplace les points de vie du personnage par npdv
 * @param npdv les nouveaux points de vie
 */
-void Joueur::setPdv(int npdv)
+void Joueur::setPDV(int npdv)
 {
    this->pdv = npdv;
 }
@@ -225,7 +224,7 @@ int Joueur::getArmure()
 * Methode qui remplace les points d'armure du personnage par narmure
 * @param narmure les nouveaux points d'armure
 */
-void Joueur::setArmure(int narmure)
+void Joueur::setARMURE(int narmure)
 {
    this->armure = narmure;
 }
@@ -246,7 +245,7 @@ int Joueur::getPdm()
 * Methode qui remplace les points de mana du personnage par npdv
 * @param npdm les nouveaux points de mana
 */
-void Joueur::setPdm(int npdm)
+void Joueur::setPDM(int npdm)
 {
    this->pdm = npdm;
 }
@@ -289,6 +288,29 @@ void Joueur::setCP(ComportementPouvoir* CP)
 {
    this->CP = CP;
 }
+
+/////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le comportement du pouvoir du personnage
+* @return CP le comportement du pouvoir du personnage
+*/
+Joueur* Joueur::getJoueurAutre()
+{
+   return this->joueurAutre;
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+/*
+* Methode qui remplace le comportement du pouvoir par CP
+* @param CP le nouveau comportement
+*/
+void Joueur::setJoueurAutre(Joueur* j)
+{
+   this->joueurAutre = j;
+}
+
+
 
 /////////////////////////////////////////////////////////////////////////
 

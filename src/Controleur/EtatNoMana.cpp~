@@ -122,7 +122,22 @@ int EtatNoMana::afficherChoixEtat()
     		case 6:
     		{		
     				jeu->getVue().afficherChoixCvJ();
-    				choixcarte1 = jeu->getVue().getChoixJoueur();
+    				bool bonnecarte = false;
+    				choixcarte1 = jeu->getVue().getChoixJoueur();	
+    				int size = jeu->getJoueurCourant()->getBoard()->size();  
+    				
+    				while ( bonnecarte == false )
+    				{
+    					if ( choixcarte1 > 0 && choixcarte1 <= size)
+    					{
+    						bonnecarte = true;
+    					}
+    					else
+    					{	
+    						jeu->getVue().afficherChoixCvJ();
+    						choixcarte1 = jeu->getVue().getChoixJoueur();
+      					}   				
+    				}  
     				jeu->attaqueCvJ(choixcarte1);
     				if (jeu->testNoAttaque() == true )
     				{
