@@ -1,0 +1,29 @@
+/**
+* Fichier Guerrier
+* @author Pierre Gaultier & Theo Dolez
+*/
+
+#ifndef GUERRIER_HPP
+#define GUERRIER_HPP
+
+#include <string> // pour le type std::string
+#include "Joueur.hpp"
+#include "ComportementPouvoirGuerrier.hpp"
+
+
+/******************************************************************************/
+
+class Guerrier: public Joueur
+{   
+   private :
+    
+   public :
+      Guerrier(std::string nom, std::string fichier);
+      ~Guerrier();
+   
+  
+};
+
+#include "../../../src/Modele/Joueur/Guerrier.cpp"
+
+#endif // Guerrier_HPP
