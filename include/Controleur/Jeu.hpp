@@ -15,6 +15,8 @@
 #include "../Modele/Joueur/Joueur.hpp"
 #include "../Modele/Joueur/ComportementPouvoirGuerrier.hpp"
 #include "../Modele/Joueur/Guerrier.hpp"
+#include "../Modele/Joueur/ComportementPouvoirChasseur.hpp"
+#include "../Modele/Joueur/Chasseur.hpp"
 #include "../Vue/VueConsole.hpp"
 #include "Sujet.hpp"
 #include "Observer.hpp"

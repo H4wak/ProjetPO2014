@@ -10,8 +10,8 @@ int main()
 {
 	
 	
-	Joueur* Pierre = new Joueur("Pierre","DeckGuerrier.txt");
-	Joueur* Theo = new Joueur("Théo","DeckGuerrier.txt");
+	Joueur* Pierre = new Guerrier("Pierre","DeckGuerrier.txt");
+	Joueur* Theo = new Chasseur("Théo","DeckGuerrier.txt");
 	Pierre->setJoueurAutre(Theo);
 	Theo->setJoueurAutre(Pierre);
 	Jeu* game = new Jeu(Pierre, Theo);

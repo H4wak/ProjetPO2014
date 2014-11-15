@@ -43,6 +43,7 @@ class Joueur
       		void setArmure(int narmure);
       		int getPdm();
       		void setPdm(int npdm);
+
 		Joueur* getJoueurAutre();
       		void setJoueurAutre(Joueur* j);
      

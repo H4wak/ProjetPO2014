@@ -60,9 +60,9 @@ class Joueur
 		std::string getNom();
 		void setNom(std::string n);
 		
-		void setPdm(int npdm);
-		void setPdv(int npdv);
-		void setArmure(int arm);
+		void setPDM(int npdm);
+		void setPDV(int npdv);
+		void setARMURE(int arm);
 		
 		
 		std::string afficherMain();
