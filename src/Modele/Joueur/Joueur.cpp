@@ -18,7 +18,8 @@ Joueur::Joueur(std::string nom, std::string fichier)
 	this->nom = nom; 
 	this->d = new Deck(fichier);
 	this->main = new vector<Carte>();
-	this->board = new vector<Carte>();	
+	this->board = new vector<Carte>();
+	this->pouvoirUtilise = false;	
 	this->pdv = 30;
 	this->armure = 0;
 	this->pdm = 0;
@@ -59,6 +60,17 @@ std::string Joueur::getNom()
 void Joueur::setNom(std::string n)
 {
   this->nom = n;
+}
+/////////////////////////////////////////////////////////////////////////
+bool Joueur::getPouvoirUtilise()
+{
+  return this->pouvoirUtilise;  
+}
+
+/////////////////////////////////////////////////////////////////////////
+void Joueur::setPouvoirUtilise(bool p)
+{
+  this->pouvoirUtilise = p;
 }
 
 

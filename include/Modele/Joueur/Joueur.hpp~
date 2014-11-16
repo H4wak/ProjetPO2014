@@ -23,8 +23,9 @@ class Joueur
 {
 	private:
 		int pdv;
-     		int armure;
-      		int pdm;
+     	int armure;
+      	int pdm;
+		bool pouvoirUtilise;
 	 	ComportementPouvoir* CP;
 		Deck* d;
 		std::vector<Carte>* main;
@@ -43,6 +44,7 @@ class Joueur
       		void setArmure(int narmure);
       		int getPdm();
       		void setPdm(int npdm);
+
 		Joueur* getJoueurAutre();
       		void setJoueurAutre(Joueur* j);
      

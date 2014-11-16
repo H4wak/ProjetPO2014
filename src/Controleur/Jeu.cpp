@@ -318,6 +318,10 @@ void Jeu::enleverMalinvoc()
 			joueurAutre->getBoard()->at(j).setMalinvoc(false);
 		}
 	}
+
+	
+	joueurCourant->setPouvoirUtilise(false);
+
 }
 		
 		
@@ -335,7 +339,15 @@ bool Jeu::testNoMana()
 		}
 	} 
 	
-	return nomana;
+
+	if (pmr>=2 && joueurCourant->getPouvoirUtilise() == false)
+	{
+		return false;
+	} 
+	else
+	{
+		return nomana;
+	}
 	
 }
 		

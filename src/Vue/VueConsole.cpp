@@ -118,7 +118,7 @@ void VueConsole::afficherJouerCarte()
 void VueConsole::afficherPdmnRestant(int i)
 {
   string si = static_cast<ostringstream*>( &(ostringstream() << i)  )->str();
-	cout << "Il vous reste " + si + " points de Mana." << endl;
+	cout << "Il vous reste " + si + " point(s) de Mana." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////

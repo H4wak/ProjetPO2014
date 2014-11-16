@@ -138,7 +138,23 @@ int EtatNoAttaque::afficherChoixEtat()
     		}
     		case 6:
     		{
-    			jeu->getJoueurCourant()->utiliserPouvoir(jeu);
+    			if (pdmn >= 2 && jeu->getJoueurCourant()->getPouvoirUtilise() == false)
+					{
+    					jeu->getJoueurCourant()->utiliserPouvoir();
+						jeu->getJoueurCourant()->setPouvoirUtilise(true);
+						pdmn = pdmn - 2;
+						jeu->getVue().afficherPdmnRestant(pdmn);
+					}
+					else
+					{
+						jeu->getVue().afficherPasAssezDeMana();
+						
+					}
+
+					if (jeu->testNoMana() == true )
+		   		 	{
+		   		 		jeu->setEtat(jeu->getEtatNoMana());
+		   		 	}	
     		}
     		
 		}
