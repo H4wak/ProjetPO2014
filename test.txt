@@ -1,5 +1,0 @@
-3 2 Cheval 4 1 0
-5 3 Easy 2 0 1
-12 3 pleutre 8 0 0
-2 3 CedricBois 3 0 1
-1 2 Murielle 1 1 0

@@ -58,7 +58,7 @@ int EtatDebutTour::afficherChoixEtat()
 	int choix = -1;
 	int choixcarte;
 	int choixcarte1, choixcarte2;
-	int pdmn = jeu->getJoueurCourant()->getPdm();
+	
 	
 	cout << "\nETAT DEBUT TOUR\n" << endl;
 	
@@ -90,11 +90,12 @@ int EtatDebutTour::afficherChoixEtat()
    					}   				
     			}    			
 		   		
-		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= pdmn)
+		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= jeu->getJoueurCourant()->getPdmTour())
 		   		{
 		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
-		   			pdmn = pdmn - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana();
-		   			jeu->getVue().afficherPdmnRestant(pdmn);
+		   			jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana())
+		   			
+		   			jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 		   		 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);
 		   		 	
 		   		 	if (jeu->testNoMana() == true )
@@ -158,16 +159,17 @@ int EtatDebutTour::afficherChoixEtat()
     		}
     		case 7:
     		{
-					if (pdmn >= 2 && jeu->getJoueurCourant()->getPouvoirUtilise() == false)
+					if (jeu->getJoueurCourant()->getPdmTour() >= 2 && jeu->getJoueurCourant()->getPouvoirUtilise() == false)
 					{
     					jeu->getJoueurCourant()->utiliserPouvoir();
 						jeu->getJoueurCourant()->setPouvoirUtilise(true);
-						pdmn = pdmn - 2;
+						jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - 2);
+						jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 					}
 					else
 					{
 						jeu->getVue().afficherPasAssezDeMana();
-						jeu->getVue().afficherPdmnRestant(pdmn);
+						jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 					}
 
 					if (jeu->testNoMana() == true )

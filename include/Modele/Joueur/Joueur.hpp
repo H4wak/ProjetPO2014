@@ -25,6 +25,7 @@ class Joueur
 		int pdv;
      	int armure;
       	int pdm;
+      	int pdmTour;
 		bool pouvoirUtilise;
 	 	ComportementPouvoir* CP;
 		Deck* d;
@@ -43,7 +44,9 @@ class Joueur
      	int getArmure();
       	void setArmure(int narmure);
       	int getPdm();
-      	void setPdm(int npdm);
+      	void setPDM(int npdm);
+      	int getPdmTour();
+      	void setPDMTour(int npdmt);
 		bool getPouvoirUtilise();
 		void setPouvoirUtilise(bool p);
 
@@ -64,7 +67,7 @@ class Joueur
 		std::string getNom();
 		void setNom(std::string n);
 		
-		void setPDM(int npdm);
+		
 		void setPDV(int npdv);
 		void setARMURE(int arm);
 		

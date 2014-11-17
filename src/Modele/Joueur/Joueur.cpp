@@ -23,6 +23,7 @@ Joueur::Joueur(std::string nom, std::string fichier)
 	this->pdv = 30;
 	this->armure = 0;
 	this->pdm = 0;
+	this->pdmTour = 0;
      
 }
 
@@ -262,7 +263,29 @@ void Joueur::setPDM(int npdm)
    this->pdm = npdm;
 }
 
+
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui renvoie le nombre de points de mana du personnage au Tour courant
+* @return mana les points de mana du personnage
+*/
+int Joueur::getPdmTour()
+{
+   return this->pdmTour;
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+/**
+* Methode qui remplace les points de mana du personnage par npdv
+* @param npdm les nouveaux points de mana
+*/
+void Joueur::setPDMTour(int npdmt)
+{
+   this->pdmTour = npdmt;
+}
+/////////////////////////////////////////////////////////////////////////
+
 
 
 /**

@@ -56,7 +56,7 @@ int EtatNoAttaque::afficherChoixEtat()
 	int choixcarte;
 	int choixcarte1, choixcarte2;
 	bool malinvoc;
-	int pdmn = jeu->getJoueurCourant()->getPdm();
+	
 	
 	cout << "\nETAT NO ATTAQUE\n" << endl;
 	
@@ -88,14 +88,13 @@ int EtatNoAttaque::afficherChoixEtat()
    					}   				
     			}    			
 		   		
-		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= pdmn)
+		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= jeu->getJoueurCourant()->getPdmTour())
 		   		{
 		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
-		   			pdmn = pdmn - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana();
-		   			malinvoc = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getMalinvoc();
-		   			jeu->getVue().afficherPdmnRestant(pdmn);
+		   			jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
+		   			
+		   			jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 		   		 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);
-		   		 	
 		   		 	
 		   		 	
 		   		 	if (jeu->testNoMana() == true )
@@ -138,17 +137,17 @@ int EtatNoAttaque::afficherChoixEtat()
     		}
     		case 6:
     		{
-    			if (pdmn >= 2 && jeu->getJoueurCourant()->getPouvoirUtilise() == false)
+    			if (jeu->getJoueurCourant()->getPdmTour() >= 2 && jeu->getJoueurCourant()->getPouvoirUtilise() == false)
 					{
     					jeu->getJoueurCourant()->utiliserPouvoir();
 						jeu->getJoueurCourant()->setPouvoirUtilise(true);
-						pdmn = pdmn - 2;
-						jeu->getVue().afficherPdmnRestant(pdmn);
+						jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - 2);
+						jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 					}
 					else
 					{
 						jeu->getVue().afficherPasAssezDeMana();
-						
+						jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 					}
 
 					if (jeu->testNoMana() == true )

@@ -156,7 +156,6 @@ void Jeu::jouer()
 {
 	if (system("CLS")) system("clear");
 	
-	int pdmn = this->joueurCourant->getPdm();
 	
 	if (this->joueurCourant->getPdm() == 0)
 	{
@@ -166,7 +165,8 @@ void Jeu::jouer()
 	
 	if (this->joueurCourant->getPdm() < 10)
 	{
-		this->joueurCourant->setPDM(this->joueurCourant->getPdm()+1);	
+		this->joueurCourant->setPDM(this->joueurCourant->getPdm()+1);
+		this->joueurCourant->setPDMTour(this->joueurCourant->getPdm()+1);	
 	}
 	
  	this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
@@ -330,7 +330,7 @@ bool Jeu::testNoMana()
 {
 	int pmr;
 	bool nomana = true;
-	pmr = joueurCourant->getPdm();
+	pmr = joueurCourant->getPdmTour();
 	for ( int i = 0; i < joueurCourant->getMain()->size() ; i++ )
 	{
 		if ( joueurCourant->getMain()->at(i).getCoutmana() <= pmr )
@@ -340,7 +340,7 @@ bool Jeu::testNoMana()
 	} 
 	
 
-	if (pmr>=2 && joueurCourant.getPouvoirUtilise() == false)
+	if (pmr>=2 && joueurCourant->getPouvoirUtilise() == false)
 	{
 		return false;
 	} 
