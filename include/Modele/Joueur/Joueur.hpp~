@@ -16,16 +16,15 @@
 
 int const tailleMain(8);
 int const tailleBoard(8);
-int const pdvmax(30);
 /******************************************************************************/
 
 class Joueur
 {
 	private:
 		int pdv;
-     	int armure;
-      	int pdm;
-      	int pdmTour;
+    int armure;
+    int pdm;
+    int pdmTour;
 		bool pouvoirUtilise;
 	 	ComportementPouvoir* CP;
 		Deck* d;
@@ -67,7 +66,7 @@ class Joueur
 		std::string getNom();
 		void setNom(std::string n);
 		
-		void setPDM(int npdm);
+		
 		void setPDV(int npdv);
 		void setARMURE(int arm);
 		

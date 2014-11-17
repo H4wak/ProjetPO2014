@@ -23,9 +23,10 @@ class Joueur
 {
 	private:
 		int pdv;
-     	int armure;
-      	int pdm;
-      	int pdmTour;
+    int armure;
+    int pdm;
+    int pdmTour;
+		int pdvmax;
 		bool pouvoirUtilise;
 	 	ComportementPouvoir* CP;
 		Deck* d;

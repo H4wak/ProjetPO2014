@@ -166,7 +166,7 @@ void Jeu::jouer()
 	if (this->joueurCourant->getPdm() < 10)
 	{
 		this->joueurCourant->setPDM(this->joueurCourant->getPdm()+1);
-		this->joueurCourant->setPDMTour(this->joueurCourant->getPdm()+1);	
+		this->joueurCourant->setPDMTour(this->joueurCourant->getPdm());	
 	}
 	
  	this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());

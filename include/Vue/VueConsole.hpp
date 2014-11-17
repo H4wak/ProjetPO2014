@@ -45,6 +45,8 @@ class VueConsole
 		void afficherJouerCarte();
 		void afficherPdmnRestant(int i);
 		void afficherPasAssezDeMana();
+		void afficherChoixPouvoirMage();
+		void afficherChoixPouvoirPretre();
 		
 };
 #include "../../src/Vue/VueConsole.cpp"

@@ -169,6 +169,17 @@ void VueConsole::afficherPersonnageAutre(Joueur* j)
    cout << " Il a " + arm + " points d'armure. \n" << endl;
 }
 
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherChoixPouvoirMage()
+{  			
+	cout << "Entrez le numéro 1 pour attaquer le heros adverse,"<< endl << "sinon entrez un autre chiffre, puis la position sur le board de la carte a attaquer" << endl;
+}
+
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherChoixPouvoirPretre()
+{  			
+	cout << "Entrez le numéro 1 pour soigner votre heros,"<< endl << "sinon entrez un autre chiffre, puis la position sur le board de la carte a soigner" << endl;
+}
 
 
 
