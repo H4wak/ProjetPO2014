@@ -25,7 +25,7 @@ ComportementPouvoirPretre::ComportementPouvoirPretre(Joueur* j)
 */
 void ComportementPouvoirPretre::pouvoir()
 {
-  cout << "Vous l'avez cherché!!! blblbblblbblbl LAWL";
+  cout << "Vous l'avez cherché!!! blblbblblbblbl LAWL"<< endl;;
 	this->vue->afficherChoixPouvoirPretre();
 	int choix = this->vue->getChoixJoueur();
 		switch (choix)
