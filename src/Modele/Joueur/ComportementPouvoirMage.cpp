@@ -36,7 +36,20 @@ void ComportementPouvoirMage::pouvoir()
 		    }
 		    default:  {
 
-					choix = this->vue->getChoixJoueur();
+    				choix = this->vue->getChoixJoueur();
+    				bool bonnecarte = false;
+    				int size = this->joueur->getJoueurAutre()->getBoard()->size();  
+    				while ( bonnecarte == false )
+    				{
+    					if ( choix > 0 && choix <= size)
+    					{
+    						bonnecarte = true;
+    					}
+    					else
+    					{	
+								choix = this->vue->getChoixJoueur();
+      					}   				
+    				}   
 					int pdv = this->joueur->getJoueurAutre()->getBoard()->at(choix-1).getPdv();
 					this->joueur->getJoueurAutre()->getBoard()->at(choix-1).setPdv(pdv-1);
 					if ( this->joueur->getJoueurAutre()->getBoard()->at(choix-1).getPdv() <= 0 )
