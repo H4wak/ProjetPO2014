@@ -19,6 +19,8 @@ FinDeJeu::FinDeJeu(Jeu* j)
 {
    this->suj = j;
    this->suj->enregistrerObs(this);
+   this->pdvJ1 =30;
+   this->pdvJ2 =30;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -36,12 +38,14 @@ FinDeJeu::~FinDeJeu()
 */
 void FinDeJeu::actualiser()
 {
-  if(this->suj->getJoueurCourant()->getPdv() < 0){
+  pdvJ1 = this->suj->getJoueurCourant()->getPdv();
+  pdvJ2 = this->suj->getJoueurAutre()->getPdv();
+  if(pdvJ1 < 0){
 	cout <<   this->suj->getJoueurAutre()->getNom() + " a gagné!!!";
 	exit(1);
   }
  
-  if(this->suj->getJoueurAutre()->getPdv() < 0){
+  if(pdvJ2 < 0){
 	cout <<   this->suj->getJoueurCourant()->getNom() + " a gagné!!!";
 	exit(1);
   }

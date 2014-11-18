@@ -10,7 +10,7 @@
 #include <vector>
 #include "Deck/Deck.hpp"
 
-#include "ComportementPouvoir.hpp"
+#include "../../Controleur/ComportementPouvoir/ComportementPouvoir.hpp"
 
 
 

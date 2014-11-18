@@ -27,5 +27,5 @@ class ComportementPouvoirPretre : public ComportementPouvoir
 	
 };
 
-#include "../../../src/Modele/Joueur/ComportementPouvoirPretre.cpp"
+#include "../../../src/Controleur/Joueur/ComportementPouvoir/ComportementPouvoirPretre.cpp"
 #endif // ComportementPouvoirPretre_HPP

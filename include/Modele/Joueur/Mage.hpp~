@@ -8,7 +8,7 @@
 
 #include <string> // pour le type std::string
 #include "Joueur.hpp"
-#include "ComportementPouvoirMage.hpp"
+#include "../../Modele/Joueur/ComportementPouvoirMage.hpp"
 
 
 /******************************************************************************/
@@ -26,4 +26,4 @@ class Mage: public Joueur
 
 #include "../../../src/Modele/Joueur/Mage.cpp"
 
-#endif // Demoniste_HPP
+#endif // Mage_HPP

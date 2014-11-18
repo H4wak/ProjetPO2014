@@ -3,27 +3,27 @@
 * @author Pierre Gaultier & Theo Dolez
 */
 
-#ifndef GUERRIER_HPP
+#ifndef DEMONISTE_HPP
 #define GUERRIER_HPP
 
 #include <string> // pour le type std::string
 #include "Joueur.hpp"
-#include "ComportementPouvoirGuerrier.hpp"
+#include "../../Modele/Joueur/ComportementPouvoirDemoniste.hpp"
 
 
 /******************************************************************************/
 
-class Guerrier: public Joueur
+class Demoniste: public Joueur
 {   
    private :
     
    public :
-      Guerrier(std::string nom, std::string fichier);
-      ~Guerrier();
+      Demoniste(std::string nom, std::string fichier);
+      ~Demoniste();
    
   
 };
 
-#include "../../../src/Modele/Joueur/Guerrier.cpp"
+#include "../../../src/Modele/Joueur/Demoniste.cpp"
 
-#endif // Guerrier_HPP
+#endif // Demoniste_HPP

@@ -25,5 +25,5 @@ class ComportementPouvoirDemoniste : public ComportementPouvoir
 	
 };
 
-#include "../../../src/Modele/Joueur/ComportementPouvoirDemoniste.cpp"
+#include "../../../src/Controleur/Joueur/ComportementPouvoir/ComportementPouvoirDemoniste.cpp"
 #endif // ComportementPouvoirDemoniste_HPP

@@ -18,6 +18,8 @@ class FinDeJeu : public Observer
 
 	private:
 		Jeu* suj;
+		int pdvJ1;
+		int pdvJ2;
 		
 		
 	

@@ -13,15 +13,15 @@
 #include <vector>
 #include <string> // pour le type std::string
 #include "../Modele/Joueur/Joueur.hpp"
-#include "../Modele/Joueur/ComportementPouvoirGuerrier.hpp"
+#include "ComportementPouvoir/ComportementPouvoirGuerrier.hpp"
 #include "../Modele/Joueur/Guerrier.hpp"
-#include "../Modele/Joueur/ComportementPouvoirChasseur.hpp"
+#include "ComportementPouvoir/ComportementPouvoirChasseur.hpp"
 #include "../Modele/Joueur/Chasseur.hpp"
-#include "../Modele/Joueur/ComportementPouvoirMage.hpp"
+#include "ComportementPouvoir/ComportementPouvoirMage.hpp"
 #include "../Modele/Joueur/Mage.hpp"
-#include "../Modele/Joueur/ComportementPouvoirDemoniste.hpp"
+#include "ComportementPouvoir/ComportementPouvoirDemoniste.hpp"
 #include "../Modele/Joueur/Demoniste.hpp"
-#include "../Modele/Joueur/ComportementPouvoirPretre.hpp"
+#include "ComportementPouvoir/ComportementPouvoirPretre.hpp"
 #include "../Modele/Joueur/Pretre.hpp"
 #include "../Vue/VueConsole.hpp"
 #include "Sujet.hpp"
@@ -78,6 +78,7 @@ class Jeu : public Sujet
 		void enregistrerObs(Observer* O);
 		void supprimerObs(Observer* O);
 		void notifierObs();
+		void fonctionsCarte(int f);
 		
 		
 		

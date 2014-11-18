@@ -25,5 +25,5 @@ class ComportementPouvoirChasseur : public ComportementPouvoir
 	
 };
 
-#include "../../../src/Modele/Joueur/ComportementPouvoirChasseur.cpp"
+#include "../../../src/Controleur/Joueur/ComportementPouvoir/ComportementPouvoirChasseur.cpp"
 #endif // COMPORTEMENTPOUVOIRCHASSEUR_HPP

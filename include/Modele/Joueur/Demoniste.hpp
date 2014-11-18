@@ -8,7 +8,7 @@
 
 #include <string> // pour le type std::string
 #include "Joueur.hpp"
-#include "ComportementPouvoirDemoniste.hpp"
+#include "../../Controleur/ComportementPouvoir/ComportementPouvoirDemoniste.hpp"
 
 
 /******************************************************************************/

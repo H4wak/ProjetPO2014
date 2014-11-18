@@ -10,12 +10,13 @@
 #include <vector>
 #include "Deck/Deck.hpp"
 
-#include "ComportementPouvoir.hpp"
+#include "../../Controleur/ComportementPouvoir/ComportementPouvoir.hpp"
 
 
 
 int const tailleMain(8);
 int const tailleBoard(8);
+int const pdvmax(30);
 /******************************************************************************/
 
 class Joueur
@@ -25,6 +26,7 @@ class Joueur
     int armure;
     int pdm;
     int pdmTour;
+		int pdvmax;
 		bool pouvoirUtilise;
 	 	ComportementPouvoir* CP;
 		Deck* d;
