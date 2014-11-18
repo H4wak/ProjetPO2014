@@ -40,7 +40,20 @@ void ComportementPouvoirPretre::pouvoir()
 		    }
 		    default:  {
 
-					choix = this->vue->getChoixJoueur();
+    				choix = this->vue->getChoixJoueur();
+    				bool bonnecarte = false;
+    				int size = this->joueur->getBoard()->size();  
+    				while ( bonnecarte == false )
+    				{
+    					if ( choix > 0 && choix <= size)
+    					{
+    						bonnecarte = true;
+    					}
+    					else
+    					{	
+								choix = this->vue->getChoixJoueur();
+      					}   				
+    				}    						
 					int pdv = this->joueur->getBoard()->at(choix-1).getPdv();
 					int pdvMax = this->joueur->getBoard()->at(choix-1).getPdvmax();
 					cout << pdvmax <<endl;
