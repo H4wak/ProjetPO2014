@@ -16,11 +16,11 @@ int myrandom (int i) { return rand()%i;}
 /////////////////////////////////////////////////////////////////////////
 Deck::Deck(string fichier)
 {
-  int pdv,pa,cm,i,j,sz,r1;
+  int pdv,pa,cm,fct,i,j,sz,r1;
   i = 0;
   j = 0;  
-  string ligne,nom;
-  bool charge,provoc;  
+  string ligne,nom,des;
+  bool charge,provoc,sort;  
   vector<Carte> myvector;
   ifstream ifs(fichier.c_str());
   
@@ -38,8 +38,15 @@ Deck::Deck(string fichier)
 			iss >> cm;
 			iss >> charge;
 			iss >> provoc;
+			iss >> sort;
+			iss >> fct;
+			iss >> des;
 			//cout << pdv << " " << pa << " " << nom << " " << cm << endl;
-			Carte * c = new Carte(pdv,pa,nom,cm,charge,provoc);
+			
+			replace(nom.begin(),nom.end(),'_',' ');
+			replace(des.begin(),des.end(),'_',' ');
+			
+			Carte * c = new Carte(pdv,pa,nom,cm,charge,provoc,sort,fct,des);
 			
 			myvector.push_back(*c);
 			//d.push(*c);
@@ -51,7 +58,7 @@ Deck::Deck(string fichier)
   			
 			i++;
 			
-			//cout << c->toString() << endl;
+			cout << c->toString() << endl;
 		}
 	}
 	else

@@ -12,7 +12,7 @@
 using namespace std;
 
 /////////////////////////////////////////////////////////////////////////
-Carte::Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc)
+Carte::Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc, bool sort, int fct, string des)
 {
    this->pdv = pdv;
    this->pdvmax = pdv;
@@ -26,6 +26,9 @@ Carte::Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool p
    } else {
    	this->malinvoc = 1;
    }
+   this->sortilege = sort;
+   this->fct = fct;
+   this->description = des;
    
 }
 
@@ -131,30 +134,65 @@ bool Carte::getMalinvoc(){
 	return this->malinvoc;
 }
 /////////////////////////////////////////////////////////////////////////
+bool Carte::getSortilege(){
+	return this->sortilege;
+}
+/////////////////////////////////////////////////////////////////////////
 void Carte::setMalinvoc(bool m){
 	this->malinvoc = m;
 }
 /////////////////////////////////////////////////////////////////////////
+string Carte::getDescription(){
+	return this->description;
+}
+/////////////////////////////////////////////////////////////////////////
+void Carte::setDescription(string des){
+	this->description = des;
+}
+/////////////////////////////////////////////////////////////////////////
+int Carte::getFct(){
+	return this->fct;
+}
+/////////////////////////////////////////////////////////////////////////
+void Carte::setFct(int f){
+	this->fct = f;
+}
+
+
+
 
 string Carte::toString()
 {
    string result;
    
-   string Spdv = static_cast<ostringstream*>( &(ostringstream() << this->pdv) )->str(); 
-   string Spa = static_cast<ostringstream*>( &(ostringstream() << this->pa) )->str();
-   string Scm = static_cast<ostringstream*>( &(ostringstream() << this->coutmana) )->str();
-   
-   result = "Nom: " + this->nom +" Attaque: " + Spa + " PDV:" + Spdv + " Cout mana:" + Scm ;
-   
-   if (this->charge == true)
+   if (sortilege == false)
    {
-   		result += " Charge ";
-   }
+	   string Spdv = static_cast<ostringstream*>( &(ostringstream() << this->pdv) )->str(); 
+	   string Spa = static_cast<ostringstream*>( &(ostringstream() << this->pa) )->str();
+	   string Scm = static_cast<ostringstream*>( &(ostringstream() << this->coutmana) )->str();
+	   
+	   result = "Nom: " + this->nom +" | Attaque: " + Spa + " | PDV:" + Spdv + " | Cout mana:" + Scm ;
    
-   if (this->provoc == true)
-   {
-   		result += " Provocation ";
-   }
+	   if (this->charge == true)
+	   {
+	   		result += " Charge ";
+	   }
+	   
+	   if (this->provoc == true)
+	   {
+	   	result += " Provocation ";
+		}
+	}
+	else
+	{
+		string Spa = static_cast<ostringstream*>( &(ostringstream() << this->pa) )->str();
+		string Scm = static_cast<ostringstream*>( &(ostringstream() << this->coutmana) )->str();
+		result = "Nom: " + this->nom +" | Cout mana:" + Scm + " | " + this->description;
+		
+	
+	
+	
+	}
 
    return result ;
 }

@@ -28,7 +28,9 @@ class Carte
    bool charge;
    bool provoc;
    bool malinvoc;
-   
+   bool sortilege;
+   int fct;
+   std::string description;   
    
    
    public :
@@ -43,7 +45,7 @@ class Carte
 	* @param provoc Booléen, vrai si la carte à la capacité Provocation.
 	*/
   	Carte();
-	Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc); // constructeur par défaut 
+	Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc, bool sort, int f, std::string des); // constructeur par défaut 
 	~Carte(); // destructeur
 
   int getPdv();
@@ -69,6 +71,17 @@ class Carte
   
   bool getMalinvoc();
   void setMalinvoc(bool m);
+  
+  bool getSortilege();
+  void setSortilege(bool m);
+  
+  int getFct();
+  void setFct(int i);
+  
+  std::string getDescription();
+  void setDescription(std::string des);
+  
+  
 
 
   std::string toString();

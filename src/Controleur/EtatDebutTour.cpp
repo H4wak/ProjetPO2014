@@ -92,16 +92,29 @@ int EtatDebutTour::afficherChoixEtat()
 		   		
 		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= jeu->getJoueurCourant()->getPdmTour())
 		   		{
-		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
-		   			jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
+		   			if (  jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getSortilege() == false)
+		   			{
+		   				jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
+		   				jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
 		   			
-		   			jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
-		   		 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);
+		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
+		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
+		   		 	
+		   		 		
+		   		 	}
+		   		 	else
+		   		 	{
+		   		 		jeu->fonctionsCarte(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct());
+		   			 	jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
+		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
+		   			 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);	   		 	
+		   		 	
+		   		 	}
 		   		 	
 		   		 	if (jeu->testNoMana() == true )
-		   		 	{
-		   		 		jeu->setEtat(jeu->getEtatNoMana());
-		   		 	}		   		 
+		   		 		{
+		   		 			jeu->setEtat(jeu->getEtatNoMana());
+		   		 		}		   		 
 		   		 	
 		   		}else{
 		   			

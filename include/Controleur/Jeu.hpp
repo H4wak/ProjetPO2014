@@ -78,6 +78,7 @@ class Jeu : public Sujet
 		void enregistrerObs(Observer* O);
 		void supprimerObs(Observer* O);
 		void notifierObs();
+		void fonctionsCarte(int f);
 		
 		
 		

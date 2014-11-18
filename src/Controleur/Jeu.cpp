@@ -410,4 +410,32 @@ void Jeu::notifierObs()
 	obs->at(i)->actualiser();
 	}
 }
+/////////////////////////////////////////////////////////////////////////
+void Jeu::fonctionsCarte(int f)
+{
+	switch (f)
+	{
+		case 1:
+		{
+			cout << "VOUS ALLEZ MOURIR" << endl;
+			break;
+		}
+		
+		case 2:
+		{
+			cout << "POUKLET" << endl;
+			break;
+		}
+		
+		case 3:
+		{
+			cout << "CHEVAl" << endl;
+			break;
+		}
+	}
+		
+
+
+
+}
 
