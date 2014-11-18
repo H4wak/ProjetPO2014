@@ -30,6 +30,7 @@ class VueConsole
 
 		void afficherMain(Joueur* j);
 		void afficherChoix();
+		void getNomJoueur();
 		void afficherChoixDebutTour();
 		void afficherChoixNoMana();
 		void afficherChoixNoAttaque();
@@ -45,6 +46,11 @@ class VueConsole
 		void afficherJouerCarte();
 		void afficherPdmnRestant(int i);
 		void afficherPasAssezDeMana();
+		void afficherChoixPouvoirMage();
+		void afficherChoixPouvoirPretre();
+		
+		void afficherIntro();
+		void afficherFinIntro();
 		
 };
 #include "../../src/Vue/VueConsole.cpp"

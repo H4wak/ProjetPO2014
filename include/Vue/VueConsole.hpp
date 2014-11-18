@@ -26,7 +26,7 @@ class VueConsole
 		~VueConsole();
 		
 		int getChoixJoueur();
-		
+		string getNomJoueur();
 
 		void afficherMain(Joueur* j);
 		void afficherChoix();
@@ -47,6 +47,9 @@ class VueConsole
 		void afficherPasAssezDeMana();
 		void afficherChoixPouvoirMage();
 		void afficherChoixPouvoirPretre();
+		
+		void afficherIntro();
+		void afficherFinIntro();
 		
 };
 #include "../../src/Vue/VueConsole.cpp"

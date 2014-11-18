@@ -27,11 +27,20 @@ VueConsole::~VueConsole()
 /////////////////////////////////////////////////////////////////////////
 int VueConsole::getChoixJoueur()
 {
-	
+	cout << "la chauve" << endl;
 	int i =0;
     cin >> i;
 	return i;
 }
+/////////////////////////////////////////////////////////////////////////
+string VueConsole::getNomJoueur()
+{
+	
+	string s ="";
+    cin >> s;
+	return s;
+}
+
 
 
 
@@ -180,6 +189,26 @@ void VueConsole::afficherChoixPouvoirPretre()
 {  			
 	cout << "Entrez le numéro 1 pour soigner votre heros,"<< endl << "sinon entrez un autre chiffre, puis la position sur le board de la carte a soigner" << endl;
 }
+
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherIntro()
+{
+	cout << "Bienvenue ! \n Vous allez commencer une partie du Jeu Hearthstone, un jeu convivial et divertissant ! \n";
+	cout << "Mais pour cela vous devez choisir, votre adversaire et vous, un personnage que vous incarnerez ! \n";
+	cout << "Vous avez le choix parmi 5 valeureux champions : \n 1- Le Guerrier : Son pouvoir héroïque vous permet de gagner 2 points d'armure ! \n 2- Le Chasseur : Son pouvoir héroïque vous permet d'infliger 2 points de dégats au Champion ennemi ! Wow ! \n 3- Le Mage : Son pouvoir héroïque vous permet d'infliger 1 point de dégat à n'importe qui, une créature ennemie ou le joueur adverse ! \n 4- Le Démoniste : Son pouvoir héroïque vous permet de piocher une carte contre 2 de vos points de vie ! \n 5- Le Prêtre : Son pouvoir héroïque vous permet de soigner 2 points de vie à un de vos serviteurs ou à vous même !\n";  
+	cout << "Indiquez votre nom puis le numéro du champion que vous choisissez, de même pour votre adversaire.\n";
+} 
+
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherFinIntro()
+{
+	cout << "\n Merci ! Vos Decks vont maintenant être construits, bonne partie !\n";
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+
 
 
 
