@@ -82,7 +82,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 4: {
-			this->j1 = new Demoniste(nom1,"DeckGuerrier.txt");
+			this->j1 = new Demoniste(nom1,"DeckDemoniste.txt");
 			break;
 		}
 		
@@ -110,7 +110,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 4: {
-			this->j2 = new Demoniste(nom1,"DeckGuerrier.txt");
+			this->j2 = new Demoniste(nom1,"DeckDemoniste.txt");
 			break;
 		}
 		

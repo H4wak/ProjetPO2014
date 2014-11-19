@@ -72,7 +72,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 2: {
-			this->j1 = new Chasseur(nom1,"DeckGuerrier.txt");
+			this->j1 = new Chasseur(nom1,"DeckChasseur.txt");
 			break;
 		}
 		
@@ -100,7 +100,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 2: {
-			this->j2 = new Chasseur(nom1,"DeckGuerrier.txt");
+			this->j2 = new Chasseur(nom1,"DeckChasseur.txt");
 			break;
 		}
 		

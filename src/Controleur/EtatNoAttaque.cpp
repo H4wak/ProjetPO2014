@@ -74,20 +74,27 @@ int EtatNoAttaque::afficherChoixEtat()
 		   		bool bonnecarte0 = false;
     			int choixcarte0 = jeu->getVue().getChoixJoueur();	
     			int size0 = jeu->getJoueurCourant()->getMain()->size();  
-    			malinvoc = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getMalinvoc();
+    			
 		   		
 		   		while ( bonnecarte0 == false )
-    			{
+    			{	
+    				
     				if ( choixcarte0 > 0 && choixcarte0 <= size0)
     				{
     					bonnecarte0 = true;
+    					
     				}
     				else
    					{	
+   						
    						jeu->getVue().afficherJouerCarte();
    						choixcarte0 = jeu->getVue().getChoixJoueur();
+   						
+   						
    					}   				
-    			}    			
+    			}  
+    			
+    			malinvoc = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getMalinvoc();  			
 		   		
 		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= jeu->getJoueurCourant()->getPdmTour())
 		   		{
@@ -102,11 +109,13 @@ int EtatNoAttaque::afficherChoixEtat()
 		   		 	}
 		   		 	else
 		   		 	{
-		   		 	
-		   		 		jeu->fonctionsCarte(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct());
-		   			 	jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
-		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
-		   			 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);	   		 	
+		   		 		int fct,cm;
+		   		 		fct = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct();
+		   		 		cm = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana();
+		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
+		   		 		jeu->fonctionsCarte(fct);
+		   			 	jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - cm);
+		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour()); 	
 		   		 	
 		   		 	}
 		   		 	

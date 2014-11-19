@@ -457,15 +457,125 @@ void Jeu::fonctionsCarte(int f)
 						}
 					break;
 		    }
-
-		}
-			
-			
-			
-			
+		}				
 			break;
 		}
 		
+		///////// Voile de Mort
+		case 21: {
+		
+			vue.afficherChoixCarte();
+			int choix = vue.getChoixJoueur();
+	    	bool bonnecarte = false;	
+    		int size = joueurAutre->getBoard()->size();  
+    		while ( bonnecarte == false )
+    		{
+    			if ( choix > 0 && choix <= size)
+    			{
+    				bonnecarte = true;
+    			}
+    			else
+    			{	
+					choix = vue.getChoixJoueur();
+      			}   				
+    		}   
+			int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
+			joueurAutre->getBoard()->at(choix-1).setPdv(pdv-1);
+			if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
+			{	
+				joueurAutre->supprimerBoard(choix);
+				joueurCourant->ajouterMain(joueurCourant->getDeck()->tirerCarte());
+			}
+				
+			break;
+		}
+		
+		///////// Drain de Vie
+		case 22: {
+		
+			vue.afficherChoixPouvoirMage();
+			int choix = vue.getChoixJoueur();
+			switch (choix)
+			{
+		  	  case 1: {
+						joueurAutre->setPDV(joueurAutre->getPdv()-2);
+						break;
+		    	}
+		     default:  {
+	
+	    				choix = vue.getChoixJoueur();
+	    				bool bonnecarte = false;	
+    					int size = joueurAutre->getBoard()->size();  
+    					while ( bonnecarte == false )
+    					{
+    						if ( choix > 0 && choix <= size)
+    						{
+    							bonnecarte = true;
+    						}
+    						else
+    						{	
+								choix = vue.getChoixJoueur();
+      						}   				
+    					}   
+						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
+						joueurAutre->getBoard()->at(choix-1).setPdv(pdv-2);
+						if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
+						{	
+							joueurAutre->supprimerBoard(choix);
+							cout << "Vous avez triomphé de votre adversaire !" << endl;
+						}
+					break;
+		    	}
+			}		
+			
+			joueurCourant->setPDV(joueurCourant->getPdv()+2);		
+			break;
+			
+		}
+		
+		
+		////// Néant Distordu
+		case 40: {
+			
+			for ( int i = 0; i < joueurAutre->getBoard()->size() ; i++ )
+			{
+				joueurAutre->supprimerBoard(i+1);
+			} 
+			
+			for ( int j = 0; j < joueurCourant->getBoard()->size() ; j++ )
+			{
+				joueurCourant->supprimerBoard(j+1);
+			} 
+		
+			break;
+		}
+		
+		
+		////// Courroux Bestial
+		case 60: {
+		
+			vue.afficherChoixCarte();
+			int choix = vue.getChoixJoueur();
+			bool bonnecarte = false;
+			int size = joueurCourant->getBoard()->size(); 
+			while ( bonnecarte == false )
+    		{
+    			if ( choix > 0 && choix <= size)
+    			{
+    				bonnecarte = true;
+    			}
+    			else
+    			{	
+					choix = vue.getChoixJoueur();
+      			}   				
+    		}
+    		
+    		joueurCourant->getBoard()->at(choix-1).setPa(joueurCourant->getBoard()->at(choix-1).getPa()+2);
+    	
+    		break;
+    	}
+    		
+    		
 		////// Marque du chasseur
 		case 80:
 		{
@@ -485,7 +595,7 @@ void Jeu::fonctionsCarte(int f)
       			}   				
     		}
     		   
-			joueurAutre->getBoard()->at(choix-1).setPDV(1);
+			joueurAutre->getBoard()->at(choix-1).setPdv(1);
 			
 		
 			break;

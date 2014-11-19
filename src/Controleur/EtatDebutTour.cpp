@@ -82,11 +82,14 @@ int EtatDebutTour::afficherChoixEtat()
     				if ( choixcarte0 > 0 && choixcarte0 <= size0)
     				{
     					bonnecarte0 = true;
+    					
     				}
     				else
    					{	
+   						
    						jeu->getVue().afficherJouerCarte();
    						choixcarte0 = jeu->getVue().getChoixJoueur();
+   						
    					}   				
     			}    			
 		   		
@@ -104,10 +107,15 @@ int EtatDebutTour::afficherChoixEtat()
 		   		 	}
 		   		 	else
 		   		 	{
-		   		 		jeu->fonctionsCarte(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct());
-		   			 	jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
+		   		 	
+		   		 		int fct,cm;
+		   		 		fct = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct();
+		   		 		cm = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana();
+		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
+		   		 		jeu->fonctionsCarte(fct);
+		   			 	jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - cm);
 		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
-		   			 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);	   		 	
+		   			 	   		 	
 		   		 	
 		   		 	}
 		   		 	

@@ -280,7 +280,7 @@ int Joueur::getPdmTour()
 * Methode qui remplace les points de mana du personnage par npdv
 * @param npdm les nouveaux points de mana
 */
-void Joueur::setPDMTour(int npdmt
+void Joueur::setPDMTour(int npdmt)
 {
    this->pdmTour = npdmt;
 }

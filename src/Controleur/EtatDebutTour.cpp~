@@ -82,26 +82,47 @@ int EtatDebutTour::afficherChoixEtat()
     				if ( choixcarte0 > 0 && choixcarte0 <= size0)
     				{
     					bonnecarte0 = true;
+    					
     				}
     				else
    					{	
+   						
    						jeu->getVue().afficherJouerCarte();
    						choixcarte0 = jeu->getVue().getChoixJoueur();
+   						
    					}   				
     			}    			
 		   		
 		   		if ( jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana() <= jeu->getJoueurCourant()->getPdmTour())
 		   		{
-		   			jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
-		   			jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana())
+		   			if (  jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getSortilege() == false)
+		   			{
+		   				jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
+		   				jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
 		   			
-		   			jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
-		   		 	jeu->getJoueurCourant()->supprimerMain(choixcarte0);
+		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
+		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
+		   		 	
+		   		 		
+		   		 	}
+		   		 	else
+		   		 	{
+		   		 	
+		   		 		int fct,cm;
+		   		 		fct = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct());
+		   		 		cm = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana();
+		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
+		   		 		jeu->fonctionsCarte(fct);
+		   			 	jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - cm);
+		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
+		   			 	   		 	
+		   		 	
+		   		 	}
 		   		 	
 		   		 	if (jeu->testNoMana() == true )
-		   		 	{
-		   		 		jeu->setEtat(jeu->getEtatNoMana());
-		   		 	}		   		 
+		   		 		{
+		   		 			jeu->setEtat(jeu->getEtatNoMana());
+		   		 		}		   		 
 		   		 	
 		   		}else{
 		   			

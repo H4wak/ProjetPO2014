@@ -218,6 +218,10 @@ int Joueur::getPdv()
 void Joueur::setPDV(int npdv)
 {
    this->pdv = npdv;
+   if (pdv > 30)
+   {
+   	pdv = 30;
+   }
 }
 
 

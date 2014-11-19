@@ -120,7 +120,7 @@ void VueConsole::afficherFinTour()
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherJouerCarte()
 {
-  cout << "Quelle carte voulez-vous jouez ?" << endl;
+  cout << "Quelle carte voulez-vous jouer ?" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
