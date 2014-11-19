@@ -165,9 +165,10 @@ void Jeu::jouer()
 	
 	if (this->joueurCourant->getPdm() < 10)
 	{
-		this->joueurCourant->setPDM(this->joueurCourant->getPdm()+1);
-		this->joueurCourant->setPDMTour(this->joueurCourant->getPdm());	
+		this->joueurCourant->setPDM(this->joueurCourant->getPdm()+1);			
 	}
+	
+	this->joueurCourant->setPDMTour(this->joueurCourant->getPdm());
 	
  	this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
   
@@ -247,7 +248,7 @@ void Jeu::attaqueCvC(int index1, int index2)
 				cout << "Votre carte est tombée au combat !" << endl;
 			}
 			
-			if ( joueurAutre->getBoard()->at(index1-1).getPdv() <= 0 )
+			if ( joueurAutre->getBoard()->at(index2-1).getPdv() <= 0 )
 			{	
 				joueurAutre->supprimerBoard(index2);
 				cout << "Vous avez triomphé de votre adversaire !" << endl;
@@ -537,14 +538,18 @@ void Jeu::fonctionsCarte(int f)
 		////// Néant Distordu
 		case 40: {
 			
-			for ( int i = 0; i < joueurAutre->getBoard()->size() ; i++ )
+			int size1,size2;
+			size1 = joueurAutre->getBoard()->size();
+			size2 = joueurCourant->getBoard()->size();
+			
+			for ( int i = 0; i <= size1 ; i++ )
 			{
-				joueurAutre->supprimerBoard(i+1);
+				joueurAutre->supprimerBoard(1);
 			} 
 			
-			for ( int j = 0; j < joueurCourant->getBoard()->size() ; j++ )
+			for ( int j = 0; j <= size2 ; j++ )
 			{
-				joueurCourant->supprimerBoard(j+1);
+				joueurCourant->supprimerBoard(1);
 			} 
 		
 			break;
