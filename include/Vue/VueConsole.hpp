@@ -48,6 +48,8 @@ class VueConsole
 		void afficherChoixPouvoirMage();
 		void afficherChoixPouvoirPretre();
 		
+		void afficherChoixCarte();
+		
 		void afficherIntro();
 		void afficherFinIntro();
 		

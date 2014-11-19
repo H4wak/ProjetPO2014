@@ -49,9 +49,9 @@ void LancementPartie::lancerPartie()
 	
 	nom2 = vue.getNomJoueur();
 	
-	cout << "ta mère" << endl;
+	
 	num2 = vue.getChoixJoueur();
-	cout << "la chauve blblbll" << endl;
+	
 	
 	while (num2 < 0 && num2> 6)
 	{

@@ -26,11 +26,10 @@ class VueConsole
 		~VueConsole();
 		
 		int getChoixJoueur();
-		
+		string getNomJoueur();
 
 		void afficherMain(Joueur* j);
 		void afficherChoix();
-		void getNomJoueur();
 		void afficherChoixDebutTour();
 		void afficherChoixNoMana();
 		void afficherChoixNoAttaque();
@@ -48,6 +47,8 @@ class VueConsole
 		void afficherPasAssezDeMana();
 		void afficherChoixPouvoirMage();
 		void afficherChoixPouvoirPretre();
+		
+
 		
 		void afficherIntro();
 		void afficherFinIntro();

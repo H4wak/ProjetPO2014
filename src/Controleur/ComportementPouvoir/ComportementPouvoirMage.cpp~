@@ -25,7 +25,7 @@ ComportementPouvoirMage::ComportementPouvoirMage(Joueur* j)
 */
 void ComportementPouvoirMage::pouvoir()
 {
-  cout << "Vous l'avez cherché!!! blblbblblbblbl LAWL"<< endl;
+  cout << "Vous l'avez cherché!!! blblbblblbblbl LAWL"<< endl;;
 	this->vue->afficherChoixPouvoirMage();
 	int choix = this->vue->getChoixJoueur();
 		switch (choix)

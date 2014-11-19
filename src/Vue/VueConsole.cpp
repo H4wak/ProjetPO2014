@@ -208,6 +208,10 @@ void VueConsole::afficherFinIntro()
 
 
 /////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherChoixCarte()
+{
+	cout << "Veuillez indiquer le numéro de la carte cible. " << endl;
+}
 
 
 

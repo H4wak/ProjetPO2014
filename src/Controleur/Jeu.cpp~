@@ -410,4 +410,90 @@ void Jeu::notifierObs()
 	obs->at(i)->actualiser();
 	}
 }
+/////////////////////////////////////////////////////////////////////////
+void Jeu::fonctionsCarte(int f)
+{
+	switch (f)
+	{
+		case 1:
+		{
+			cout << "VOUS ALLEZ MOURIR" << endl;
+			break;
+		}
+		
+		////// Tir des Arcanes
+		case 20:
+		{
+			vue.afficherChoixPouvoirMage();
+			int choix = vue.getChoixJoueur();
+			switch (choix)
+			{
+		  	  case 1: {
+						joueurAutre->setPDV(joueurAutre->getPdv()-2);
+						break;
+		    	}
+		     default:  {
+	
+	    				choix = vue.getChoixJoueur();
+	    				bool bonnecarte = false;	
+    					int size = joueurAutre->getBoard()->size();  
+    					while ( bonnecarte == false )
+    					{
+    						if ( choix > 0 && choix <= size)
+    						{
+    							bonnecarte = true;
+    						}
+    						else
+    						{	
+								choix = vue.getChoixJoueur();
+      						}   				
+    					}   
+						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
+						joueurAutre->getBoard()->at(choix-1).setPdv(pdv-2);
+						if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
+						{	
+							joueurAutre->supprimerBoard(choix);
+							cout << "Vous avez triomphé de votre adversaire !" << endl;
+						}
+					break;
+		    }
+
+		}
+			
+			
+			
+			
+			break;
+		}
+		
+		////// Marque du chasseur
+		case 80:
+		{
+			vue.afficherChoixCarte();
+			int choix = vue.getChoixJoueur();
+	    	bool bonnecarte = false;	
+    		int size = joueurAutre->getBoard()->size();  
+    		while ( bonnecarte == false )
+    		{
+    			if ( choix > 0 && choix <= size)
+    			{
+    				bonnecarte = true;
+    			}
+    			else
+    			{	
+					choix = vue.getChoixJoueur();
+      			}   				
+    		}
+    		   
+			joueurAutre->getBoard()->at(choix-1).setPDV(1);
+			
+		
+			break;
+		}
+	}
+		
+
+
+
+}
 
