@@ -23,6 +23,8 @@
 #include "../Modele/Joueur/Demoniste.hpp"
 #include "ComportementPouvoir/ComportementPouvoirPretre.hpp"
 #include "../Modele/Joueur/Pretre.hpp"
+#include "ComportementPouvoir/ComportementPouvoirJXR.hpp"
+#include "../Modele/Joueur/JXR.hpp"
 #include "../Vue/VueConsole.hpp"
 #include "Sujet.hpp"
 #include "Observer.hpp"
