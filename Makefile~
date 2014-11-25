@@ -1,5 +1,7 @@
-all:Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementJeu.o  Main.o
-	g++ -Wall -g bin/Modele/Joueur/Deck/Carte.o bin/Modele/Joueur/Deck/Deck.o bin/Controleur/ComportementPouvoir/ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Joueur.o VueConsole.o Sujet.o Observer.o Jeu.o Etat.o EtatDebutTour.o EtatDoubleNo.o EtatNoMana.o EtatNoAttaque.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o FinDeJeu.o LancementJeu.o Main.o -o main
+all: Deck.o Carte.o Joueur.o Jeu.o  Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o VueConsole.o LancementPartie.o FinDeJeu.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o  Main.o
+
+
+	g++ -Wall -g bin/Modele/Joueur/Deck/Carte/Carte.o bin/Modele/Joueur/Deck/Deck.o bin/Controleur/ComportementPouvoir/ComportementPouvoir.o ComportementPouvoirGuerrier.o bin/Controleur/ComportementPouvoir/ComportementPouvoirChasseur.o bin/Controleur/ComportementPouvoir/bin/Controleur/ComportementPouvoir/ComportementPouvoirPretre.o bin/Controleur/ComportementPouvoir/ComportementPouvoirMage.o bin/Controleur/ComportementPouvoir/ComportementPouvoirDemoniste.o Joueur.o VueConsole.o Sujet.o Observer.o Jeu.o Etat.o EtatDebutTour.o EtatDoubleNo.o EtatNoMana.o EtatNoAttaque.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o FinDeJeu.o LancementPartie.o Main.o -o main
 
 Carte.o:
 	g++ -g -Wall include/Modele/Joueur/Deck/Carte/Carte.hpp -o bin/Modele/Joueur/Deck/Carte/Carte.o -c
@@ -10,7 +12,7 @@ Deck.o:
 ComportementPouvoir.o:
 	g++ -g -Wall include/Controleur/ComportementPouvoir/ComportementPouvoir.hpp -o bin/Controleur/ComportementPouvoir/ComportementPouvoir.o -c
 
-ComportementPouvoirGuerrier.o:ComportementPouvoir.o
+ComportementPouvoirGuerrier.o:ComportementPouvoir.o 
 	g++ -g -Wall include/Controleur/ComportementPouvoir/ComportementPouvoirGuerrier.hpp -o bin/Controleur/ComportementPouvoir/ComportementPouvoirGuerrier.o -c
 
 ComportementPouvoirChasseur.o:ComportementPouvoir.o
@@ -70,11 +72,11 @@ Mage.o: Joueur.o
 Demoniste.o: Joueur.o
 	g++ -g -Wall include/Modele/Joueur/Demoniste.hpp -o include/Modele/Joueur/Demoniste.o -c
 
-FinDeJeu.o:Observer.o
+FinDeJeu.o:Observer.o Sujet.o 
 	g++ -g -Wall include/Controleur/FinDeJeu.hpp -o bin/Controleur/FinDeJeu.o -c
 
-LancementJeu.o:
-	g++ -g -Wall include/Controleur/LancementJeu.hpp -o bin/Controleur/LancementJeu.o -c
+LancementPartie.o:
+	g++ -g -Wall include/Controleur/LancementPartie.hpp -o bin/Controleur/LancementPartie.o -c
 
 Main.o:
 	g++ -g -Wall Main.cpp -o Main.exe -c

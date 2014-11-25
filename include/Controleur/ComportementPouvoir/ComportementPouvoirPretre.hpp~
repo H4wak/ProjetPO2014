@@ -9,6 +9,7 @@
 #include <string> // pour le type std::string
 #include "ComportementPouvoir.hpp"
 #include "../../Vue/VueConsole.hpp"
+#include "../../Modele/Joueur/Joueur.hpp"
 
 
 /******************************************************************************/
@@ -27,5 +28,5 @@ class ComportementPouvoirPretre : public ComportementPouvoir
 	
 };
 
-#include "../../../src/Controleur/Joueur/ComportementPouvoir/ComportementPouvoirPretre.cpp"
+#include "../../../src/Controleur/ComportementPouvoir/ComportementPouvoirPretre.cpp"
 #endif // ComportementPouvoirPretre_HPP

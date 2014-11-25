@@ -8,6 +8,7 @@
 #include <string> // pour le type std::string
 #include "Observer.hpp"
 #include "Sujet.hpp"
+#include "Jeu.hpp"
 
 
 
