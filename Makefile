@@ -1,5 +1,6 @@
-all:Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementJeu.o  Main.o
-	g++ -Wall -g bin/Modele/Joueur/Deck/Carte.o bin/Modele/Joueur/Deck/Deck.o bin/Controleur/ComportementPouvoir/ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Joueur.o VueConsole.o Sujet.o Observer.o Jeu.o Etat.o EtatDebutTour.o EtatDoubleNo.o EtatNoMana.o EtatNoAttaque.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o FinDeJeu.o LancementJeu.o Main.o -o main
+all:Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementPartie.o  Main.o
+
+	g++ -Wall -g bin/Modele/Joueur/Deck/Carte/Carte.o bin/Modele/Joueur/Deck/Deck.o bin/Controleur/ComportementPouvoir/ComportementPouvoir.o bin/Controleur/ComportementPouvoir/ComportementPouvoirGuerrier.o bin/Controleur/ComportementPouvoir/ComportementPouvoirChasseur.o bin/Controleur/ComportementPouvoir/ComportementPouvoirPretre.o bin/Controleur/ComportementPouvoir/ComportementPouvoirMage.o bin/Controleur/ComportementPouvoir/ComportementPouvoirDemoniste.o bin/Modele/Joueur/Joueur.o bin/Vue/VueConsole.o bin/Controleur/Sujet.o bin/Controleur/Observer.o bin/Controleur/Jeu.o bin/Controleur/Etat.o bin/Controleur/EtatDebutTour.o bin/Controleur/EtatDoubleNo.o bin/Controleur/EtatNoMana.o bin/Controleur/EtatNoAttaque.o bin/Modele/Joueur/Guerrier.o bin/Modele/Joueur/Chasseur.o bin/Modele/Joueur/Pretre.o bin/Modele/Joueur/Mage.o bin/Modele/Joueur/Demoniste.o bin/Controleur/FinDeJeu.o bin/Controleur/LancementPartie.o Main.exe -o main
 
 Carte.o:
 	g++ -g -Wall include/Modele/Joueur/Deck/Carte/Carte.hpp -o bin/Modele/Joueur/Deck/Carte/Carte.o -c
@@ -73,8 +74,8 @@ Demoniste.o: Joueur.o
 FinDeJeu.o:Observer.o
 	g++ -g -Wall include/Controleur/FinDeJeu.hpp -o bin/Controleur/FinDeJeu.o -c
 
-LancementJeu.o:
-	g++ -g -Wall include/Controleur/LancementJeu.hpp -o bin/Controleur/LancementJeu.o -c
+LancementPartie.o:
+	g++ -g -Wall include/Controleur/LancementPartie.hpp -o bin/Controleur/LancementPartie.o -c
 
 Main.o:
 	g++ -g -Wall Main.cpp -o Main.exe -c

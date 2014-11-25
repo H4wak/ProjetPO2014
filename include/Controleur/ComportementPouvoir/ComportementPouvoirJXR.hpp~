@@ -1,10 +1,10 @@
 /**
-* Fichier ComportementPouvoirMage
+* Fichier ComportementPouvoirJXR
 * @author Pierre Gaultier & Theo Dolez
 */
 
-#ifndef COMPORTEMENTPOUVOIRMAGE_HPP
-#define COMPORTEMENTPOUVOIRMAGE_HPP
+#ifndef COMPORTEMENTPOUVOIRJXR_HPP
+#define COMPORTEMENTPOUVOIRJXR_HPP
 
 #include <string> // pour le type std::string
 #include "ComportementPouvoir.hpp"
@@ -13,7 +13,7 @@
 
 /******************************************************************************/
 
-class ComportementPouvoirMage : public ComportementPouvoir
+class ComportementPouvoirJXR : public ComportementPouvoir
 {
 
    private:
@@ -21,11 +21,11 @@ class ComportementPouvoirMage : public ComportementPouvoir
 	VueConsole* vue;
 
    public :
-	  ComportementPouvoirMage(Joueur* j);
-	  ~ComportementPouvoirMage();
+	  ComportementPouvoirJXR(Joueur* j);
+	  ~ComportementPouvoirJXR();
 	  void pouvoir();
 	
 };
 
-#include "../../../src/Controleur/ComportementPouvoir/ComportementPouvoirMage.cpp"
-#endif // ComportementPouvoirMage_HPP
+#include "../../../src/Controleur/ComportementPouvoir/ComportementPouvoirJXR.cpp"
+#endif // ComportementPouvoirJXR_HPP

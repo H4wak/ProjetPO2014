@@ -9,7 +9,7 @@
 #include <string> // pour le type std::string
 #include "ComportementPouvoir.hpp"
 #include "../../Vue/VueConsole.hpp"
-
+#include "../../Modele/Joueur/Joueur.hpp"
 
 /******************************************************************************/
 

@@ -25,5 +25,5 @@ class ComportementPouvoirGuerrier : public ComportementPouvoir
 	
 };
 
-#include "../../../src/Controleur/Joueur/ComportementPouvoir/ComportementPouvoirGuerrier.cpp"
+#include "../../../src/Controleur/ComportementPouvoir/ComportementPouvoirGuerrier.cpp"
 #endif // ComportementPouvoirGuerrier_HPP

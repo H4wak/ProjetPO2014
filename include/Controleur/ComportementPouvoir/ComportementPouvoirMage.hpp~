@@ -27,5 +27,5 @@ class ComportementPouvoirMage : public ComportementPouvoir
 	
 };
 
-#include "../../../src/Controleur/Joueur/ComportementPouvoir/ComportementPouvoirMage.cpp"
+#include "../../../src/Controleur/ComportementPouvoir/ComportementPouvoirMage.cpp"
 #endif // ComportementPouvoirMage_HPP
