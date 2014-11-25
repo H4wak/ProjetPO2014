@@ -16,7 +16,7 @@ int myrandom (int i) { return rand()%i;}
 /////////////////////////////////////////////////////////////////////////
 Deck::Deck(string fichier)
 {
-  int pdv,pa,cm,fct,i,j,sz,r1;
+  int pdv,pa,cm,fct,i,j,sz;
   i = 0;
   j = 0;  
   string ligne,nom,des;

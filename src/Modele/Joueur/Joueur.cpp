@@ -171,7 +171,8 @@ bool Joueur::ajouterBoard(Carte c)
 bool Joueur::supprimerMain(int index)
 {
 	string sindex = static_cast<ostringstream*>( &(ostringstream() << index) )->str();
-	if (index-1 >= tailleMain || index-1 < 0 || index > this->main->size() )
+	int size = this->main->size();
+	if (index-1 >= tailleMain || index-1 < 0 || index > size )
 	{	
 		cout << "Index "+ sindex +" hors de la Main !!" << endl;
 		return false;
@@ -186,7 +187,8 @@ bool Joueur::supprimerMain(int index)
 bool Joueur::supprimerBoard(int index)
 {
 	string sindex = static_cast<ostringstream*>( &(ostringstream() << index) )->str();
-	if (index-1 >= tailleBoard || index-1 < 0 || index > this->board->size()) 
+	int size = this->main->size();
+	if (index-1 >= tailleBoard || index-1 < 0 || index > size) 
 	{	
 		cout << "Index "+ sindex+" hors du Board !!" << endl;
 		return false;

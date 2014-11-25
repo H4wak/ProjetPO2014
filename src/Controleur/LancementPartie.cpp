@@ -90,6 +90,11 @@ void LancementPartie::lancerPartie()
 			this->j1 = new Pretre(nom1,"DeckPretre.txt");
 			break;
 		}
+		
+		case 666:{
+			this->j1 = new JXR(nom1,"DeckJXR.txt");
+			break;
+		}
 	}
 	
 	switch (num2)
@@ -116,6 +121,11 @@ void LancementPartie::lancerPartie()
 		
 		case 5: {
 			this->j2 = new Pretre(nom1,"DeckPretre.txt");
+			break;
+		}
+		
+		case 666:{
+			this->j2 = new JXR(nom1,"DeckJXR.txt");
 			break;
 		}
 	}

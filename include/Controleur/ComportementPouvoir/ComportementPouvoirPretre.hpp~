@@ -10,7 +10,10 @@
 #include "ComportementPouvoir.hpp"
 #include "../../Vue/VueConsole.hpp"
 #include "../../Modele/Joueur/Joueur.hpp"
+<<<<<<< HEAD
 
+=======
+>>>>>>> efa1c12496d10854476bf2756b95e76257fc3d48
 
 /******************************************************************************/
 

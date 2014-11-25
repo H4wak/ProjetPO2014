@@ -171,7 +171,8 @@ bool Joueur::ajouterBoard(Carte c)
 bool Joueur::supprimerMain(int index)
 {
 	string sindex = static_cast<ostringstream*>( &(ostringstream() << index) )->str();
-	if (index-1 >= tailleMain || index-1 < 0 || index > this->main->size() )
+	int size = this->main->size();
+	if (index-1 >= tailleMain || index-1 < 0 || index > size )
 	{	
 		cout << "Index "+ sindex +" hors de la Main !!" << endl;
 		return false;
@@ -218,6 +219,10 @@ int Joueur::getPdv()
 void Joueur::setPDV(int npdv)
 {
    this->pdv = npdv;
+   if (pdv > 30)
+   {
+   	pdv = 30;
+   }
 }
 
 

@@ -1,7 +1,6 @@
-all: Deck.o Carte.o Joueur.o Jeu.o  Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o VueConsole.o LancementPartie.o FinDeJeu.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o  Main.o
+all:Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementPartie.o  Main.o
 
-
-	g++ -Wall -g bin/Modele/Joueur/Deck/Carte/Carte.o bin/Modele/Joueur/Deck/Deck.o bin/Controleur/ComportementPouvoir/ComportementPouvoir.o ComportementPouvoirGuerrier.o bin/Controleur/ComportementPouvoir/ComportementPouvoirChasseur.o bin/Controleur/ComportementPouvoir/bin/Controleur/ComportementPouvoir/ComportementPouvoirPretre.o bin/Controleur/ComportementPouvoir/ComportementPouvoirMage.o bin/Controleur/ComportementPouvoir/ComportementPouvoirDemoniste.o Joueur.o VueConsole.o Sujet.o Observer.o Jeu.o Etat.o EtatDebutTour.o EtatDoubleNo.o EtatNoMana.o EtatNoAttaque.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o FinDeJeu.o LancementPartie.o Main.o -o main
+	g++ -Wall -g bin/Modele/Joueur/Deck/Carte/Carte.o bin/Modele/Joueur/Deck/Deck.o bin/Controleur/ComportementPouvoir/ComportementPouvoir.o bin/Controleur/ComportementPouvoir/ComportementPouvoirGuerrier.o bin/Controleur/ComportementPouvoir/ComportementPouvoirChasseur.o bin/Controleur/ComportementPouvoir/ComportementPouvoirPretre.o bin/Controleur/ComportementPouvoir/ComportementPouvoirMage.o bin/Controleur/ComportementPouvoir/ComportementPouvoirDemoniste.o bin/Modele/Joueur/Joueur.o bin/Vue/VueConsole.o bin/Controleur/Sujet.o bin/Controleur/Observer.o bin/Controleur/Jeu.o bin/Controleur/Etat.o bin/Controleur/EtatDebutTour.o bin/Controleur/EtatDoubleNo.o bin/Controleur/EtatNoMana.o bin/Controleur/EtatNoAttaque.o bin/Modele/Joueur/Guerrier.o bin/Modele/Joueur/Chasseur.o bin/Modele/Joueur/Pretre.o bin/Modele/Joueur/Mage.o bin/Modele/Joueur/Demoniste.o bin/Controleur/FinDeJeu.o bin/Controleur/LancementPartie.o Main.exe -o main
 
 Carte.o:
 	g++ -g -Wall include/Modele/Joueur/Deck/Carte/Carte.hpp -o bin/Modele/Joueur/Deck/Carte/Carte.o -c
@@ -58,19 +57,19 @@ EtatNoAttaque.o:Etat.o
 	g++ -g -Wall include/Controleur/EtatNoAttaque.hpp -o bin/Controleur/EtatNoAttaque.o -c
 
 Guerrier.o: Joueur.o
-	g++ -g -Wall include/Modele/Joueur/Guerrier.hpp -o include/Modele/Joueur/Guerrier.o -c
+	g++ -g -Wall include/Modele/Joueur/Guerrier.hpp -o bin/Modele/Joueur/Guerrier.o -c
 
 Chasseur.o: Chasseur.o
-	g++ -g -Wall include/Modele/Joueur/Chasseur.hpp -o include/Modele/Joueur/Chasseur.o -c
+	g++ -g -Wall include/Modele/Joueur/Chasseur.hpp -o bin/Modele/Joueur/Chasseur.o -c
 
 Pretre.o: Pretre.o
-	g++ -g -Wall include/Modele/Joueur/Pretre.hpp -o include/Modele/Joueur/Pretre.o -c
+	g++ -g -Wall include/Modele/Joueur/Pretre.hpp -o bin/Modele/Joueur/Pretre.o -c
 
 Mage.o: Joueur.o
-	g++ -g -Wall include/Modele/Joueur/Mage.hpp -o include/Modele/Joueur/Mage.o -c
+	g++ -g -Wall include/Modele/Joueur/Mage.hpp -o bin/Modele/Joueur/Mage.o -c
 
 Demoniste.o: Joueur.o
-	g++ -g -Wall include/Modele/Joueur/Demoniste.hpp -o include/Modele/Joueur/Demoniste.o -c
+	g++ -g -Wall include/Modele/Joueur/Demoniste.hpp -o bin/Modele/Joueur/Demoniste.o -c
 
 FinDeJeu.o:Observer.o Sujet.o 
 	g++ -g -Wall include/Controleur/FinDeJeu.hpp -o bin/Controleur/FinDeJeu.o -c

@@ -47,6 +47,7 @@ class VueConsole
 		void afficherPasAssezDeMana();
 		void afficherChoixPouvoirMage();
 		void afficherChoixPouvoirPretre();
+		void afficherChoixPouvoirInduction();
 		
 		void afficherChoixCarte();
 		

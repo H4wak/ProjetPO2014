@@ -175,12 +175,12 @@ string Carte::toString()
    
 	   if (this->charge == true)
 	   {
-	   		result += " Charge ";
+	   		result += " | Charge ";
 	   }
 	   
 	   if (this->provoc == true)
 	   {
-	   	result += " Provocation ";
+	   	result += " | Provocation ";
 		}
 	}
 	else

@@ -87,7 +87,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 5: {
-			this->j1 = new Pretre(nom1,"DeckPretreSorts.txt");
+			this->j1 = new Pretre(nom1,"DeckPretre.txt");
 			break;
 		}
 	}

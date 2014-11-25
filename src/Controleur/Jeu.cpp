@@ -416,12 +416,7 @@ void Jeu::fonctionsCarte(int f)
 {
 	switch (f)
 	{
-		case 1:
-		{
-			cout << "VOUS ALLEZ MOURIR" << endl;
-			break;
-		}
-		
+				
 		
 		/////// Intelligence des Arcanes
 		case 10:
