@@ -57,19 +57,19 @@ EtatNoAttaque.o:Etat.o
 	g++ -g -Wall include/Controleur/EtatNoAttaque.hpp -o bin/Controleur/EtatNoAttaque.o -c
 
 Guerrier.o: Joueur.o
-	g++ -g -Wall include/Modele/Joueur/Guerrier.hpp -o include/Modele/Joueur/Guerrier.o -c
+	g++ -g -Wall include/Modele/Joueur/Guerrier.hpp -o bin/Modele/Joueur/Guerrier.o -c
 
 Chasseur.o: Chasseur.o
-	g++ -g -Wall include/Modele/Joueur/Chasseur.hpp -o include/Modele/Joueur/Chasseur.o -c
+	g++ -g -Wall include/Modele/Joueur/Chasseur.hpp -o bin/Modele/Joueur/Chasseur.o -c
 
 Pretre.o: Pretre.o
-	g++ -g -Wall include/Modele/Joueur/Pretre.hpp -o include/Modele/Joueur/Pretre.o -c
+	g++ -g -Wall include/Modele/Joueur/Pretre.hpp -o bin/Modele/Joueur/Pretre.o -c
 
 Mage.o: Joueur.o
-	g++ -g -Wall include/Modele/Joueur/Mage.hpp -o include/Modele/Joueur/Mage.o -c
+	g++ -g -Wall include/Modele/Joueur/Mage.hpp -o bin/Modele/Joueur/Mage.o -c
 
 Demoniste.o: Joueur.o
-	g++ -g -Wall include/Modele/Joueur/Demoniste.hpp -o include/Modele/Joueur/Demoniste.o -c
+	g++ -g -Wall include/Modele/Joueur/Demoniste.hpp -o bin/Modele/Joueur/Demoniste.o -c
 
 FinDeJeu.o:Observer.o
 	g++ -g -Wall include/Controleur/FinDeJeu.hpp -o bin/Controleur/FinDeJeu.o -c
