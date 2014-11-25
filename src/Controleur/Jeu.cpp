@@ -422,6 +422,16 @@ void Jeu::fonctionsCarte(int f)
 			break;
 		}
 		
+		
+		/////// Intelligence des Arcanes
+		case 10:
+		{
+			joueurCourant->ajouterMain(joueurCourant->getDeck()->tirerCarte());
+			joueurCourant->ajouterMain(joueurCourant->getDeck()->tirerCarte());
+			break;
+		}
+		
+		
 		////// Tir des Arcanes
 		case 20:
 		{
@@ -535,6 +545,160 @@ void Jeu::fonctionsCarte(int f)
 		}
 		
 		
+		////// Boule de Feu
+		case 23:
+		{
+			vue.afficherChoixPouvoirMage();
+			int choix = vue.getChoixJoueur();
+			switch (choix)
+			{
+		  	  case 1: {
+						joueurAutre->setPDV(joueurAutre->getPdv()-6);
+						break;
+		    	}
+		     default:  {
+	
+	    				choix = vue.getChoixJoueur();
+	    				bool bonnecarte = false;	
+    					int size = joueurAutre->getBoard()->size();  
+    					while ( bonnecarte == false )
+    					{
+    						if ( choix > 0 && choix <= size)
+    						{
+    							bonnecarte = true;
+    						}
+    						else
+    						{	
+								choix = vue.getChoixJoueur();
+      						}   				
+    					}   
+						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
+						joueurAutre->getBoard()->at(choix-1).setPdv(pdv-6);
+						if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
+						{	
+							joueurAutre->supprimerBoard(choix);
+							cout << "Vous avez triomphé de votre adversaire !" << endl;
+						}
+					break;
+		    }
+		}				
+			break;
+		}
+		
+		
+		////// Choc de Flammes
+		case 24: {
+			
+			int size1,size2,pdv;
+			size1 = joueurAutre->getBoard()->size();
+			
+			
+			for ( int i = 0; i < size1 ; i++ )
+			{
+				
+				pdv = joueurAutre->getBoard()->at(i).getPdv();
+				joueurAutre->getBoard()->at(i).setPdv(pdv-4);
+				
+				if ( joueurAutre->getBoard()->at(i).getPdv() <= 0 )
+					{	
+						joueurAutre->supprimerBoard(i+1);
+						i--;
+						size1--;
+					}
+			} 
+			
+			
+			break;
+		}
+		
+		//// Nova Sacrée
+		case 25: {
+			
+			int size1,size2,pdv,pdvmax,arm,ataq2;
+			size1 = joueurAutre->getBoard()->size();
+			size2 = joueurCourant->getBoard()->size();
+			
+			for ( int i = 0; i < size1 ; i++ )
+			{
+				pdv = joueurAutre->getBoard()->at(i).getPdv();
+				joueurAutre->getBoard()->at(i).setPdv(pdv-2);
+				
+				if ( joueurAutre->getBoard()->at(i).getPdv() <= 0 )
+					{	
+						joueurAutre->supprimerBoard(i+1);
+						i--;
+						size1--;
+					}
+			} 
+			
+			for ( int j = 0; j < size2 ; j++ )
+			{
+				pdv = joueurCourant->getBoard()->at(j).getPdv();
+				pdvmax = joueurCourant->getBoard()->at(j).getPdvmax();
+				
+				joueurCourant->getBoard()->at(j).setPdv(pdv+2);
+					if ( pdv+2 > pdvmax )
+					{	
+						joueurCourant->getBoard()->at(j).setPdv(pdvmax);
+					}
+			} 
+			
+			
+			arm = joueurAutre->getArmure();
+			
+  			 if (arm == 0)
+  			 {					
+				joueurAutre->setPDV(joueurAutre->getPdv()-2);
+  			 }
+  			 else
+   			{
+				if (2 <= arm)
+				{
+					joueurAutre->setARMURE(arm-2);
+				}
+				else
+				{
+					ataq2 = 2 - arm;
+					joueurAutre->setARMURE(0);
+					joueurAutre->setPDV(joueurAutre->getPdv()-ataq2);
+				}
+			
+			}
+			
+			joueurCourant->setPDV(joueurCourant->getPdv()+2);
+			if(joueurCourant->getPdv()>30)
+			{
+				joueurCourant->setPDV(30);
+			}
+			break;
+		}
+		
+		////// Attaque mentale
+		case 26: {
+			
+			int arm =  joueurAutre->getArmure();
+			if (arm == 0)
+			{					
+				joueurAutre->setPDV(joueurAutre->getPdv()-5);
+			}
+			else
+			{
+				if (5 <= arm)
+				{
+					joueurAutre->setARMURE(arm-5);
+				}
+				else
+				{
+					int ataq2 = 5 - arm;
+					joueurAutre->setARMURE(0);
+					joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+				}
+			}
+			
+			break;	
+   		}
+		
+		
 		////// Néant Distordu
 		case 40: {
 			
@@ -576,6 +740,33 @@ void Jeu::fonctionsCarte(int f)
     		}
     		
     		joueurCourant->getBoard()->at(choix-1).setPa(joueurCourant->getBoard()->at(choix-1).getPa()+2);
+    	
+    		break;
+    	}
+    	
+    	////// Esprit Divin
+		case 61: {
+		
+			vue.afficherChoixCarte();
+			int pdv1,pdv2;
+			int choix = vue.getChoixJoueur();
+			bool bonnecarte = false;
+			int size = joueurCourant->getBoard()->size(); 
+			while ( bonnecarte == false )
+    		{
+    			if ( choix > 0 && choix <= size)
+    			{
+    				bonnecarte = true;
+    			}
+    			else
+    			{	
+					choix = vue.getChoixJoueur();
+      			}   				
+    		}
+    		
+    		pdv1 = joueurCourant->getBoard()->at(choix-1).getPdv();
+    		pdv2 = pdv1*2;
+    		joueurCourant->getBoard()->at(choix-1).setPdv(pdv2);
     	
     		break;
     	}

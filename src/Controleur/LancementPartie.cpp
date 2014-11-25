@@ -77,7 +77,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 3: {
-			this->j1 = new Mage(nom1,"DeckGuerrier.txt");
+			this->j1 = new Mage(nom1,"DeckMage.txt");
 			break;
 		}
 		
@@ -87,7 +87,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 5: {
-			this->j1 = new Pretre(nom1,"DeckGuerrier.txt");
+			this->j1 = new Pretre(nom1,"DeckPretre.txt");
 			break;
 		}
 	}
@@ -105,7 +105,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 3: {
-			this->j2 = new Mage(nom1,"DeckGuerrier.txt");
+			this->j2 = new Mage(nom1,"DeckMage.txt");
 			break;
 		}
 		
@@ -115,7 +115,7 @@ void LancementPartie::lancerPartie()
 		}
 		
 		case 5: {
-			this->j2 = new Pretre(nom1,"DeckGuerrier.txt");
+			this->j2 = new Pretre(nom1,"DeckPretre.txt");
 			break;
 		}
 	}

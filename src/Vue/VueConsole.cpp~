@@ -56,21 +56,21 @@ void VueConsole::afficherMain(Joueur* j)
 void VueConsole::afficherChoixDebutTour()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher les Personnages.\n6 -> Attaquer une carte. \n7 -> utiliser le pouvoir heroique \n8 -> attaquer le heros adverse." << endl;
+	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main. \n2 -> Jouer une carte. \n3 -> Afficher le board. \n4 -> Afficher les 2 boards. \n5 -> Afficher les Personnages.\n6 -> Attaquer une carte. \n7 -> Utiliser le pouvoir heroique \n8 -> Attaquer le héros adverse." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixNoMana()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> afficher le board. \n3 -> afficher les 2 boards. \n4 -> Afficher votre Personnages. \n5 -> Attaquer une carte. \n6 -> attaquer le heros adverse" << endl;
+	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main. \n2 -> Afficher le board. \n3 -> Afficher les 2 boards. \n4 -> Afficher les personnages. \n5 -> Attaquer une carte. \n6 -> Attaquer le héros adverse" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixNoAttaque()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main. \n2 -> jouer une carte. \n3 -> afficher le board. \n4 -> afficher les 2 boards. \n5 -> Afficher les Personnages. \n6 -> utiliser le pouvoir heroique." << endl;
+	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main. \n2 -> Jouer une carte. \n3 -> Afficher le board. \n4 -> Afficher les 2 boards. \n5 -> Afficher les personnages. \n6 -> utiliser le pouvoir heroique." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -120,7 +120,7 @@ void VueConsole::afficherFinTour()
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherJouerCarte()
 {
-  cout << "Quelle carte voulez-vous jouez ?" << endl;
+  cout << "Quelle carte voulez-vous jouer ?" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -152,7 +152,7 @@ void VueConsole::afficherChoixCvJ()
 void VueConsole::afficherPersonnage(Joueur* j)
 {
    int pdvv = j->getPdv();
-   int pdmn = j->getPdm();
+   int pdmn = j->getPdmTour();
    int armm = j->getArmure();
    string pdv = static_cast<ostringstream*>( &(ostringstream() << pdvv)  )->str();
    string pdm = static_cast<ostringstream*>( &(ostringstream() << pdmn)  )->str();

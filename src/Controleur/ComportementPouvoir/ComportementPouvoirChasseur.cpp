@@ -42,7 +42,7 @@ void ComportementPouvoirChasseur::pouvoir()
 		this->joueur->getJoueurAutre()->setPDV(this->joueur->getJoueurAutre()->getPdv()- ataq2);
 	}
    }
-   cout << "BLBLLBLBLBL!";
+   
 }
 
 

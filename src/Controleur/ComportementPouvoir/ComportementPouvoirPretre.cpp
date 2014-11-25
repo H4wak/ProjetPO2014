@@ -56,7 +56,7 @@ void ComportementPouvoirPretre::pouvoir()
     				}    						
 					int pdv = this->joueur->getBoard()->at(choix-1).getPdv();
 					int pdvMax = this->joueur->getBoard()->at(choix-1).getPdvmax();
-					cout << pdvmax <<endl;
+					
 					this->joueur->getBoard()->at(choix-1).setPdv(pdv+2);
 					if ( pdv+2 > pdvMax )
 					{	
