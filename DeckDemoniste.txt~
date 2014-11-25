@@ -9,7 +9,7 @@
 2 1 Guerrier_branchie_bleue 2 1 0 0 0 blbl
 2 1 Guerrier_branchie_bleue 2 1 0 0 0 blbl
 0 0 Drain_de_vie 3 0 0 1 22 Inflige_2_points_de_dégats_et_rend_2_points_de_vie_à_votre_héros.
-3 1 Chevaucheur_de_loup 3 1 0 0 0 blbl
+0 0 Drain_de_vie 3 0 0 1 22 Inflige_2_points_de_dégats_et_rend_2_points_de_vie_à_votre_héros.
 6 7 Ogre_Rochepoing 6 0 0 0 0 blbl
 0 0 Néant_Distordu 8 0 0 1 40 Détruit_tout_les_serviteurs
 3 5 Maitre_bouclier_de_Sen'jin 4 0 1 0 0 blbl

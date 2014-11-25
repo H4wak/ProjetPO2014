@@ -675,7 +675,7 @@ void Jeu::fonctionsCarte(int f)
 		
 		////// Attaque mentale
 		case 26: {
-			cout << "BLBLBLBL1" << endl;
+			
 			int arm =  joueurAutre->getArmure();
 			if (arm == 0)
 			{					
@@ -694,13 +694,14 @@ void Jeu::fonctionsCarte(int f)
 					joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
 				}
 			}
-			cout << "BLBLBLBL2" << endl;		
+			
+			break;	
    		}
 		
 		
 		////// Néant Distordu
 		case 40: {
-			cout << "BLBLBLBLNEANT" << endl;
+			
 			int size1,size2;
 			size1 = joueurAutre->getBoard()->size();
 			size2 = joueurCourant->getBoard()->size();

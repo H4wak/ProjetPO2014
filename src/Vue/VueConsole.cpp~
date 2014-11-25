@@ -70,14 +70,14 @@ void VueConsole::afficherChoixNoMana()
 void VueConsole::afficherChoixNoAttaque()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main. \n2 -> Jouer une carte. \n3 -> Afficher le board. \n4 -> Afficher les 2 boards. \n5 -> Afficher les personnages. \n6 -> utiliser le pouvoir heroique." << endl;
+	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main. \n2 -> Jouer une carte. \n3 -> Afficher le board. \n4 -> Afficher les 2 boards. \n5 -> Afficher les personnages. \n6 -> Utiliser le pouvoir héroïque." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
 void VueConsole::afficherChoixDoubleNo()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> passer votre tour. \n1 -> afficher votre main.  \n2 -> afficher le board. \n3 -> afficher les 2 boards.  \n4 ->  Afficher les Personnages." << endl;
+	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main.  \n2 -> Afficher le board. \n3 -> Afficher les 2 boards.  \n4 -> Afficher les Personnages." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -213,6 +213,11 @@ void VueConsole::afficherChoixCarte()
 	cout << "Veuillez indiquer le numéro de la carte cible. " << endl;
 }
 
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherChoixPouvoirInduction()
+{
+	cout << "Choisissez la carte adverse qui subira L'INDUCTION NOEUTHERIENNE ! MUAHAHAHAHHA!" << endl;
+}
 
 
 

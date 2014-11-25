@@ -77,7 +77,7 @@ void VueConsole::afficherChoixNoAttaque()
 void VueConsole::afficherChoixDoubleNo()
 {
 	cout << "Que voulez vous faire ?" << endl;
-	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main.  \n2 -> Afficher le board. \n3 -> Afficher les 2 boards.  \n4 ->  Afficher les Personnages." << endl;
+	cout << "0 -> Passer votre tour. \n1 -> Afficher votre main.  \n2 -> Afficher le board. \n3 -> Afficher les 2 boards.  \n4 -> Afficher les Personnages." << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -195,7 +195,7 @@ void VueConsole::afficherIntro()
 {
 	cout << "Bienvenue ! \n Vous allez commencer une partie du Jeu Hearthstone, un jeu convivial et divertissant ! \n";
 	cout << "Mais pour cela vous devez choisir, votre adversaire et vous, un personnage que vous incarnerez ! \n";
-	cout << "Vous avez le choix parmi 5 valeureux champions : \n 1- Le Guerrier : Son pouvoir héroïque vous permet de gagner 2 points d'armure ! \n 2- Le Chasseur : Son pouvoir héroïque vous permet d'infliger 2 points de dégats au Champion ennemi ! Wow ! \n 3- Le Mage : Son pouvoir héroïque vous permet d'infliger 1 point de dégat à n'importe qui, une créature ennemie ou le joueur adverse ! \n 4- Le Démoniste : Son pouvoir héroïque vous permet de piocher une carte contre 2 de vos points de vie ! \n 5- Le Prêtre : Son pouvoir héroïque vous permet de soigner 2 points de vie à un de vos serviteurs ou à vous même !\n";  
+	cout << "Vous avez le choix parmi 5 valeureux champions : \n 1- Le Guerrier : Son pouvoir héroïque vous permet de gagner 2 points d'armure ! \n 2- Le Chasseur : Son pouvoir héroïque vous permet d'infliger 2 points de dégats au Champion ennemi ! Wow ! \n 3- Le Mage : Son pouvoir héroïque vous permet d'infliger 1 point de dégat à n'importe qui, une créature ennemie ou le joueur adverse ! \n 4- Le Démoniste : Son pouvoir héroïque vous permet de piocher une carte contre 2 de vos points de vie ! \n 5- Le Prêtre : Son pouvoir héroïque vous permet de soigner 2 points de vie à un de vos serviteurs ou à vous même !\n 666- Le légendaire JXR : Son pouvoir héroïque détruit à l'aide d'une induction Noeutherienne n'importe quel serviteur ennemi! \n";  
 	cout << "Indiquez votre nom puis le numéro du champion que vous choisissez, de même pour votre adversaire.\n";
 } 
 
@@ -213,6 +213,11 @@ void VueConsole::afficherChoixCarte()
 	cout << "Veuillez indiquer le numéro de la carte cible. " << endl;
 }
 
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherChoixPouvoirInduction()
+{
+	cout << "Choisissez la carte adverse qui subira L'INDUCTION NOEUTHERIENNE ! MUAHAHAHAHHA!" << endl;
+}
 
 
 
